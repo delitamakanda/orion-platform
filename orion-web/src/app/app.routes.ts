@@ -7,7 +7,7 @@ export const routes: Routes = [
         children: [
             {
                 path: 'dashboard',
-                loadComponent: () => import('./features/dashboard/dashboard-page/dashboard-page').then(m => m.DashboardPage)
+                loadComponent: () => import('./features/dashboard/pages/dashboard-page/dashboard-page').then(m => m.DashboardPage)
             },
             {
                 path: 'complaints',
@@ -20,6 +20,10 @@ export const routes: Routes = [
             {
                 path: 'complaints/new',
                 loadComponent: () => import('./features/complaints/pages/complaint-create-page/complaint-create-page').then(m => m.ComplaintCreatePage)
+            },
+            {
+                path: 'imports',
+                loadComponent: () => import('./features/imports/pages/import-monitoring-page/import-monitoring-page').then(m => m.ImportMonitoringPage)
             },
             { 
                 path: '**', 

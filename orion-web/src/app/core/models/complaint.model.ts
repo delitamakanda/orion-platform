@@ -1,14 +1,24 @@
 export type PriorityLevel = 'low' | 'medium' | 'high' | 'critical';
 
+export interface ExternalComplaint {
+  external_id: string;
+  source_system: string;
+  victim_type: string;
+  facts: string;
+  received_at: string;
+}
+
 export interface Complaint {
   id: string;
   reference: string;
   title: string;
+  source_system: string;
+  original_external_id: string;
   description: string;
   category: string;
   location: string;
   incident_date: string;
-  status: 'new' | 'in_progress' | 'assigned' | 'closed';
+  status: 'imported' | 'analyzed' | 'reviewed' | 'closed';
   declared_urgency: number;
   vulnerability_victim: boolean;
   created_at: string;
