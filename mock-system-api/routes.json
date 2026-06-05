@@ -1,0 +1,6 @@
+{
+    "/api/v1/complaints": "/complaints",
+    "/api/v1/complaints/:id": "/complaints/:id",
+    "/api/v1/attachments": "/attachments",
+    "/api/v1/complaint-events": "/complaint-events"
+}

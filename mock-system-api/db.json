@@ -1,0 +1,259 @@
+{
+    "complaints": [
+        {
+            "id":"EXT-2026-000001",
+            "reference": "SI-PLAINTE-000001",
+            "source_system": "SI-PLAINTE",
+            "status": "received",
+            "category": "violence",
+            "sub_category": "violences_conjugales",
+            "declared_urgency": 5,
+            "received_at": "2026-01-15T10:30:00Z",
+            "incident_date": "2026-01-10T20:00:00Z",
+            "location": {
+                "city": "Paris",
+                "postal_code": "75001",
+                "country": "France",
+                "department": "75"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": true
+            },
+            "facts": {
+                "title": "Menaces répétées et violences physiques",
+                "description": "La personne déclare être victime de menaces répétées et de violences physiques de la part de son conjoint depuis plusieurs mois. Les incidents se produisent principalement à leur domicile à Paris. La victime a déjà porté plainte une fois, mais les violences ont continué malgré l'intervention des forces de l'ordre.",
+                "keywords": ["menaces", "violences physiques", "recidive"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000001",
+                    "type": "photo",
+                    "filename": "declaration.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-01-20T12:30:00Z"
+            } 
+        },
+        {
+            "id":"EXT-2026-000002",
+            "reference": "SI-PLAINTE-000002",
+            "source_system": "SI-PLAINTE",
+            "status": "pending_investigation",
+            "category": "violence",
+            "sub_category": "violences_conjugales",
+            "declared_urgency": 3,
+            "received_at": "2026-01-20T15:00:00Z",
+            "incident_date": "2026-01-15T15:00:00Z",
+            "location": {
+                "city": "Paris",
+                "postal_code": "75001",
+                "country": "France",
+                "department": "75"
+                },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Violences verbales et menaces",
+                "description": "La personne déclare être victime de violences verbales et de menaces de la part de son conjoint depuis plusieurs semaines. Les incidents se produisent principalement à leur domicile à Paris. La victime n'a pas encore porté plainte, mais envisage de le faire prochainement.",
+                "keywords": ["violences verbales", "menaces"]
+                },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000002",
+                    "type": "audio",
+                    "filename": "audio_recording.wav"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-01-25T18:00:00Z"
+            }
+        },
+        {
+            "id":"EXT-2026-000003",
+            "reference": "SI-PLAINTE-000003",
+            "source_system": "SI-PLAINTE",
+            "status": "closed",
+            "category": "violence",
+            "sub_category": "violences_conjugales",
+            "declared_urgency": 2,
+            "received_at": "2026-01-25T10:00:00Z",
+            "incident_date": "2026-01-20T18:00:00Z",
+            "location": {
+                "city": "Paris",
+                "postal_code": "75001",
+                "country": "France",
+                "department": "75"
+                },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
+            }, 
+            "facts": {
+                "title": "Violences physiques ponctuelles",
+                "description": "La personne déclare être victime de violences physiques ponctuelles de la part de son conjoint. Les incidents se sont produits à leur domicile à Paris. La victime a porté plainte et une enquête a été ouverte, mais les violences ont cessé depuis.",
+                "keywords": ["violences physiques", "ponctuelles"]
+                },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000003",
+                    "type": "video",
+                    "filename": "incident_video.mp4"
+                }
+                ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-01-30T12:00:00Z"
+            }
+        },
+       {
+            "id":"EXT-2026-000004",
+            "reference": "SI-PLAINTE-000004",
+            "source_system": "SI-PLAINTE",
+            "status": "in_progress",
+            "category": "violence",
+            "sub_category": "degradations",
+            "declared_urgency": 2,
+            "received_at": "2026-02-01T15:00:00Z",
+            "incident_date": "2026-01-25T12:00:00Z",
+            "location": {
+                "city": "Bobigny",
+                "postal_code": "93000",
+                "country": "France",
+                "department": "93"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Dégradations du domicile",
+                "description": "La personne déclare que son domicile a été dégradé à plusieurs reprises par diverses personnes. La dégradation se produit principalement à Bobigny.",
+                "keywords": ["dégradations", "domicile", "diverses personnes"]
+                },
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-02-05T10:00:00Z"
+            }
+       },
+       {
+         "id":"EXT-2026-000005",
+         "reference": "SI-PLAINTE-000005",
+         "source_system": "SI-PLAINTE",
+         "status": "received",
+         "category": "suicide",
+         "sub_category": "tentative",
+          "declared_urgency": 5,
+          "received_at": "2026-02-10T10:00:00Z",
+          "incident_date": "2026-02-05T20:00:00Z",
+          "location": {
+            "city": "Paris",
+            "postal_code": "75001",
+            "country": "France",
+            "department": "75"
+            },
+          "facts": {
+            "title": "Tentative de suicide",
+            "description": "La personne déclare avoir fait une tentative de suicide à l'aide de médicaments. La personne a été découverte et a été hospitalisée.",
+            "keywords": ["tentative de suicide", "médicaments"]
+            },
+          "metadata": {
+            "created_by": "external_system",
+            "updated_at": "2026-02-15T15:00:00Z"
+            }
+       }
+    ],
+    "attachments": [
+        {
+            "id": "ATT-2026-000001",
+            "complaint_id": "SI-PLAINTE-000001",
+            "mime_type": "application/pdf",
+            "filename": "declaration.pdf",
+            "url": "http://localhost:3000/files/declaration.pdf"
+        },
+        {
+            "id": "ATT-2026-000002",
+            "complaint_id": "SI-PLAINTE-000002",
+            "mime_type": "audio/wav",
+            "filename": "audio_recording.wav",
+            "url": "http://localhost:3000/files/audio_recording.wav"
+        },
+        {
+            "id": "ATT-2026-000003",
+            "complaint_id": "SI-PLAINTE-000003",
+            "mime_type": "video/mp4",
+            "filename": "incident_video.mp4",
+            "url": "http://localhost:3000/files/incident_video.mp4"
+        },
+        {
+            "id": "ATT-2026-000004",
+            "complaint_id": "SI-PLAINTE-000004",
+            "mime_type": "image/jpeg",
+            "filename": "degradation_photo.jpg",
+            "url": "http://localhost:3000/files/degradation_photo.jpg"
+        },
+        {
+            "id": "ATT-2026-000005",
+            "complaint_id": "SI-PLAINTE-000005",
+            "mime_type": "application/pdf",
+            "filename": "medical_report.pdf",
+            "url": "http://localhost:3000/files/medical_report.pdf"
+        }
+    ],
+    "complaint_events": [
+        {
+            "id": "EVT-2026-000001",
+            "complaint_id": "SI-PLAINTE-000001",
+            "type": "created",
+            "occured_at": "2026-01-20T12:30:00Z",
+            "payload": {
+                "status": "received"
+            }
+        },
+        {
+            "id": "EVT-2026-000002",
+            "complaint_id": "SI-PLAINTE-000001",
+            "type": "closed",
+            "occured_at": "2026-01-25T18:00:00Z",
+            "payload": {
+                "status": "closed"
+            }
+        },
+        {
+            "id": "EVT-2026-000003",
+            "complaint_id": "SI-PLAINTE-000002",
+            "type": "created",
+            "occured_at": "2026-01-25T18:00:00Z",
+            "payload": {
+                "status": "pending_investigation"
+            }
+        },
+        {
+            "id": "EVT-2026-000004",
+            "complaint_id": "SI-PLAINTE-000003",
+            "type": "created",
+            "occured_at": "2026-01-30T12:00:00Z",
+            "payload": {
+                "status": "closed"
+            }
+        },
+        {
+            "id": "EVT-2026-000005",
+            "complaint_id": "SI-PLAINTE-000004",
+            "type": "created",
+            "occured_at": "2026-02-05T10:00:00Z",
+            "payload": {
+                "status": "in_progress"
+            }
+        }
+    ]
+}
