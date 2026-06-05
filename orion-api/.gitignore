@@ -1,0 +1,35 @@
+# ignore python bytecode files
+__pycache__/
+*.pyc
+# ignore node modules
+node_modules/
+# ignore build artifacts
+build/
+dist/
+# ignore environment files
+.env
+orion_venv/
+# ignore logs
+logs/
+# ignore test coverage reports
+coverage/
+# ignore npm lock file
+package-lock.json
+# ignore Docker configuration
+docker-compose.yml
+docker-compose.override.yml
+# ignore IDE configuration files
+.vscode/
+.idea/
+# ignore IntelliJ configuration files
+.iml
+# ignore PyCharm configuration files
+.idea/
+# ignore MacOS system files
+.DS_Store
+# ignore Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# ignore ESLint cache
+.eslintcache/
