@@ -23,6 +23,8 @@ class Complaint(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    raw_payload = models.JSONField(default=dict)
+
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.IMPORTED)
 
     received_at = models.DateTimeField()
