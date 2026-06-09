@@ -1,6 +1,6 @@
 import json
 from django.conf import settings
-from mistralai import Mistral
+from mistralai.client import Mistral
 
 from apps.complaints.models import Complaint
 

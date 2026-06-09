@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 MISTRAL_MODEL_NAME = os.getenv("MISTRAL_MODEL_NAME", "mistral-small-2603")
+PRIORITIZATION_PROVIDER = os.getenv("PRIORITIZATION_PROVIDER", "mistral")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
