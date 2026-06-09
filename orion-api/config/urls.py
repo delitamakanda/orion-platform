@@ -24,6 +24,7 @@ urlpatterns = [
         path('audits/', include('apps.audits.urls')),
         path('complaints/', include('apps.complaints.urls')),
         path('dashboards/', include('apps.dashboards.urls')),
+        path('integrations/', include('apps.integrations.urls')),
         path('notifications/', include('apps.notifications.urls')),
     ], 'api'), namespace='v1')),
 ]

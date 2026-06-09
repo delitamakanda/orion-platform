@@ -156,6 +156,8 @@ REST_FRAMEWORK = {
     'DEFAULT_VERSION': 'v1',
     'DEFAULT_SCHEMA_VERSION': 'v1',
     'VERSION_PARAM': 'version',
+    'SEARCH_PARAM': 'q',
+    
 }
 
 # how to handle versioning in URLs
