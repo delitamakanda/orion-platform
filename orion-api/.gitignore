@@ -33,3 +33,4 @@ ehthumbs.db
 Desktop.ini
 # ignore ESLint cache
 .eslintcache/
+db.sqlite3
