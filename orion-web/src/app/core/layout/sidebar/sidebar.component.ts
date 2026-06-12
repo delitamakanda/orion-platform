@@ -37,12 +37,12 @@ export class SidebarComponent {
         icon: 'assignment'
       },
       {
-        path: '/queue',
+        path: '/prioritization/queue',
         label: 'Prioritization',
         icon: 'priority_high'
       },
       {
-        path: '/synch',
+        path: '/integrations/sync',
         label: 'Synchronisation',
         icon: 'sync'
       },
