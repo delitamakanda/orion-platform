@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { form, FormField, required, email, submit } from '@angular/forms/signals';
 import { AuthStore } from '../../data-access/auth.store';
 import MaterialModule from '@app/shared/material.module';
+import { Router } from '@angular/router';
 
 interface LoginData {
   email: string;
@@ -20,6 +21,7 @@ interface LoginData {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthPage {
+  private readonly router = inject(Router);
   readonly store = inject(AuthStore);
   loginModel = signal<LoginData>({
     email: '',
@@ -40,6 +42,7 @@ export class AuthPage {
       this.store.login(email, password).subscribe({
         next: () => {
           // Handle successful login, e.g., navigate to dashboard
+          this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           // Handle login error, e.g., show error message
