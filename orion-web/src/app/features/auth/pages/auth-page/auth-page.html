@@ -1,47 +1,52 @@
 <form (submit)="onSubmit($event)">
-  <div>
-    <label>
-      Email
-      <input type="email" [formField]="loginForm.email" />
-    </label>
+    <div>
+<mat-form-field>
+    <mat-label>
+      Email 
+    </mat-label>
+    <input matInput type="email" [formField]="loginForm.email" />
     @if (loginForm.email().invalid() && loginForm.email().touched()) {
-  <div class="error">
+  <mat-error>
     @for (error of loginForm.email().errors(); track error.kind) {
       <span>{{ error.message }}</span>
     }
-  </div>
+  </mat-error>
 }
-  </div>
+  </mat-form-field>
+    </div>
+  
 
   <div>
-    <label>
+    <mat-form-field>
+    <mat-label>
       Password
-      <input type="password" [formField]="loginForm.password" />
-    </label>
+    </mat-label>
+    <input matInput type="password" [formField]="loginForm.password" />
 @if (loginForm.password().invalid() && loginForm.password().touched()) {
-  <div class="error">
+  <mat-error>
     @for (error of loginForm.password().errors(); track error.kind) {
       <span>{{ error.message }}</span>
     }
-  </div>
+  </mat-error>
 }
+  </mat-form-field>
   </div>
 
-  <div>
-    <label>
-      <input type="checkbox" [formField]="loginForm.rememberMe" />
-      Remember me
-    </label>
+  <div class="remember-me">
+    <mat-label>
+      <mat-checkbox [formField]="loginForm.rememberMe">Remember me</mat-checkbox>
+    </mat-label>
   </div>
 
-  <button [disabled]="loginForm().invalid()" type="submit">Log in</button>
+  <button mat-raised-button [disabled]="loginForm().invalid()" type="submit">Log in</button>
+  <button mat-raised-button color="primary" type="button" (click)="clearForm()">Clear</button>
 </form>
 
 
 @if (store.error()) {
-  <div class="error">
+  <mat-error>
     {{ store.error() }}
-  </div>
+  </mat-error>
 }
 
 <div class="form-debug">

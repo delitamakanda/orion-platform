@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { form, FormField, required, email, submit } from '@angular/forms/signals';
 import { AuthStore } from '../../data-access/auth.store';
+import MaterialModule from '@app/shared/material.module';
 
 interface LoginData {
   email: string;
@@ -12,6 +13,7 @@ interface LoginData {
   selector: 'app-auth-page',
   imports: [
     FormField,
+    MaterialModule,
   ],
   templateUrl: './auth-page.html',
   styleUrls: ['./auth-page.css'],
@@ -44,6 +46,14 @@ export class AuthPage {
           console.error('Login failed:', error);
         }
       });
+    });
+  }
+
+  clearForm() {
+    this.loginModel.set({
+      email: '',
+      password: '',
+      rememberMe: false,
     });
   }
 }
