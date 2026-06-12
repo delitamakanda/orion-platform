@@ -3,6 +3,7 @@ import MaterialModule from '@app/shared/material.module';
 import { Router, RouterLinkActive, RouterLink } from "@angular/router";
 import { MatSidenav } from '@angular/material/sidenav';
 import { siteConfig } from '@app/core/config/site.config';
+import { AuthStore } from '@app/features/auth/data-access/auth.store';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,6 +17,7 @@ import { siteConfig } from '@app/core/config/site.config';
 })
 export class SidebarComponent {
   private readonly router = inject(Router);
+  readonly store = inject(AuthStore);
   @ViewChild('sidenav') sidenav!: MatSidenav;
   protected title = siteConfig.title;
 
@@ -24,7 +26,7 @@ export class SidebarComponent {
   toggleSidebar = output<void>();
 
   constructor() { 
-    // list of rroutes for sidebar menu items
+    // list of routes for sidebar menu items
     this.routes = [
       {
         path: '/dashboard',
@@ -61,6 +63,12 @@ export class SidebarComponent {
 
   toggleSidenav(): void {
     this.sidenav.toggle();
+  }
+
+  logout(): void {
+    this.store.logout().subscribe(() => {
+      this.router.navigate(['/login']);
+    });
   }
 
 }
