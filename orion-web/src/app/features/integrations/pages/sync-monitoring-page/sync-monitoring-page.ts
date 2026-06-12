@@ -1,9 +1,47 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, effect, inject, OnInit, ViewChild } from '@angular/core';
+import { SyncStore } from '../../data-access/sync.store';
+import MaterialModules from '@app/shared/material.module';
+import { MatTableDataSource } from '@angular/material/table';
+import { SyncJob } from '../../models/sync-job.model';
+import { MatPaginator } from '@angular/material/paginator';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-sync-monitoring-page',
-  imports: [],
+  standalone: true,
+  imports: [
+    MaterialModules,
+    DatePipe
+  ],
+  providers: [
+    SyncStore,
+  ],
   templateUrl: './sync-monitoring-page.html',
-  styleUrl: './sync-monitoring-page.css',
+  styleUrls: ['./sync-monitoring-page.css'],
 })
-export class SyncMonitoringPage {}
+export class SyncMonitoringPage implements OnInit {
+  readonly store = inject(SyncStore);
+  readonly displayedColumns: string[] = ['id', 'source_system', 'status', 'imported_count', 'updated_count', 'skipped_count', 'started_at', 'completed_at']
+  dataSource = new MatTableDataSource<SyncJob>([]);
+
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor() {
+    effect(() => {
+      const syncJobs = this.store.syncJobs();
+      
+      setTimeout(() => {
+        this.dataSource.data = syncJobs;
+        if (this.paginator) {
+          this.dataSource.paginator = this.paginator;
+        }
+      }, 0);
+    });
+  }
+
+  ngOnInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+}
