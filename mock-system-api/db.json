@@ -1,7 +1,7 @@
 {
     "complaints": [
         {
-            "id":"EXT-2026-000001",
+            "id": "EXT-2026-000001",
             "reference": "SI-PLAINTE-000001",
             "source_system": "SI-PLAINTE",
             "status": "received",
@@ -36,10 +36,10 @@
             "metadata": {
                 "created_by": "external_system",
                 "updated_at": "2026-01-20T12:30:00Z"
-            } 
+            }
         },
         {
-            "id":"EXT-2026-000002",
+            "id": "EXT-2026-000002",
             "reference": "SI-PLAINTE-000002",
             "source_system": "SI-PLAINTE",
             "status": "pending_investigation",
@@ -53,7 +53,7 @@
                 "postal_code": "75001",
                 "country": "France",
                 "department": "75"
-                },
+            },
             "complainant": {
                 "type": "individual",
                 "age_range": "adult",
@@ -63,7 +63,7 @@
                 "title": "Violences verbales et menaces",
                 "description": "La personne déclare être victime de violences verbales et de menaces de la part de son conjoint depuis plusieurs semaines. Les incidents se produisent principalement à leur domicile à Paris. La victime n'a pas encore porté plainte, mais envisage de le faire prochainement.",
                 "keywords": ["violences verbales", "menaces"]
-                },
+            },
             "attachments": [
                 {
                     "id": "ATT-2026-000002",
@@ -77,7 +77,7 @@
             }
         },
         {
-            "id":"EXT-2026-000003",
+            "id": "EXT-2026-000003",
             "reference": "SI-PLAINTE-000003",
             "source_system": "SI-PLAINTE",
             "status": "closed",
@@ -91,35 +91,35 @@
                 "postal_code": "75001",
                 "country": "France",
                 "department": "75"
-                },
+            },
             "complainant": {
                 "type": "individual",
                 "age_range": "adult",
                 "is_vulnerable": false
-            }, 
+            },
             "facts": {
                 "title": "Violences physiques ponctuelles",
                 "description": "La personne déclare être victime de violences physiques ponctuelles de la part de son conjoint. Les incidents se sont produits à leur domicile à Paris. La victime a porté plainte et une enquête a été ouverte, mais les violences ont cessé depuis.",
                 "keywords": ["violences physiques", "ponctuelles"]
-                },
+            },
             "attachments": [
                 {
                     "id": "ATT-2026-000003",
                     "type": "video",
                     "filename": "incident_video.mp4"
                 }
-                ],
+            ],
             "metadata": {
                 "created_by": "external_system",
                 "updated_at": "2026-01-30T12:00:00Z"
             }
         },
-       {
-            "id":"EXT-2026-000004",
+        {
+            "id": "EXT-2026-000004",
             "reference": "SI-PLAINTE-000004",
             "source_system": "SI-PLAINTE",
             "status": "in_progress",
-            "category": "violence",
+            "category": "atteintes_aux_biens",
             "sub_category": "degradations",
             "declared_urgency": 2,
             "received_at": "2026-02-01T15:00:00Z",
@@ -139,43 +139,604 @@
                 "title": "Dégradations du domicile",
                 "description": "La personne déclare que son domicile a été dégradé à plusieurs reprises par diverses personnes. La dégradation se produit principalement à Bobigny.",
                 "keywords": ["dégradations", "domicile", "diverses personnes"]
-                },
+            },
             "metadata": {
                 "created_by": "external_system",
                 "updated_at": "2026-02-05T10:00:00Z"
             }
-       },
-       {
-         "id":"EXT-2026-000005",
-         "reference": "SI-PLAINTE-000005",
-         "source_system": "SI-PLAINTE",
-         "status": "received",
-         "category": "suicide",
-         "sub_category": "tentative",
-          "declared_urgency": 5,
-          "received_at": "2026-02-10T10:00:00Z",
-          "incident_date": "2026-02-05T20:00:00Z",
-          "location": {
-            "city": "Paris",
-            "postal_code": "75001",
-            "country": "France",
-            "department": "75"
+        },
+        {
+            "id": "EXT-2026-000005",
+            "reference": "SI-PLAINTE-000005",
+            "source_system": "SI-PLAINTE",
+            "status": "received",
+            "category": "suicide",
+            "sub_category": "tentative",
+            "declared_urgency": 5,
+            "received_at": "2026-02-10T10:00:00Z",
+            "incident_date": "2026-02-05T20:00:00Z",
+            "location": {
+                "city": "Paris",
+                "postal_code": "75001",
+                "country": "France",
+                "department": "75"
             },
             "complainant": {
-            "type": "individual",
-            "age_range": "adult",
-            "is_vulnerable": false
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
             },
-          "facts": {
-            "title": "Tentative de suicide",
-            "description": "La personne déclare avoir fait une tentative de suicide à l'aide de médicaments. La personne a été découverte et a été hospitalisée.",
-            "keywords": ["tentative de suicide", "médicaments"]
+            "facts": {
+                "title": "Tentative de suicide",
+                "description": "La personne déclare avoir fait une tentative de suicide à l'aide de médicaments. La personne a été découverte et a été hospitalisée.",
+                "keywords": ["tentative de suicide", "médicaments"]
             },
-          "metadata": {
-            "created_by": "external_system",
-            "updated_at": "2026-02-15T15:00:00Z"
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-02-15T15:00:00Z"
             }
-       }
+        },
+        {
+            "id": "EXT-2026-000006",
+            "reference": "SI-PLAINTE-000006",
+            "source_system": "SI-PLAINTE",
+            "status": "pending_investigation",
+            "category": "atteintes_aux_biens",
+            "sub_category": "vol_avec_violence",
+            "declared_urgency": 4,
+            "received_at": "2026-02-12T09:00:00Z",
+            "incident_date": "2026-02-11T22:30:00Z",
+            "location": {
+                "city": "Marseille",
+                "postal_code": "13001",
+                "country": "France",
+                "department": "13"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Vol à l'arraché avec coups",
+                "description": "La victime a été agressée par deux individus qui lui ont arraché son téléphone portable et son sac à main en lui portant plusieurs coups au visage. Les faits se sont déroulés rue de la République à Marseille en soirée. L'un des auteurs était cagoulé.",
+                "keywords": ["vol", "agression", "téléphone", "coups", "nuit"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000006",
+                    "type": "photo",
+                    "filename": "blessures_visage.jpg"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-02-13T08:45:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000007",
+            "reference": "SI-PLAINTE-000007",
+            "source_system": "SI-PLAINTE",
+            "status": "in_progress",
+            "category": "cybercriminalite",
+            "sub_category": "escroquerie_en_ligne",
+            "declared_urgency": 3,
+            "received_at": "2026-02-14T11:00:00Z",
+            "incident_date": "2026-02-08T14:00:00Z",
+            "location": {
+                "city": "Lyon",
+                "postal_code": "69002",
+                "country": "France",
+                "department": "69"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "senior",
+                "is_vulnerable": true
+            },
+            "facts": {
+                "title": "Arnaque au faux conseiller bancaire",
+                "description": "La victime a reçu un appel d'un individu se présentant comme conseiller de sa banque, lui indiquant une activité suspecte sur son compte. Sous prétexte de sécuriser ses fonds, la victime a communiqué ses codes d'accès et a autorisé plusieurs virements pour un total de 8 400 euros. La victime est âgée de 74 ans.",
+                "keywords": ["escroquerie", "usurpation", "virement frauduleux", "phishing téléphonique"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000007",
+                    "type": "document",
+                    "filename": "releve_bancaire.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-02-16T09:30:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000008",
+            "reference": "SI-PLAINTE-000008",
+            "source_system": "SI-PLAINTE",
+            "status": "received",
+            "category": "trafic",
+            "sub_category": "trafic_stupefiants",
+            "declared_urgency": 4,
+            "received_at": "2026-02-18T16:30:00Z",
+            "incident_date": "2026-02-17T23:00:00Z",
+            "location": {
+                "city": "Lille",
+                "postal_code": "59000",
+                "country": "France",
+                "department": "59"
+            },
+            "complainant": {
+                "type": "anonymous",
+                "age_range": "unknown",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Signalement d'un point de deal actif",
+                "description": "Le déclarant signale l'existence d'un point de deal actif au pied d'un immeuble du quartier Moulins à Lille. Des allers-retours fréquents de clients ont lieu principalement en soirée et la nuit. Des mineurs semblent être utilisés comme guetteurs. La déclaration est faite de manière anonyme.",
+                "keywords": ["stupéfiants", "point de deal", "mineurs", "guetteurs", "signalement anonyme"]
+            },
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-02-19T08:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000009",
+            "reference": "SI-PLAINTE-000009",
+            "source_system": "SI-PLAINTE",
+            "status": "closed",
+            "category": "discriminations",
+            "sub_category": "discrimination_raciale",
+            "declared_urgency": 3,
+            "received_at": "2026-02-20T10:00:00Z",
+            "incident_date": "2026-02-18T09:30:00Z",
+            "location": {
+                "city": "Toulouse",
+                "postal_code": "31000",
+                "country": "France",
+                "department": "31"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Refus d'accès à un établissement pour motif discriminatoire",
+                "description": "La victime s'est vue refuser l'entrée d'un bar en centre-ville de Toulouse. Le videur a invoqué une prétendue liste d'attente, mais la victime et ses amis ont constaté que des personnes arrivées après eux ont été admises sans délai. Des témoins confirment avoir entendu des propos à caractère racial tenus par l'agent de sécurité.",
+                "keywords": ["discrimination", "refus d'accès", "témoins", "propos racistes"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000009",
+                    "type": "video",
+                    "filename": "video_entree_bar.mp4"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-01T14:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000010",
+            "reference": "SI-PLAINTE-000010",
+            "source_system": "SI-PLAINTE",
+            "status": "in_progress",
+            "category": "cybercriminalite",
+            "sub_category": "harcelement_en_ligne",
+            "declared_urgency": 4,
+            "received_at": "2026-02-25T14:00:00Z",
+            "incident_date": "2026-02-01T00:00:00Z",
+            "location": {
+                "city": "Nantes",
+                "postal_code": "44000",
+                "country": "France",
+                "department": "44"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "minor",
+                "is_vulnerable": true
+            },
+            "facts": {
+                "title": "Cyberharcèlement scolaire prolongé",
+                "description": "Une adolescente de 15 ans déclare faire l'objet d'un cyberharcèlement intensif depuis le début du mois de février. Des insultes, des photos modifiées et des messages menaçants sont diffusés sur plusieurs réseaux sociaux par des camarades de classe. La situation a entraîné une anxiété sévère et un refus scolaire.",
+                "keywords": ["cyberharcèlement", "mineur", "réseaux sociaux", "insultes", "refus scolaire"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000010",
+                    "type": "document",
+                    "filename": "captures_ecran_harcelement.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-02T10:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000011",
+            "reference": "SI-PLAINTE-000011",
+            "source_system": "SI-PLAINTE",
+            "status": "pending_investigation",
+            "category": "atteintes_aux_biens",
+            "sub_category": "cambriolage",
+            "declared_urgency": 3,
+            "received_at": "2026-03-03T08:30:00Z",
+            "incident_date": "2026-03-02T03:00:00Z",
+            "location": {
+                "city": "Bordeaux",
+                "postal_code": "33000",
+                "country": "France",
+                "department": "33"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Cambriolage avec effraction au domicile",
+                "description": "La victime a constaté au réveil que son domicile avait été cambriolé durant la nuit. Les auteurs ont forcé la porte de derrière. Un ordinateur portable, des bijoux et environ 600 euros en espèces ont été dérobés. Des traces de pas et des éclats de bois sont visibles à l'entrée.",
+                "keywords": ["cambriolage", "effraction", "vol", "nuit", "porte forcée"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000011",
+                    "type": "photo",
+                    "filename": "effraction_porte.jpg"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-04T09:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000012",
+            "reference": "SI-PLAINTE-000012",
+            "source_system": "SI-PLAINTE",
+            "status": "received",
+            "category": "violence",
+            "sub_category": "agression_dans_les_transports",
+            "declared_urgency": 4,
+            "received_at": "2026-03-05T19:00:00Z",
+            "incident_date": "2026-03-05T18:10:00Z",
+            "location": {
+                "city": "Paris",
+                "postal_code": "75013",
+                "country": "France",
+                "department": "75"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Agression physique dans le métro",
+                "description": "La victime déclare avoir été frappée à plusieurs reprises par un groupe de quatre individus dans la rame de métro ligne 7 entre les stations Tolbiac et Place d'Italie. L'agression a débuté à la suite d'un regard. La victime a subi une fracture du nez. Des voyageurs ont assisté à la scène.",
+                "keywords": ["agression", "métro", "groupe", "fracture", "témoins"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000012",
+                    "type": "document",
+                    "filename": "certificat_medical.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-05T20:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000013",
+            "reference": "SI-PLAINTE-000013",
+            "source_system": "SI-PLAINTE",
+            "status": "in_progress",
+            "category": "fraude",
+            "sub_category": "fraude_documentaire",
+            "declared_urgency": 2,
+            "received_at": "2026-03-07T10:00:00Z",
+            "incident_date": "2026-03-01T00:00:00Z",
+            "location": {
+                "city": "Strasbourg",
+                "postal_code": "67000",
+                "country": "France",
+                "department": "67"
+            },
+            "complainant": {
+                "type": "organization",
+                "age_range": "unknown",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Usurpation d'identité et faux documents",
+                "description": "Une entreprise signale qu'un individu a produit de faux documents d'identité et de faux justificatifs de domicile pour obtenir un contrat de location de véhicule longue durée. Le véhicule, d'une valeur de 35 000 euros, n'a pas été restitué. L'identité usurpée est celle d'un tiers qui a lui-même déposé une main courante.",
+                "keywords": ["usurpation d'identité", "faux documents", "location", "non-restitution"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000013",
+                    "type": "document",
+                    "filename": "faux_documents_scans.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-10T11:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000014",
+            "reference": "SI-PLAINTE-000014",
+            "source_system": "SI-PLAINTE",
+            "status": "received",
+            "category": "violence",
+            "sub_category": "violences_a_caractere_sexuel",
+            "declared_urgency": 5,
+            "received_at": "2026-03-10T08:00:00Z",
+            "incident_date": "2026-03-09T23:30:00Z",
+            "location": {
+                "city": "Nice",
+                "postal_code": "06000",
+                "country": "France",
+                "department": "06"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "adult",
+                "is_vulnerable": true
+            },
+            "facts": {
+                "title": "Agression sexuelle en soirée",
+                "description": "La victime déclare avoir été victime d'une agression sexuelle à la sortie d'une soirée privée. Elle se trouvait seule lorsqu'un individu l'a suivie et agressée dans une ruelle. La victime a été prise en charge par les secours et une unité médico-légale a procédé aux constats.",
+                "keywords": ["agression sexuelle", "nuit", "soirée", "prise en charge médicale"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000014",
+                    "type": "document",
+                    "filename": "rapport_medico_legal.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-10T12:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000015",
+            "reference": "SI-PLAINTE-000015",
+            "source_system": "SI-PLAINTE",
+            "status": "pending_investigation",
+            "category": "atteintes_aux_biens",
+            "sub_category": "vandalisme",
+            "declared_urgency": 1,
+            "received_at": "2026-03-12T09:30:00Z",
+            "incident_date": "2026-03-11T03:00:00Z",
+            "location": {
+                "city": "Rennes",
+                "postal_code": "35000",
+                "country": "France",
+                "department": "35"
+            },
+            "complainant": {
+                "type": "organization",
+                "age_range": "unknown",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Tags et graffitis sur façade commerciale",
+                "description": "La gérante d'une boulangerie a constaté à l'ouverture que sa façade et ses vitrines avaient été recouvertes de graffitis à la bombe de peinture pendant la nuit. Les dégâts sont estimés à environ 2 000 euros de remise en état. Une caméra de vidéosurveillance voisine pourrait avoir capturé les auteurs.",
+                "keywords": ["vandalisme", "graffitis", "façade", "vidéosurveillance", "nuit"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000015",
+                    "type": "photo",
+                    "filename": "graffitis_facade.jpg"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-12T11:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000016",
+            "reference": "SI-PLAINTE-000016",
+            "source_system": "SI-PLAINTE",
+            "status": "in_progress",
+            "category": "fraude",
+            "sub_category": "abus_de_faiblesse",
+            "declared_urgency": 4,
+            "received_at": "2026-03-15T14:00:00Z",
+            "incident_date": "2026-03-10T10:00:00Z",
+            "location": {
+                "city": "Grenoble",
+                "postal_code": "38000",
+                "country": "France",
+                "department": "38"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "senior",
+                "is_vulnerable": true
+            },
+            "facts": {
+                "title": "Abus de faiblesse sur personne âgée par démarcheur",
+                "description": "La famille d'une femme de 81 ans signale qu'un démarcheur à domicile lui a fait signer plusieurs contrats pour des travaux non nécessaires pour un montant total de 22 000 euros. La victime souffre d'un début de démence diagnostiqué. Les travaux n'ont jamais été réalisés malgré le paiement d'acomptes.",
+                "keywords": ["abus de faiblesse", "démarchage", "personne âgée", "démence", "travaux fictifs"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000016",
+                    "type": "document",
+                    "filename": "contrats_signes.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-17T10:30:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000017",
+            "reference": "SI-PLAINTE-000017",
+            "source_system": "SI-PLAINTE",
+            "status": "received",
+            "category": "trafic",
+            "sub_category": "trafic_armes",
+            "declared_urgency": 5,
+            "received_at": "2026-03-18T07:00:00Z",
+            "incident_date": "2026-03-17T20:00:00Z",
+            "location": {
+                "city": "Montpellier",
+                "postal_code": "34000",
+                "country": "France",
+                "department": "34"
+            },
+            "complainant": {
+                "type": "anonymous",
+                "age_range": "unknown",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Signalement de détention et vente illicite d'armes",
+                "description": "Un signalement anonyme indique qu'un individu stockerait et revendrait des armes à feu illicites depuis un local commercial apparent. Des transactions auraient eu lieu à plusieurs reprises. Le déclarant précise avoir lui-même été approché pour un achat.",
+                "keywords": ["armes", "trafic", "illicite", "signalement anonyme", "vente"]
+            },
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-18T08:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000018",
+            "reference": "SI-PLAINTE-000018",
+            "source_system": "SI-PLAINTE",
+            "status": "closed",
+            "category": "atteintes_a_l_environnement",
+            "sub_category": "pollution_illicite",
+            "declared_urgency": 3,
+            "received_at": "2026-03-20T11:00:00Z",
+            "incident_date": "2026-03-19T06:00:00Z",
+            "location": {
+                "city": "Dunkerque",
+                "postal_code": "59140",
+                "country": "France",
+                "department": "59"
+            },
+            "complainant": {
+                "type": "organization",
+                "age_range": "unknown",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Déversement illicite de déchets industriels",
+                "description": "Une association de protection de l'environnement signale le déversement nocturne de déchets industriels dans un cours d'eau proche d'une zone industrielle de Dunkerque. Des traces huileuses et une mortalité de poissons ont été constatées le matin même. Des prélèvements ont été effectués par l'association.",
+                "keywords": ["pollution", "déchets industriels", "cours d'eau", "mortalité animale", "nuit"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000018",
+                    "type": "photo",
+                    "filename": "pollution_cours_eau.jpg"
+                },
+                {
+                    "id": "ATT-2026-000018B",
+                    "type": "document",
+                    "filename": "rapport_prelevement.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-04-01T09:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000019",
+            "reference": "SI-PLAINTE-000019",
+            "source_system": "SI-PLAINTE",
+            "status": "pending_investigation",
+            "category": "violence",
+            "sub_category": "violences_en_milieu_scolaire",
+            "declared_urgency": 3,
+            "received_at": "2026-03-22T15:30:00Z",
+            "incident_date": "2026-03-21T12:30:00Z",
+            "location": {
+                "city": "Créteil",
+                "postal_code": "94000",
+                "country": "France",
+                "department": "94"
+            },
+            "complainant": {
+                "type": "individual",
+                "age_range": "minor",
+                "is_vulnerable": true
+            },
+            "facts": {
+                "title": "Violences physiques répétées dans l'enceinte scolaire",
+                "description": "Les parents d'un élève de 13 ans signalent que leur enfant est victime de violences physiques répétées de la part d'un groupe d'élèves dans la cour de récréation. Des coups ont été portés à plusieurs reprises depuis début mars. L'établissement a été informé mais n'a pris aucune mesure.",
+                "keywords": ["violences scolaires", "mineur", "harcèlement physique", "groupe", "établissement scolaire"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000019",
+                    "type": "photo",
+                    "filename": "blessures_enfant.jpg"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-24T10:00:00Z"
+            }
+        },
+        {
+            "id": "EXT-2026-000020",
+            "reference": "SI-PLAINTE-000020",
+            "source_system": "SI-PLAINTE",
+            "status": "received",
+            "category": "cybercriminalite",
+            "sub_category": "atteinte_au_systeme_informatique",
+            "declared_urgency": 4,
+            "received_at": "2026-03-25T10:00:00Z",
+            "incident_date": "2026-03-24T08:00:00Z",
+            "location": {
+                "city": "Paris",
+                "postal_code": "75008",
+                "country": "France",
+                "department": "75"
+            },
+            "complainant": {
+                "type": "organization",
+                "age_range": "unknown",
+                "is_vulnerable": false
+            },
+            "facts": {
+                "title": "Attaque par rançongiciel sur infrastructure d'entreprise",
+                "description": "Une PME du secteur logistique déclare avoir été victime d'une attaque par rançongiciel ayant chiffré l'intégralité de ses serveurs internes. Une rançon en cryptomonnaie est exigée pour la restitution des données. L'activité de l'entreprise est totalement paralysée depuis 24 heures. Une adresse email en .onion a été fournie par les attaquants.",
+                "keywords": ["rançongiciel", "ransomware", "cyberattaque", "chiffrement", "cryptomonnaie"]
+            },
+            "attachments": [
+                {
+                    "id": "ATT-2026-000020",
+                    "type": "document",
+                    "filename": "message_rancon.pdf"
+                }
+            ],
+            "metadata": {
+                "created_by": "external_system",
+                "updated_at": "2026-03-25T12:00:00Z"
+            }
+        }
     ],
     "attachments": [
         {
@@ -212,6 +773,104 @@
             "mime_type": "application/pdf",
             "filename": "medical_report.pdf",
             "url": "http://localhost:3000/files/medical_report.pdf"
+        },
+        {
+            "id": "ATT-2026-000006",
+            "complaint_id": "SI-PLAINTE-000006",
+            "mime_type": "image/jpeg",
+            "filename": "blessures_visage.jpg",
+            "url": "http://localhost:3000/files/blessures_visage.jpg"
+        },
+        {
+            "id": "ATT-2026-000007",
+            "complaint_id": "SI-PLAINTE-000007",
+            "mime_type": "application/pdf",
+            "filename": "releve_bancaire.pdf",
+            "url": "http://localhost:3000/files/releve_bancaire.pdf"
+        },
+        {
+            "id": "ATT-2026-000009",
+            "complaint_id": "SI-PLAINTE-000009",
+            "mime_type": "video/mp4",
+            "filename": "video_entree_bar.mp4",
+            "url": "http://localhost:3000/files/video_entree_bar.mp4"
+        },
+        {
+            "id": "ATT-2026-000010",
+            "complaint_id": "SI-PLAINTE-000010",
+            "mime_type": "application/pdf",
+            "filename": "captures_ecran_harcelement.pdf",
+            "url": "http://localhost:3000/files/captures_ecran_harcelement.pdf"
+        },
+        {
+            "id": "ATT-2026-000011",
+            "complaint_id": "SI-PLAINTE-000011",
+            "mime_type": "image/jpeg",
+            "filename": "effraction_porte.jpg",
+            "url": "http://localhost:3000/files/effraction_porte.jpg"
+        },
+        {
+            "id": "ATT-2026-000012",
+            "complaint_id": "SI-PLAINTE-000012",
+            "mime_type": "application/pdf",
+            "filename": "certificat_medical.pdf",
+            "url": "http://localhost:3000/files/certificat_medical.pdf"
+        },
+        {
+            "id": "ATT-2026-000013",
+            "complaint_id": "SI-PLAINTE-000013",
+            "mime_type": "application/pdf",
+            "filename": "faux_documents_scans.pdf",
+            "url": "http://localhost:3000/files/faux_documents_scans.pdf"
+        },
+        {
+            "id": "ATT-2026-000014",
+            "complaint_id": "SI-PLAINTE-000014",
+            "mime_type": "application/pdf",
+            "filename": "rapport_medico_legal.pdf",
+            "url": "http://localhost:3000/files/rapport_medico_legal.pdf"
+        },
+        {
+            "id": "ATT-2026-000015",
+            "complaint_id": "SI-PLAINTE-000015",
+            "mime_type": "image/jpeg",
+            "filename": "graffitis_facade.jpg",
+            "url": "http://localhost:3000/files/graffitis_facade.jpg"
+        },
+        {
+            "id": "ATT-2026-000016",
+            "complaint_id": "SI-PLAINTE-000016",
+            "mime_type": "application/pdf",
+            "filename": "contrats_signes.pdf",
+            "url": "http://localhost:3000/files/contrats_signes.pdf"
+        },
+        {
+            "id": "ATT-2026-000018",
+            "complaint_id": "SI-PLAINTE-000018",
+            "mime_type": "image/jpeg",
+            "filename": "pollution_cours_eau.jpg",
+            "url": "http://localhost:3000/files/pollution_cours_eau.jpg"
+        },
+        {
+            "id": "ATT-2026-000018B",
+            "complaint_id": "SI-PLAINTE-000018",
+            "mime_type": "application/pdf",
+            "filename": "rapport_prelevement.pdf",
+            "url": "http://localhost:3000/files/rapport_prelevement.pdf"
+        },
+        {
+            "id": "ATT-2026-000019",
+            "complaint_id": "SI-PLAINTE-000019",
+            "mime_type": "image/jpeg",
+            "filename": "blessures_enfant.jpg",
+            "url": "http://localhost:3000/files/blessures_enfant.jpg"
+        },
+        {
+            "id": "ATT-2026-000020",
+            "complaint_id": "SI-PLAINTE-000020",
+            "mime_type": "application/pdf",
+            "filename": "message_rancon.pdf",
+            "url": "http://localhost:3000/files/message_rancon.pdf"
         }
     ],
     "complaint_events": [
@@ -220,45 +879,217 @@
             "complaint_id": "SI-PLAINTE-000001",
             "type": "created",
             "occured_at": "2026-01-20T12:30:00Z",
-            "payload": {
-                "status": "received"
-            }
+            "payload": { "status": "received" }
         },
         {
             "id": "EVT-2026-000002",
             "complaint_id": "SI-PLAINTE-000001",
             "type": "closed",
             "occured_at": "2026-01-25T18:00:00Z",
-            "payload": {
-                "status": "closed"
-            }
+            "payload": { "status": "closed" }
         },
         {
             "id": "EVT-2026-000003",
             "complaint_id": "SI-PLAINTE-000002",
             "type": "created",
             "occured_at": "2026-01-25T18:00:00Z",
-            "payload": {
-                "status": "pending_investigation"
-            }
+            "payload": { "status": "pending_investigation" }
         },
         {
             "id": "EVT-2026-000004",
             "complaint_id": "SI-PLAINTE-000003",
             "type": "created",
             "occured_at": "2026-01-30T12:00:00Z",
-            "payload": {
-                "status": "closed"
-            }
+            "payload": { "status": "closed" }
         },
         {
             "id": "EVT-2026-000005",
             "complaint_id": "SI-PLAINTE-000004",
             "type": "created",
             "occured_at": "2026-02-05T10:00:00Z",
-            "payload": {
-                "status": "in_progress"
-            }
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000006",
+            "complaint_id": "SI-PLAINTE-000005",
+            "type": "created",
+            "occured_at": "2026-02-15T15:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000007",
+            "complaint_id": "SI-PLAINTE-000006",
+            "type": "created",
+            "occured_at": "2026-02-12T09:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000008",
+            "complaint_id": "SI-PLAINTE-000006",
+            "type": "updated",
+            "occured_at": "2026-02-13T08:45:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000009",
+            "complaint_id": "SI-PLAINTE-000007",
+            "type": "created",
+            "occured_at": "2026-02-14T11:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000010",
+            "complaint_id": "SI-PLAINTE-000007",
+            "type": "updated",
+            "occured_at": "2026-02-16T09:30:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000011",
+            "complaint_id": "SI-PLAINTE-000008",
+            "type": "created",
+            "occured_at": "2026-02-19T08:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000012",
+            "complaint_id": "SI-PLAINTE-000009",
+            "type": "created",
+            "occured_at": "2026-02-20T10:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000013",
+            "complaint_id": "SI-PLAINTE-000009",
+            "type": "closed",
+            "occured_at": "2026-03-01T14:00:00Z",
+            "payload": { "status": "closed" }
+        },
+        {
+            "id": "EVT-2026-000014",
+            "complaint_id": "SI-PLAINTE-000010",
+            "type": "created",
+            "occured_at": "2026-02-25T14:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000015",
+            "complaint_id": "SI-PLAINTE-000010",
+            "type": "updated",
+            "occured_at": "2026-03-02T10:00:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000016",
+            "complaint_id": "SI-PLAINTE-000011",
+            "type": "created",
+            "occured_at": "2026-03-03T08:30:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000017",
+            "complaint_id": "SI-PLAINTE-000011",
+            "type": "updated",
+            "occured_at": "2026-03-04T09:00:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000018",
+            "complaint_id": "SI-PLAINTE-000012",
+            "type": "created",
+            "occured_at": "2026-03-05T20:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000019",
+            "complaint_id": "SI-PLAINTE-000013",
+            "type": "created",
+            "occured_at": "2026-03-07T10:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000020",
+            "complaint_id": "SI-PLAINTE-000013",
+            "type": "updated",
+            "occured_at": "2026-03-10T11:00:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000021",
+            "complaint_id": "SI-PLAINTE-000014",
+            "type": "created",
+            "occured_at": "2026-03-10T12:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000022",
+            "complaint_id": "SI-PLAINTE-000015",
+            "type": "created",
+            "occured_at": "2026-03-12T09:30:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000023",
+            "complaint_id": "SI-PLAINTE-000015",
+            "type": "updated",
+            "occured_at": "2026-03-12T11:00:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000024",
+            "complaint_id": "SI-PLAINTE-000016",
+            "type": "created",
+            "occured_at": "2026-03-15T14:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000025",
+            "complaint_id": "SI-PLAINTE-000016",
+            "type": "updated",
+            "occured_at": "2026-03-17T10:30:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000026",
+            "complaint_id": "SI-PLAINTE-000017",
+            "type": "created",
+            "occured_at": "2026-03-18T08:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000027",
+            "complaint_id": "SI-PLAINTE-000018",
+            "type": "created",
+            "occured_at": "2026-03-20T11:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000028",
+            "complaint_id": "SI-PLAINTE-000018",
+            "type": "closed",
+            "occured_at": "2026-04-01T09:00:00Z",
+            "payload": { "status": "closed" }
+        },
+        {
+            "id": "EVT-2026-000029",
+            "complaint_id": "SI-PLAINTE-000019",
+            "type": "created",
+            "occured_at": "2026-03-22T15:30:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000030",
+            "complaint_id": "SI-PLAINTE-000019",
+            "type": "updated",
+            "occured_at": "2026-03-24T10:00:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000031",
+            "complaint_id": "SI-PLAINTE-000020",
+            "type": "created",
+            "occured_at": "2026-03-25T12:00:00Z",
+            "payload": { "status": "received" }
         }
     ]
 }
