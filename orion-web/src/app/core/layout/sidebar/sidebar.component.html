@@ -1,1 +1,24 @@
-<p>sidebar.component works!</p>
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="Menu icon" (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+    </button>{{ title }}
+</mat-toolbar>
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav [opened]="true" mode="side" opened>
+    <mat-nav-list>
+    @for (entry of routes; track entry['path']) {
+        <ng-container>
+      <a mat-list-item [routerLink]="entry['path']" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="entry">
+          <mat-icon>{{entry['icon']}}</mat-icon>
+          <span>{{entry['label']}}</span>
+        </span>
+      </a>
+    </ng-container>
+    }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
