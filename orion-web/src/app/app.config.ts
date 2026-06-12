@@ -12,12 +12,12 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideHttpClient(
-      withInterceptors([authInterceptor])
+       withInterceptors([authInterceptor])
     ),
     {
       provide: API_CONFIG_TOKEN,
       useValue: API_CONFIG
-    },
+     },
     provideRouter(
       routes,
       withViewTransitions(),
