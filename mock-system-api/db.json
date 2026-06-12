@@ -161,6 +161,11 @@
             "country": "France",
             "department": "75"
             },
+            "complainant": {
+            "type": "individual",
+            "age_range": "adult",
+            "is_vulnerable": false
+            },
           "facts": {
             "title": "Tentative de suicide",
             "description": "La personne déclare avoir fait une tentative de suicide à l'aide de médicaments. La personne a été découverte et a été hospitalisée.",

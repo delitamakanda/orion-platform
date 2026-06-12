@@ -17,17 +17,16 @@ class ComplaintImportService:
         for payload in external_complaints:
             data = self.mapper.map_external_to_internal(payload)
             complaint, created = Complaint.objects.update_or_create(
-                external_id=data['original_external_id'],
+                original_external_id=data['original_external_id'],
                 defaults=data,
-                source_system=data['source_system'],
             )
             if created:
                 imported += 1
             else:
                 updated += 1
             
-            return {
-                'imported_count': imported,
-                'updated_count': updated,
-                'skipped_count': skipped,
-            }
+        return {
+            'imported_count': imported,
+            'updated_count': updated,
+            'skipped_count': skipped,
+        }

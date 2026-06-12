@@ -12,7 +12,6 @@ class ExternalComplaintService:
         try:
             response = requests.get(f'{self.api_url}/complaints', timeout=self.timeout, headers={'Authorization': f'Bearer {settings.EXTERNAL_COMPLAINTS_SYSTEM_API["API_KEY"]}', 'Content-Type': 'application/json'})
             response.raise_for_status()
-            print(f"Fetched complaints: {response.json()}")
             return response.json()
         except requests.RequestException as e:
             raise ExternalSystemError(f"Error fetching complaints: {e}") from e
