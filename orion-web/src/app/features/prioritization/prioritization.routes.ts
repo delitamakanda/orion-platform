@@ -2,7 +2,7 @@ import { Routes } from "@angular/router";
 
 export const prioritizationRoutes: Routes = [
     {
-        path: "",
+        path: "queue",
         loadComponent: () => import("./pages/prioritization-page/prioritization-page").then(m => m.PrioritizationPage),
     },
     {
