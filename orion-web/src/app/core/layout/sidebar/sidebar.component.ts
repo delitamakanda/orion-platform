@@ -1,5 +1,5 @@
 import { Component, inject, output, ViewChild } from '@angular/core';
-import MaterialModule from '@app/shared/material.module';
+import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { Router, RouterLinkActive, RouterLink } from "@angular/router";
 import { MatSidenav } from '@angular/material/sidenav';
 import { siteConfig } from '@app/core/config/site.config';
@@ -8,7 +8,7 @@ import { AuthStore } from '@app/features/auth/data-access/auth.store';
 @Component({
   selector: 'app-sidebar',
   imports: [
-    MaterialModule,
+    MATERIAL_IMPORTS,
     RouterLink,
     RouterLinkActive,
 ],

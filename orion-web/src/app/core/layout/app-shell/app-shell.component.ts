@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import MaterialModule from '@app/shared/material.module';
+import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 @Component({
   selector: 'app-shell',
   imports: [
     SidebarComponent,
     RouterOutlet,
-    MaterialModule,
+    MATERIAL_IMPORTS,
   ],
   standalone: true,
   templateUrl: './app-shell.component.html',

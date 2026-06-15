@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { form, FormField, required, email, submit } from '@angular/forms/signals';
 import { AuthStore } from '../../data-access/auth.store';
-import MaterialModule from '@app/shared/material.module';
+import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { Router } from '@angular/router';
 
 interface LoginData {
@@ -14,7 +14,7 @@ interface LoginData {
   selector: 'app-auth-page',
   imports: [
     FormField,
-    MaterialModule,
+    MATERIAL_IMPORTS,
   ],
   templateUrl: './auth-page.html',
   styleUrls: ['./auth-page.css'],

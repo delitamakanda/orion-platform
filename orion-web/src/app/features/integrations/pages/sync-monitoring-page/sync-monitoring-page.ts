@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, effect, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, effect, inject, OnInit, ViewChild } from '@angular/core';
 import { SyncStore } from '../../data-access/sync.store';
-import MaterialModules from '@app/shared/material.module';
+import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { MatTableDataSource } from '@angular/material/table';
 import { SyncJob } from '../../models/sync-job.model';
 import { MatPaginator } from '@angular/material/paginator';
@@ -10,7 +10,7 @@ import { DatePipe } from '@angular/common';
   selector: 'app-sync-monitoring-page',
   standalone: true,
   imports: [
-    MaterialModules,
+    MATERIAL_IMPORTS,
     DatePipe
   ],
   providers: [
