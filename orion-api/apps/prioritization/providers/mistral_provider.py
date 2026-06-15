@@ -16,11 +16,7 @@ class MistralProvider:
             messages=[
                 {
                     "role": "system",
-                    "content": (
-                        "Tu es un assistant d'aide à la priorisation des plaintes pour le compte du ministère de la justice. ",
-                        "Tu ne prends jamais de décision judiciaire.",
-                        "Tu fournis une recommendation explicite explicable, structurée et prudente."
-                    )
+                    "content": "Tu es un assistant d'aide à la priorisation des plaintes pour le compte du ministère de la justice. Tu ne prends jamais de décision judiciaire. Tu fournis une recommendation explicite explicable, structurée et prudente."
                 },
                 {
                     "role": "user",
@@ -31,7 +27,8 @@ class MistralProvider:
             temperature=0.2,
         )
 
-        content = response["choices"][0]["message"]["content"]
+        # return respons as object
+        content = response.choices[0].message.content
         return json.loads(content)
     
     def _build_prompt(self, complaint: Complaint) -> str:
@@ -44,9 +41,8 @@ class MistralProvider:
         - Catégorie: {complaint.category}
         - Description: {complaint.description}
         - Date des faits: {complaint.incident_date.isoformat() if complaint.incident_date else 'N/A'}
-        - Date de dépôt: {complaint.recorded_date.isoformat() if complaint.recorded_date else 'N/A'}
-        - Ville: {complaint.city if complaint.city else 'N/A'}
-        - Département: {complaint.department if complaint.department else 'N/A'}
+        - Date de dépôt: {complaint.received_at.isoformat() if complaint.received_at else 'N/A'}
+        - Localisation: {complaint.location if complaint.location else 'N/A'}
 
         Format attendu:
         {{
@@ -54,8 +50,9 @@ class MistralProvider:
         "level": "low|medium|high|critical",
         "score": 0,
         "summary": "<string>",
-        "recommended_actions": [],
-        "recommendations": [
+        "model_name": "{self.model_name}",
+        "provider": "mistral",
+        "recommended_actions": [
             {{
                 "label": "Facteur déterminant",
                 "weight": 10,
@@ -64,7 +61,7 @@ class MistralProvider:
         ],
         "explanation": {{
             "reasoning": "Explication synthétique",
-            "human_review_requred": "Indique si une revue humaine est nécessaire (true/false)",
+            "human_review_required": "Indique si une revue humaine est nécessaire (true/false)",
             "limitations": "Limites de l'analyse ou incertitudes identifiées"
             }},
         }}

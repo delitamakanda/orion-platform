@@ -1,3 +1,5 @@
+from django.utils import timedelta
+
 from apps.complaints.models import Complaint
 
 class RuleBasedPrioritizationService:
