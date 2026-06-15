@@ -1,3 +1,5 @@
+<app-complaint-filters (filterChange)="updateFilters($event)"></app-complaint-filters>
+
 @if (store.isLoading()) {
     <p>Loading complaints...</p>
 }
@@ -8,10 +10,6 @@
 
 @if (store.complaints().length > 0) {
     @for (complaint of store.complaints(); track complaint.id) {
-        <div class="complaint-item" (click)="store.selectComplaint(complaint.id)">
-            <h3>{{ complaint.title }}</h3>
-            <p>{{ complaint.description }}</p>
-            <p>Status: {{ complaint.status }}</p>
-        </div>
+        <app-complaint-card [complaint]="complaint" (click)="store.selectComplaint(complaint.id)"></app-complaint-card>
     }
 }

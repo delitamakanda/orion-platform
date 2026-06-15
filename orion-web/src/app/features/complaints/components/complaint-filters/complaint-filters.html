@@ -5,31 +5,6 @@
             <input matInput [value]="filterModel().reference ?? ''" (input)="onChangeFilter('reference', $any($event.target).value)" />
         </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Système source</mat-label>
-            <input matInput [value]="filterModel().source_system ?? ''" (input)="onChangeFilter('source_system', $any($event.target).value)" />
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Catégorie</mat-label>
-            <input matInput [value]="filterModel().category ?? ''" (input)="onChangeFilter('category', $any($event.target).value)" />
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Localisation</mat-label>
-            <input matInput [value]="filterModel().location ?? ''" (input)="onChangeFilter('location', $any($event.target).value)" />
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Statut</mat-label>
-            <mat-select [value]="filterModel().status" (selectionChange)="onChangeFilter('status', $event.value)">
-                <mat-option value="">Tous</mat-option>
-                <mat-option value="imported">Importé</mat-option>
-                <mat-option value="analyzed">Analysé</mat-option>
-                <mat-option value="reviewed">Revu</mat-option>
-                <mat-option value="closed">Clôturé</mat-option>
-            </mat-select>
-        </mat-form-field>
 
         <mat-form-field>
             <mat-label>Victime vulnérable</mat-label>
@@ -42,28 +17,28 @@
 
         <mat-form-field>
             <mat-label>Créé le (du)</mat-label>
-            <input matInput [matDatepicker]="createdAtFromPicker" [value]="filterModel().created_at_gte" (dateChange)="onChangeFilter('created_at_gte', $event.value)" />
+            <input matInput [matDatepicker]="createdAtFromPicker" [value]="filterModel().created_at_gte" (dateChange)="onDateChange('created_at_gte', $event.value)" />
             <mat-datepicker-toggle matSuffix [for]="createdAtFromPicker"></mat-datepicker-toggle>
             <mat-datepicker #createdAtFromPicker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Créé le (au)</mat-label>
-            <input matInput [matDatepicker]="createdAtToPicker" [value]="filterModel().created_at_lte" (dateChange)="onChangeFilter('created_at_lte', $event.value)" />
+            <input matInput [matDatepicker]="createdAtToPicker" [value]="filterModel().created_at_lte" (dateChange)="onDateChange('created_at_lte', $event.value)" />
             <mat-datepicker-toggle matSuffix [for]="createdAtToPicker"></mat-datepicker-toggle>
             <mat-datepicker #createdAtToPicker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Date incident (du)</mat-label>
-            <input matInput [matDatepicker]="incidentDateFromPicker" [value]="filterModel().incident_date_gte" (dateChange)="onChangeFilter('incident_date_gte', $event.value)" />
+            <input matInput [matDatepicker]="incidentDateFromPicker" [value]="filterModel().incident_date_gte" (dateChange)="onDateChange('incident_date_gte', $event.value)" />
             <mat-datepicker-toggle matSuffix [for]="incidentDateFromPicker"></mat-datepicker-toggle>
             <mat-datepicker #incidentDateFromPicker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Date incident (au)</mat-label>
-            <input matInput [matDatepicker]="incidentDateToPicker" [value]="filterModel().incident_date_lte" (dateChange)="onChangeFilter('incident_date_lte', $event.value)" />
+            <input matInput [matDatepicker]="incidentDateToPicker" [value]="filterModel().incident_date_lte" (dateChange)="onDateChange('incident_date_lte', $event.value)" />
             <mat-datepicker-toggle matSuffix [for]="incidentDateToPicker"></mat-datepicker-toggle>
             <mat-datepicker #incidentDateToPicker></mat-datepicker>
         </mat-form-field>
