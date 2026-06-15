@@ -24,7 +24,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatRippleModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
 
-export const MaterialModules = [
+export const MATERIAL_IMPORTS = [
     MatTableModule,
     MatToolbarModule,
     MatIconModule,
@@ -52,5 +52,3 @@ export const MaterialModules = [
     MatRippleModule,
     MatBadgeModule,
 ];
-
-export default MaterialModules;
