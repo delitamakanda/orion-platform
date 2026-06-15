@@ -1092,4 +1092,1414 @@
             "payload": { "status": "received" }
         }
     ]
+},
+{
+  "complaints": [
+    {
+      "id": "EXT-2026-000021",
+      "reference": "SI-PLAINTE-000021",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "atteintes_a_la_personne",
+      "sub_category": "homicide_volontaire",
+      "declared_urgency": 5,
+      "received_at": "2026-01-03T06:45:00Z",
+      "incident_date": "2026-01-02T23:50:00Z",
+      "location": {
+        "city": "Strasbourg",
+        "postal_code": "67000",
+        "country": "France",
+        "department": "67"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Homicide volontaire au couteau dans un parking",
+        "description": "Un homme de 32 ans a été retrouvé sans vie dans un parking souterrain du centre-ville de Strasbourg avec plusieurs plaies par arme blanche. Des témoins ont signalé une altercation entre deux individus une heure avant la découverte du corps. Les caméras du parking ont enregistré la scène. Le suspect, identifié par les témoins, a pris la fuite.",
+        "keywords": ["homicide", "arme blanche", "parking", "fugitif", "témoins"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000021", "type": "video", "filename": "camera_parking_niv2.mp4" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-01-05T14:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000022",
+      "reference": "SI-PLAINTE-000022",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "atteintes_a_la_personne",
+      "sub_category": "tentative_homicide",
+      "declared_urgency": 5,
+      "received_at": "2026-01-08T03:20:00Z",
+      "incident_date": "2026-01-08T02:10:00Z",
+      "location": {
+        "city": "Lyon",
+        "postal_code": "69007",
+        "country": "France",
+        "department": "69"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": true
+      },
+      "facts": {
+        "title": "Tentative d'homicide par arme à feu en pleine rue",
+        "description": "La victime, un homme de 27 ans, a été touchée par deux balles tirées depuis un véhicule en mouvement alors qu'il marchait sur un trottoir du 7e arrondissement de Lyon. Pris en charge d'urgence, il a subi une opération chirurgicale. Son pronostic vital est stable. Aucun témoin direct, mais des douilles ont été retrouvées sur place.",
+        "keywords": ["tir", "arme à feu", "voiture", "chirurgie", "pronostic vital"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000022", "type": "document", "filename": "rapport_balistique.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-01-09T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000023",
+      "reference": "SI-PLAINTE-000023",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "atteintes_a_la_liberte",
+      "sub_category": "enlevement_sequestration",
+      "declared_urgency": 5,
+      "received_at": "2026-01-12T08:00:00Z",
+      "incident_date": "2026-01-11T19:30:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75019",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Séquestration et demande de rançon",
+        "description": "Les proches d'un entrepreneur de 45 ans signalent sa disparition depuis la veille au soir. Un message de rançon a été reçu par SMS demandant 80 000 euros pour sa libération. Les ravisseurs ont fourni une photo de la victime comme preuve de vie. La famille n'a pas encore pris contact avec les forces de l'ordre de leur propre initiative.",
+        "keywords": ["enlèvement", "séquestration", "rançon", "preuve de vie", "entrepreneur"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000023", "type": "photo", "filename": "preuve_de_vie.jpg" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-01-12T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000024",
+      "reference": "SI-PLAINTE-000024",
+      "source_system": "SI-PLAINTE",
+      "status": "closed",
+      "category": "violence",
+      "sub_category": "violence_sur_agent_public",
+      "declared_urgency": 4,
+      "received_at": "2026-01-18T22:00:00Z",
+      "incident_date": "2026-01-18T21:15:00Z",
+      "location": {
+        "city": "Marseille",
+        "postal_code": "13003",
+        "country": "France",
+        "department": "13"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Agression d'un fonctionnaire de police en intervention",
+        "description": "Lors d'une interpellation dans le 3e arrondissement de Marseille, un policier en tenue a été frappé à la tête avec une bouteille par un individu qui tentait de s'échapper. Le fonctionnaire a subi une plaie ouverte nécessitant des points de suture et a été placé en arrêt de travail. L'agresseur a été interpellé sur place.",
+        "keywords": ["violence", "policier", "interpellation", "bouteille", "ITT"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000024", "type": "document", "filename": "certificat_itt_police.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-02-01T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000025",
+      "reference": "SI-PLAINTE-000025",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "atteintes_aux_biens",
+      "sub_category": "incendie_volontaire",
+      "declared_urgency": 4,
+      "received_at": "2026-01-22T05:30:00Z",
+      "incident_date": "2026-01-22T03:45:00Z",
+      "location": {
+        "city": "Bordeaux",
+        "postal_code": "33800",
+        "country": "France",
+        "department": "33"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Incendie volontaire de véhicule à caractère intimidatoire",
+        "description": "Le propriétaire d'un restaurant signale que son véhicule personnel garé devant son établissement a été incendié délibérément. L'incendie a failli se propager à la façade du commerce. Le plaignant déclare avoir reçu des menaces de la part d'un ex-associé dans les semaines précédentes. Deux jerricanes vides ont été retrouvés à proximité.",
+        "keywords": ["incendie", "véhicule", "intimidation", "menaces", "jerricane"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000025", "type": "photo", "filename": "vehicule_incendie.jpg" },
+        { "id": "ATT-2026-000025B", "type": "audio", "filename": "menaces_vocales.wav" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-01-24T11:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000026",
+      "reference": "SI-PLAINTE-000026",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "trafic",
+      "sub_category": "proxenetisme_traite_humaine",
+      "declared_urgency": 5,
+      "received_at": "2026-01-28T10:00:00Z",
+      "incident_date": "2026-01-20T00:00:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75018",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Réseau de proxénétisme impliquant des ressortissants étrangers",
+        "description": "Une association d'aide aux victimes de l'exploitation sexuelle signale un réseau actif dans le 18e arrondissement de Paris. Plusieurs femmes d'origine étrangère, en situation irrégulière, seraient contraintes à la prostitution sous la menace. Leurs documents d'identité ont été confisqués à leur arrivée en France. Des téléphones et adresses de recruteurs ont été collectés.",
+        "keywords": ["proxénétisme", "traite des êtres humains", "exploitation sexuelle", "documents confisqués", "réseau"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000026", "type": "document", "filename": "rapport_association.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-02-03T14:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000027",
+      "reference": "SI-PLAINTE-000027",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "fraude",
+      "sub_category": "corruption",
+      "declared_urgency": 3,
+      "received_at": "2026-02-02T09:00:00Z",
+      "incident_date": "2026-01-28T00:00:00Z",
+      "location": {
+        "city": "Toulouse",
+        "postal_code": "31400",
+        "country": "France",
+        "department": "31"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Corruption dans l'attribution d'un marché public",
+        "description": "Une entreprise du bâtiment signale qu'un agent d'une collectivité territoriale lui a demandé le versement d'une somme de 15 000 euros en échange de l'attribution d'un marché public de travaux. L'entreprise a refusé et a perdu le marché au profit d'une société tierce. Des échanges de messages écrits attestent la tentative de corruption.",
+        "keywords": ["corruption", "marché public", "pot-de-vin", "collectivité", "messages écrits"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000027", "type": "document", "filename": "echanges_sms_corruption.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-02-05T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000028",
+      "reference": "SI-PLAINTE-000028",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "trafic",
+      "sub_category": "travail_illegal_exploitation",
+      "declared_urgency": 4,
+      "received_at": "2026-02-06T14:00:00Z",
+      "incident_date": "2026-02-04T07:00:00Z",
+      "location": {
+        "city": "Saint-Denis",
+        "postal_code": "93200",
+        "country": "France",
+        "department": "93"
+      },
+      "complainant": {
+        "type": "anonymous",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Exploitation de travailleurs sans papiers sur un chantier",
+        "description": "Un signalement anonyme dénonce l'emploi de travailleurs en situation irrégulière sur un important chantier de construction à Saint-Denis. Ces personnes travailleraient 12 heures par jour pour une rémunération dérisoire, logées dans des conditions indignes sur le site. Le donneur d'ordre serait une société de sous-traitance.",
+        "keywords": ["travail illégal", "sans-papiers", "exploitation", "chantier", "sous-traitance"]
+      },
+      "metadata": { "created_by": "external_system", "updated_at": "2026-02-10T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000029",
+      "reference": "SI-PLAINTE-000029",
+      "source_system": "SI-PLAINTE",
+      "status": "closed",
+      "category": "fraude",
+      "sub_category": "escroquerie_immobiliere",
+      "declared_urgency": 3,
+      "received_at": "2026-02-09T11:00:00Z",
+      "incident_date": "2026-02-03T00:00:00Z",
+      "location": {
+        "city": "Nice",
+        "postal_code": "06200",
+        "country": "France",
+        "department": "06"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Arnaque à la location immobilière fictive",
+        "description": "La victime a versé un dépôt de garantie de 2 400 euros et un mois de loyer d'avance pour un appartement en location à Nice. L'annonce était diffusée sur une plateforme en ligne. Arrivée sur place, elle a constaté que le logement était occupé par ses véritables propriétaires, qui n'avaient jamais mis le bien en location. L'escroc est injoignable.",
+        "keywords": ["escroquerie", "immobilier", "location fictive", "dépôt de garantie", "annonce frauduleuse"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000029", "type": "document", "filename": "capture_annonce_et_virement.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-01T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000030",
+      "reference": "SI-PLAINTE-000030",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "discriminations",
+      "sub_category": "violences_homophobes",
+      "declared_urgency": 4,
+      "received_at": "2026-02-14T21:00:00Z",
+      "incident_date": "2026-02-14T19:30:00Z",
+      "location": {
+        "city": "Lyon",
+        "postal_code": "69001",
+        "country": "France",
+        "department": "69"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Agression homophobe en pleine rue le soir de la Saint-Valentin",
+        "description": "Un couple d'hommes a été pris à partie par un groupe de cinq individus alors qu'ils se tenaient par la main dans le centre de Lyon. Des insultes homophobes ont précédé une agression physique. L'une des victimes a subi une fracture du poignet et un traumatisme crânien léger. Des témoins ont filmé une partie de la scène.",
+        "keywords": ["homophobie", "agression", "couple", "insultes", "fracture", "vidéo témoin"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000030", "type": "video", "filename": "agression_saint_valentin.mp4" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-02-16T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000031",
+      "reference": "SI-PLAINTE-000031",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "violence",
+      "sub_category": "menaces_de_mort",
+      "declared_urgency": 4,
+      "received_at": "2026-02-17T10:30:00Z",
+      "incident_date": "2026-02-16T00:00:00Z",
+      "location": {
+        "city": "Rennes",
+        "postal_code": "35200",
+        "country": "France",
+        "department": "35"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Lettres de menaces de mort adressées à un élu local",
+        "description": "Un conseiller municipal de Rennes a reçu trois lettres anonymes menaçant de mort lui et sa famille. Les courriers, rédigés avec des lettres découpées dans des magazines, ont été déposés directement dans la boîte aux lettres de son domicile, suggérant que l'auteur connaît son adresse personnelle. Le dernier courrier incluait une photo de ses enfants.",
+        "keywords": ["menaces de mort", "élu local", "lettres anonymes", "photo", "intimidation familiale"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000031", "type": "photo", "filename": "lettres_menaces.jpg" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-02-18T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000032",
+      "reference": "SI-PLAINTE-000032",
+      "source_system": "SI-PLAINTE",
+      "status": "closed",
+      "category": "atteintes_aux_biens",
+      "sub_category": "vol_a_la_tire",
+      "declared_urgency": 2,
+      "received_at": "2026-02-20T12:00:00Z",
+      "incident_date": "2026-02-20T09:30:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75001",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "senior",
+        "is_vulnerable": true
+      },
+      "facts": {
+        "title": "Vol à la tire du portefeuille dans le métro",
+        "description": "Une femme de 68 ans a été victime d'un vol à la tire dans la rame de métro ligne 1, direction La Défense. Son portefeuille contenant ses cartes bancaires, sa carte de transport et environ 120 euros en espèces a été dérobé sans qu'elle s'en aperçoive. Des retraits frauduleux ont été effectués dans les trente minutes suivant le vol.",
+        "keywords": ["vol à la tire", "portefeuille", "métro", "carte bancaire", "retraits frauduleux"]
+      },
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-05T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000033",
+      "reference": "SI-PLAINTE-000033",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "atteintes_aux_animaux",
+      "sub_category": "maltraitance_animale",
+      "declared_urgency": 3,
+      "received_at": "2026-02-22T15:00:00Z",
+      "incident_date": "2026-02-21T00:00:00Z",
+      "location": {
+        "city": "Montpellier",
+        "postal_code": "34090",
+        "country": "France",
+        "department": "34"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Maltraitance animale grave sur plusieurs chiens",
+        "description": "Une association de protection animale signale avoir recueilli cinq chiens dans un état de dénutrition sévère, présentant des traces de coups et des blessures non soignées. Les animaux provenaient d'une propriété privée à la suite d'une dénonciation de voisins. Le propriétaire aurait détenu une vingtaine d'animaux dans des conditions inhumaines.",
+        "keywords": ["maltraitance animale", "chiens", "dénutrition", "blessures", "élevage illégal"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000033", "type": "photo", "filename": "etat_animaux.jpg" },
+        { "id": "ATT-2026-000033B", "type": "document", "filename": "rapport_veterinaire.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-02-24T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000034",
+      "reference": "SI-PLAINTE-000034",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "violence",
+      "sub_category": "harcelement_moral_professionnel",
+      "declared_urgency": 3,
+      "received_at": "2026-02-25T09:00:00Z",
+      "incident_date": "2026-09-01T00:00:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75009",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Harcèlement moral au travail conduisant à un burn-out",
+        "description": "Une salariée d'une grande entreprise du secteur des assurances déclare être victime de harcèlement moral systématique de la part de son supérieur hiérarchique depuis septembre 2025. Humiliations publiques, mise à l'écart, tâches dégradantes et évaluation délibérément biaisées ont conduit à un arrêt maladie de longue durée pour dépression sévère. Des témoignages de collègues ont été recueillis.",
+        "keywords": ["harcèlement moral", "travail", "burn-out", "supérieur hiérarchique", "dépression", "témoins"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000034", "type": "document", "filename": "attestations_collegues.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-01T11:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000035",
+      "reference": "SI-PLAINTE-000035",
+      "source_system": "SI-PLAINTE",
+      "status": "closed",
+      "category": "securite_routiere",
+      "sub_category": "conduite_en_etat_d_ivresse_avec_blessures",
+      "declared_urgency": 4,
+      "received_at": "2026-03-01T01:30:00Z",
+      "incident_date": "2026-03-01T00:15:00Z",
+      "location": {
+        "city": "Clermont-Ferrand",
+        "postal_code": "63000",
+        "country": "France",
+        "department": "63"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Accident de la route causé par un conducteur ivre avec deux blessés graves",
+        "description": "Un conducteur en état d'ivresse avancée a grillé un feu rouge et percuté un taxi en service, blessant grièvement le chauffeur et sa passagère. Le taux d'alcoolémie relevé sur le chauffard était de 2,1 g/L. L'un des blessés est hospitalisé en réanimation. Le conducteur fautif, sans permis valide, a été interpellé sur place.",
+        "keywords": ["alcool au volant", "accident", "blessés graves", "feu rouge", "sans permis", "réanimation"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000035", "type": "document", "filename": "pv_alcoolemie.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-15T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000036",
+      "reference": "SI-PLAINTE-000036",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "atteintes_aux_mineurs",
+      "sub_category": "disparition_inquietante_mineur",
+      "declared_urgency": 5,
+      "received_at": "2026-03-04T18:00:00Z",
+      "incident_date": "2026-03-04T15:30:00Z",
+      "location": {
+        "city": "Lille",
+        "postal_code": "59800",
+        "country": "France",
+        "department": "59"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Disparition inquiétante d'une adolescente de 14 ans",
+        "description": "Les parents signalent la disparition de leur fille de 14 ans qui ne s'est pas présentée à l'école ce matin. Son téléphone est éteint depuis 15h30. Elle aurait évoqué à des amies une relation avec un homme adulte rencontré sur internet. Une dernière localisation a été relevée à la gare Lille-Europe. Aucune fugue antérieure connue.",
+        "keywords": ["disparition", "mineur", "adolescente", "internet", "homme adulte", "gare"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000036", "type": "photo", "filename": "photo_signalement_mineure.jpg" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-04T19:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000037",
+      "reference": "SI-PLAINTE-000037",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "atteintes_aux_mineurs",
+      "sub_category": "non_representation_enfant",
+      "declared_urgency": 3,
+      "received_at": "2026-03-08T10:00:00Z",
+      "incident_date": "2026-03-06T18:00:00Z",
+      "location": {
+        "city": "Nantes",
+        "postal_code": "44300",
+        "country": "France",
+        "department": "44"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Non-représentation d'enfant en violation d'une décision judiciaire",
+        "description": "Un père de famille signale que son ex-conjointe n'a pas représenté leurs deux enfants lors du droit de visite prévu par ordonnance du juge aux affaires familiales. Cette situation se répète pour la troisième fois en deux mois. Les enfants, âgés de 7 et 10 ans, sont injoignables. La mère ne répond plus aux communications.",
+        "keywords": ["non-représentation", "droit de visite", "ordonnance", "enfants", "JAF", "récidive"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000037", "type": "document", "filename": "ordonnance_jaf.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-10T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000038",
+      "reference": "SI-PLAINTE-000038",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "crime_organise",
+      "sub_category": "association_de_malfaiteurs",
+      "declared_urgency": 4,
+      "received_at": "2026-03-11T07:00:00Z",
+      "incident_date": "2026-03-10T22:00:00Z",
+      "location": {
+        "city": "Aubervilliers",
+        "postal_code": "93300",
+        "country": "France",
+        "department": "93"
+      },
+      "complainant": {
+        "type": "anonymous",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Signalement d'un réseau de recel de véhicules volés",
+        "description": "Un signalement anonyme indique l'existence d'un atelier clandestin de démontage de véhicules volés dans une zone industrielle d'Aubervilliers. Des véhicules de luxe y seraient acheminés la nuit et démantelés pour la revente de pièces. Le trafic concernerait plusieurs dizaines de véhicules par mois selon le déclarant.",
+        "keywords": ["association de malfaiteurs", "recel", "véhicules volés", "atelier clandestin", "pièces détachées"]
+      },
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-11T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000039",
+      "reference": "SI-PLAINTE-000039",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "discriminations",
+      "sub_category": "violences_antisemites",
+      "declared_urgency": 4,
+      "received_at": "2026-03-14T09:30:00Z",
+      "incident_date": "2026-03-13T18:00:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75004",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Agression antisémite et dégradation de devanture",
+        "description": "Le propriétaire d'une épicerie casher signale que sa boutique a été taguée de svastikas et d'inscriptions antisémites durant la nuit. En voulant effacer les inscriptions, il a été agressé par deux individus qui l'ont insulté en faisant référence à ses origines. Il a reçu un coup de poing et a nécessité des soins. La police est intervenue.",
+        "keywords": ["antisémitisme", "tag", "agression", "insultes", "commerce", "svastika"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000039", "type": "photo", "filename": "tags_devanture.jpg" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-16T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000040",
+      "reference": "SI-PLAINTE-000040",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "discriminations",
+      "sub_category": "violences_islamophobes",
+      "declared_urgency": 3,
+      "received_at": "2026-03-17T14:00:00Z",
+      "incident_date": "2026-03-16T12:30:00Z",
+      "location": {
+        "city": "Mulhouse",
+        "postal_code": "68100",
+        "country": "France",
+        "department": "68"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Agression islamophobe envers une femme voilée dans la rue",
+        "description": "Une femme portant le hijab déclare avoir été agressée verbalement puis physiquement par un individu dans un marché couvert. L'agresseur lui aurait arraché son voile en la traitant de termes islamophobes. Des commerçants présents ont retenu l'individu jusqu'à l'arrivée de la police. La victime a subi un choc psychologique et des égratignures.",
+        "keywords": ["islamophobie", "voile", "agression", "marché", "rétention du suspect", "choc psychologique"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000040", "type": "video", "filename": "camera_marche.mp4" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-18T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000041",
+      "reference": "SI-PLAINTE-000041",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "atteintes_aux_biens",
+      "sub_category": "extorsion",
+      "declared_urgency": 4,
+      "received_at": "2026-03-19T16:00:00Z",
+      "incident_date": "2026-03-15T00:00:00Z",
+      "location": {
+        "city": "Grenoble",
+        "postal_code": "38100",
+        "country": "France",
+        "department": "38"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Extorsion de fonds par menaces répétées envers un commerçant",
+        "description": "Un restaurateur déclare que des individus lui réclament le versement mensuel d'une somme d'argent en échange d'une 'protection'. Depuis son refus de payer, son restaurant a subi deux dégradations. Il a reçu des appels menaçants et craint pour la sécurité de son personnel. Il dit connaître d'autres commerçants victimes des mêmes individus.",
+        "keywords": ["extorsion", "racket", "protection", "menaces", "commerçant", "réseau"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000041", "type": "audio", "filename": "appel_menaces.mp3" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-22T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000042",
+      "reference": "SI-PLAINTE-000042",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "atteintes_a_la_personne",
+      "sub_category": "viol",
+      "declared_urgency": 5,
+      "received_at": "2026-03-21T11:00:00Z",
+      "incident_date": "2026-03-20T03:00:00Z",
+      "location": {
+        "city": "Caen",
+        "postal_code": "14000",
+        "country": "France",
+        "department": "14"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": true
+      },
+      "facts": {
+        "title": "Viol commis par une connaissance après soirée",
+        "description": "La victime, une femme de 23 ans, déclare avoir été violée par un individu de son entourage à la fin d'une soirée privée. Elle s'était endormie et a repris connaissance lors des faits. Elle n'a pas consenti. Un examen médico-légal a été réalisé en urgence. La victime connaît l'identité de l'auteur présumé.",
+        "keywords": ["viol", "connaissance", "soirée", "soumission chimique suspectée", "examen médico-légal"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000042", "type": "document", "filename": "constatations_medico_legales.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-22T14:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000043",
+      "reference": "SI-PLAINTE-000043",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "cybercriminalite",
+      "sub_category": "pedopornographie",
+      "declared_urgency": 5,
+      "received_at": "2026-03-23T09:00:00Z",
+      "incident_date": "2026-03-22T00:00:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75015",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Signalement de diffusion de contenu pédopornographique en ligne",
+        "description": "Une plateforme de signalement en ligne de contenus illicites transmets un dossier regroupant plusieurs signalements convergents vers un compte de réseau social diffusant du contenu à caractère pédopornographique. L'IP source a été géolocalisée en région parisienne. Le compte a depuis été suspendu mais les contenus ont déjà été rediffusés.",
+        "keywords": ["pédopornographie", "réseaux sociaux", "diffusion", "IP", "signalement plateforme"]
+      },
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-24T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000044",
+      "reference": "SI-PLAINTE-000044",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "trafic",
+      "sub_category": "trafic_medicaments",
+      "declared_urgency": 3,
+      "received_at": "2026-03-26T10:00:00Z",
+      "incident_date": "2026-03-24T20:00:00Z",
+      "location": {
+        "city": "Marseille",
+        "postal_code": "13005",
+        "country": "France",
+        "department": "13"
+      },
+      "complainant": {
+        "type": "anonymous",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Signalement d'un trafic de médicaments opioïdes de substitution",
+        "description": "Un signalement anonyme indique qu'un individu revend des médicaments de substitution aux opioïdes (buprénorphine) obtenus frauduleusement sur prescription médicale, à des personnes dépendantes dans le quartier Belsunce à Marseille. Le trafic se déroulerait à la sortie d'une officine partenaire.",
+        "keywords": ["trafic de médicaments", "opioïdes", "substitution", "prescription frauduleuse", "pharmacie"]
+      },
+      "metadata": { "created_by": "external_system", "updated_at": "2026-03-27T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000045",
+      "reference": "SI-PLAINTE-000045",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "fraude",
+      "sub_category": "blanchiment_argent",
+      "declared_urgency": 3,
+      "received_at": "2026-03-28T09:00:00Z",
+      "incident_date": "2026-01-01T00:00:00Z",
+      "location": {
+        "city": "Nice",
+        "postal_code": "06300",
+        "country": "France",
+        "department": "06"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Soupçons de blanchiment via une succession de sociétés écrans",
+        "description": "Un cabinet comptable signale des mouvements financiers suspects chez l'un de ses clients. Des fonds d'origine inconnue transiteraient via une chaîne de sociétés immatriculées dans différents pays avant d'être réinjectés dans des investissements immobiliers sur la Côte d'Azur. Les montants en jeu dépassent 1,2 millions d'euros sur les trois derniers mois.",
+        "keywords": ["blanchiment", "sociétés écrans", "immobilier", "Côte d'Azur", "flux financiers suspects"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000045", "type": "document", "filename": "rapport_comptable.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-02T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000046",
+      "reference": "SI-PLAINTE-000046",
+      "source_system": "SI-PLAINTE",
+      "status": "closed",
+      "category": "securite_routiere",
+      "sub_category": "delit_de_fuite",
+      "declared_urgency": 3,
+      "received_at": "2026-04-01T07:30:00Z",
+      "incident_date": "2026-04-01T06:50:00Z",
+      "location": {
+        "city": "Rouen",
+        "postal_code": "76000",
+        "country": "France",
+        "department": "76"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Délit de fuite après renversement d'un cycliste",
+        "description": "Un cycliste a été renversé par un véhicule utilitaire dont le conducteur a pris la fuite sans s'arrêter. La victime a subi une fracture de la clavicule et de multiples contusions. Des témoins ont relevé partiellement la plaque d'immatriculation du véhicule, de couleur blanche avec des inscriptions publicitaires.",
+        "keywords": ["délit de fuite", "cycliste", "renversement", "plaque relevée", "fracture", "utilitaire"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000046", "type": "document", "filename": "certificat_hospitalier.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-20T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000047",
+      "reference": "SI-PLAINTE-000047",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "atteintes_aux_biens",
+      "sub_category": "usurpation_plaque_immatriculation",
+      "declared_urgency": 2,
+      "received_at": "2026-04-04T10:00:00Z",
+      "incident_date": "2026-04-02T00:00:00Z",
+      "location": {
+        "city": "Dijon",
+        "postal_code": "21000",
+        "country": "France",
+        "department": "21"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Usurpation de plaque d'immatriculation liée à des infractions routières",
+        "description": "Un conducteur signale avoir reçu plusieurs amendes pour des infractions (excès de vitesse, stationnement, feu rouge) commises par un autre véhicule utilisant les mêmes plaques d'immatriculation que le sien. Les infractions ont eu lieu dans des villes différentes et parfois simultanément, ce qui prouve l'usurpation. Il demande l'annulation des amendes.",
+        "keywords": ["usurpation de plaque", "amendes frauduleuses", "infractions", "double immatriculation"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000047", "type": "document", "filename": "amendes_recues.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-06T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000048",
+      "reference": "SI-PLAINTE-000048",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "violence",
+      "sub_category": "violences_en_milieu_sportif",
+      "declared_urgency": 3,
+      "received_at": "2026-04-06T22:30:00Z",
+      "incident_date": "2026-04-06T21:00:00Z",
+      "location": {
+        "city": "Lens",
+        "postal_code": "62300",
+        "country": "France",
+        "department": "62"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Violences entre supporters en marge d'un match de football",
+        "description": "À l'issue d'un match de Ligue 1, deux groupes de supporters adverses se sont affrontés à proximité du stade. Plusieurs personnes ont été blessées dont deux grièvement. Des projectiles ont été lancés et des fumigènes utilisés. Des biens publics et des véhicules ont été dégradés. Vingt-trois individus ont été interpellés.",
+        "keywords": ["hooliganisme", "supporters", "violences", "stade", "blessés", "interpellations"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000048", "type": "video", "filename": "camera_voie_publique.mp4" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-07T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000049",
+      "reference": "SI-PLAINTE-000049",
+      "source_system": "SI-PLAINTE",
+      "status": "closed",
+      "category": "atteintes_aux_mineurs",
+      "sub_category": "maltraitance_infantile",
+      "declared_urgency": 5,
+      "received_at": "2026-04-08T15:00:00Z",
+      "incident_date": "2026-04-07T18:00:00Z",
+      "location": {
+        "city": "Amiens",
+        "postal_code": "80000",
+        "country": "France",
+        "department": "80"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Signalement de maltraitance sur enfants par l'école",
+        "description": "L'école primaire signale avoir constaté chez deux élèves frère et sœur, âgés de 6 et 8 ans, des marques de coups sur les bras et le dos, ainsi qu'un état de malnutrition manifeste. Les enfants ont tenu des propos alarmants à l'enseignante sur leur vie au domicile familial. Une information préoccupante a été transmise à l'ASE et une mesure de mise en sécurité immédiate a été requise.",
+        "keywords": ["maltraitance infantile", "marques de coups", "malnutrition", "école", "ASE", "signalement"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000049", "type": "document", "filename": "rapport_ase.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-20T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000050",
+      "reference": "SI-PLAINTE-000050",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "atteintes_aux_personnes_vulnerables",
+      "sub_category": "violences_en_ehpad",
+      "declared_urgency": 4,
+      "received_at": "2026-04-10T11:00:00Z",
+      "incident_date": "2026-04-09T14:00:00Z",
+      "location": {
+        "city": "Versailles",
+        "postal_code": "78000",
+        "country": "France",
+        "department": "78"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Violences physiques sur une résidente d'EHPAD commises par un soignant",
+        "description": "La fille d'une résidente de 87 ans dans un EHPAD signale avoir découvert des hématomes inexpliqués sur sa mère. Une aide-soignante aurait été vue en train de la bousculer violemment par une autre résidente. La direction de l'établissement a tardé à réagir malgré le signalement interne. Un médecin légiste a confirmé les lésions récentes.",
+        "keywords": ["EHPAD", "maltraitance", "personne âgée", "soignant", "hématomes", "médecin légiste"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000050", "type": "document", "filename": "constat_medecin_legiste.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-12T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000051",
+      "reference": "SI-PLAINTE-000051",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "cybercriminalite",
+      "sub_category": "arnaque_cryptomonnaies",
+      "declared_urgency": 3,
+      "received_at": "2026-04-14T09:30:00Z",
+      "incident_date": "2026-03-20T00:00:00Z",
+      "location": {
+        "city": "Lyon",
+        "postal_code": "69006",
+        "country": "France",
+        "department": "69"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Escroquerie aux faux investissements en cryptomonnaies",
+        "description": "La victime a perdu 34 000 euros investis sur une plateforme d'investissement en cryptomonnaies frauduleuse présentée par un contact rencontré sur un réseau social. Les rendements annoncés étaient de 30% par mois. Après plusieurs mois de petits gains simulés pour renforcer la confiance, tout retrait lui a été refusé et la plateforme a disparu.",
+        "keywords": ["cryptomonnaies", "escroquerie", "plateforme frauduleuse", "pig butchering", "réseau social"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000051", "type": "document", "filename": "preuves_transactions.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-15T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000052",
+      "reference": "SI-PLAINTE-000052",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "cybercriminalite",
+      "sub_category": "phishing",
+      "declared_urgency": 2,
+      "received_at": "2026-04-16T14:00:00Z",
+      "incident_date": "2026-04-15T10:00:00Z",
+      "location": {
+        "city": "Bordeaux",
+        "postal_code": "33300",
+        "country": "France",
+        "department": "33"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Hameçonnage par faux SMS des impôts avec vol de données",
+        "description": "La victime a reçu un SMS imitant l'administration fiscale l'informant d'un remboursement à percevoir. En cliquant sur le lien et en remplissant le formulaire, elle a transmis ses coordonnées bancaires complètes. Un prélèvement de 1 800 euros a été effectué le lendemain. L'URL du faux site était très proche de celle du site officiel.",
+        "keywords": ["phishing", "SMS", "impôts", "faux site", "données bancaires", "prélèvement frauduleux"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000052", "type": "photo", "filename": "capture_sms_phishing.jpg" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-18T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000053",
+      "reference": "SI-PLAINTE-000053",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "cybercriminalite",
+      "sub_category": "stalkerware_cybercontrole",
+      "declared_urgency": 4,
+      "received_at": "2026-04-18T11:00:00Z",
+      "incident_date": "2026-02-01T00:00:00Z",
+      "location": {
+        "city": "Marseille",
+        "postal_code": "13008",
+        "country": "France",
+        "department": "13"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": true
+      },
+      "facts": {
+        "title": "Installation d'un logiciel espion sur le téléphone de la victime par son ex-conjoint",
+        "description": "Une femme séparée de son conjoint depuis deux mois déclare que celui-ci connaît en temps réel ses déplacements, ses conversations et ses contacts. Un technicien informatique a découvert un logiciel espion (stalkerware) installé sur son téléphone à son insu, permettant l'accès total au micro, à la caméra et à la géolocalisation. Elle craint pour sa sécurité.",
+        "keywords": ["stalkerware", "logiciel espion", "surveillance", "ex-conjoint", "géolocalisation", "violences conjugales numériques"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000053", "type": "document", "filename": "rapport_analyse_telephone.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-20T14:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000054",
+      "reference": "SI-PLAINTE-000054",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "atteintes_a_l_environnement",
+      "sub_category": "decharge_sauvage",
+      "declared_urgency": 2,
+      "received_at": "2026-04-20T09:00:00Z",
+      "incident_date": "2026-04-18T07:00:00Z",
+      "location": {
+        "city": "Perpignan",
+        "postal_code": "66000",
+        "country": "France",
+        "department": "66"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Dépôt sauvage massif de déchets de chantier en zone naturelle",
+        "description": "Une association de randonneurs a découvert une décharge sauvage de grande ampleur dans un espace naturel protégé aux abords de Perpignan. Des tonnes de gravats, matériaux de démolition et déchets d'amiante ont été déposés illégalement. Des traces de pneus de poids lourds ont été relevées. L'amiante représente un risque sanitaire pour les promeneurs.",
+        "keywords": ["décharge sauvage", "déchets BTP", "amiante", "zone naturelle protégée", "poids lourds"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000054", "type": "photo", "filename": "decharge_zone_naturelle.jpg" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-22T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000055",
+      "reference": "SI-PLAINTE-000055",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "fraude",
+      "sub_category": "fraude_fiscale",
+      "declared_urgency": 2,
+      "received_at": "2026-04-22T10:00:00Z",
+      "incident_date": "2026-01-01T00:00:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75002",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Suspicion de fraude fiscale par sous-déclaration de chiffre d'affaires",
+        "description": "L'administration fiscale signale une suspicion de fraude à grande échelle impliquant plusieurs sociétés liées à un même dirigeant. Le chiffre d'affaires déclaré serait largement inférieur aux flux financiers réels détectés par recoupement. Le montant des impôts éludés est estimé à plus de 400 000 euros sur deux exercices.",
+        "keywords": ["fraude fiscale", "sous-déclaration", "TVA", "chiffre d'affaires", "recoupement", "dirigeant"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000055", "type": "document", "filename": "analyse_financiere_dgfip.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-25T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000056",
+      "reference": "SI-PLAINTE-000056",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "atteintes_aux_biens",
+      "sub_category": "escroquerie_aux_faux_devis",
+      "declared_urgency": 2,
+      "received_at": "2026-04-25T14:00:00Z",
+      "incident_date": "2026-04-20T00:00:00Z",
+      "location": {
+        "city": "Toulouse",
+        "postal_code": "31500",
+        "country": "France",
+        "department": "31"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "senior",
+        "is_vulnerable": true
+      },
+      "facts": {
+        "title": "Arnaque aux faux artisans pour travaux urgents surfacturés",
+        "description": "Un couple de retraités a fait appel à des artisans se présentant à leur domicile après une forte pluie pour des prétendus dommages sur leur toiture. Sans devis écrit ni contrat, des travaux inutiles ont été réalisés à la hâte et facturés 9 000 euros, réglés en espèces. Un vrai couvreur mandaté ensuite a constaté qu'aucune réparation n'était nécessaire.",
+        "keywords": ["faux artisans", "démarchage abusif", "surfacturation", "personnes âgées", "travaux fictifs", "espèces"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000056", "type": "document", "filename": "expertise_couvreur.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-04-28T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000057",
+      "reference": "SI-PLAINTE-000057",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "atteintes_a_la_personne",
+      "sub_category": "violences_sur_mineur_dans_famille",
+      "declared_urgency": 5,
+      "received_at": "2026-05-02T08:30:00Z",
+      "incident_date": "2026-05-01T22:00:00Z",
+      "location": {
+        "city": "Toulon",
+        "postal_code": "83000",
+        "country": "France",
+        "department": "83"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "minor",
+        "is_vulnerable": true
+      },
+      "facts": {
+        "title": "Violences physiques graves sur un enfant de 9 ans par le beau-père",
+        "description": "Un enfant de 9 ans a été admis aux urgences pédiatriques avec des fractures multiples des côtes à des stades de cicatrisation différents, indiquant des violences répétées dans le temps. Le beau-père présent lors de l'admission a fourni des explications contradictoires. L'enfant a confié au personnel soignant être frappé régulièrement. Une garde à vue a été ouverte.",
+        "keywords": ["violences intrafamiliales", "enfant", "fractures", "urgences pédiatriques", "beau-père", "garde à vue"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000057", "type": "document", "filename": "bilan_radiologique.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-05-02T14:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000058",
+      "reference": "SI-PLAINTE-000058",
+      "source_system": "SI-PLAINTE",
+      "status": "closed",
+      "category": "atteintes_aux_biens",
+      "sub_category": "vol_a_main_armee",
+      "declared_urgency": 5,
+      "received_at": "2026-05-05T11:00:00Z",
+      "incident_date": "2026-05-05T10:20:00Z",
+      "location": {
+        "city": "Strasbourg",
+        "postal_code": "67100",
+        "country": "France",
+        "department": "67"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Braquage d'une agence bancaire avec prise d'otages",
+        "description": "Deux individus cagoulés et armés ont fait irruption dans une agence bancaire et ont contraint les employés à remettre le contenu des caisses sous la menace d'armes à feu. Quatre clients présents ont été retenus comme boucliers humains pendant dix minutes. Le butin est estimé à 18 000 euros. Les auteurs ont pris la fuite à moto. Le RAID a été mobilisé.",
+        "keywords": ["braquage", "agence bancaire", "prise d'otages", "armes à feu", "fuite à moto", "RAID"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000058", "type": "video", "filename": "camera_banque.mp4" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-05-25T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000059",
+      "reference": "SI-PLAINTE-000059",
+      "source_system": "SI-PLAINTE",
+      "status": "pending_investigation",
+      "category": "atteintes_a_la_liberte",
+      "sub_category": "harcelement_obsessionnel",
+      "declared_urgency": 3,
+      "received_at": "2026-05-08T10:00:00Z",
+      "incident_date": "2026-03-01T00:00:00Z",
+      "location": {
+        "city": "Bordeaux",
+        "postal_code": "33000",
+        "country": "France",
+        "department": "33"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Harcèlement obsessionnel par un ex-partenaire sur plusieurs mois",
+        "description": "Une femme est harcelée depuis mars par son ex-compagnon. Appels incessants depuis des numéros masqués, présence répétée devant son domicile et son lieu de travail, envoi de colis non sollicités, messages via des faux profils sur les réseaux sociaux. Elle a dû changer de numéro à trois reprises. La situation génère une anxiété sévère invalidante.",
+        "keywords": ["harcèlement", "ex-compagnon", "stalking", "appels", "filature", "faux profils"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000059", "type": "document", "filename": "journal_incidents.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-05-10T09:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000060",
+      "reference": "SI-PLAINTE-000060",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "atteintes_a_l_environnement",
+      "sub_category": "braconnage",
+      "declared_urgency": 2,
+      "received_at": "2026-05-12T07:00:00Z",
+      "incident_date": "2026-05-11T04:00:00Z",
+      "location": {
+        "city": "Pau",
+        "postal_code": "64000",
+        "country": "France",
+        "department": "64"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Braconnage d'espèces protégées dans les Pyrénées",
+        "description": "L'Office français de la biodiversité signale la découverte de trois isards et d'un ours brun abattus illégalement dans une zone protégée des Pyrénées-Atlantiques. Des douilles et des pièges ont été retrouvés sur place. Des photos des animaux braconnés ont été diffusées sur un groupe de messagerie privé, ce qui a permis d'identifier des suspects.",
+        "keywords": ["braconnage", "espèces protégées", "isard", "ours brun", "Pyrénées", "OFB"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000060", "type": "photo", "filename": "animaux_braconnes.jpg" },
+        { "id": "ATT-2026-000060B", "type": "document", "filename": "rapport_ofb.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-05-13T08:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000061",
+      "reference": "SI-PLAINTE-000061",
+      "source_system": "SI-PLAINTE",
+      "status": "in_progress",
+      "category": "fraude",
+      "sub_category": "contrefacon",
+      "declared_urgency": 3,
+      "received_at": "2026-05-14T10:00:00Z",
+      "incident_date": "2026-05-10T00:00:00Z",
+      "location": {
+        "city": "Paris",
+        "postal_code": "75010",
+        "country": "France",
+        "department": "75"
+      },
+      "complainant": {
+        "type": "organization",
+        "age_range": "unknown",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Réseau de vente de médicaments contrefaits sur internet",
+        "description": "Un laboratoire pharmaceutique signale la vente de médicaments contrefaits portant sa marque sur plusieurs sites e-commerce et marketplaces. Les analyses révèlent des principes actifs absents ou sous-dosés, représentant un danger sanitaire grave. Des commandes test ont permis de localiser des entrepôts en Île-de-France servant de point de redistribution.",
+        "keywords": ["contrefaçon", "médicaments", "internet", "danger sanitaire", "laboratoire", "entrepôt"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000061", "type": "document", "filename": "rapport_analyse_labo.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-05-16T10:00:00Z" }
+    },
+    {
+      "id": "EXT-2026-000062",
+      "reference": "SI-PLAINTE-000062",
+      "source_system": "SI-PLAINTE",
+      "status": "received",
+      "category": "violence",
+      "sub_category": "agression_a_caractere_raciste",
+      "declared_urgency": 4,
+      "received_at": "2026-05-18T09:00:00Z",
+      "incident_date": "2026-05-17T20:30:00Z",
+      "location": {
+        "city": "Metz",
+        "postal_code": "57000",
+        "country": "France",
+        "department": "57"
+      },
+      "complainant": {
+        "type": "individual",
+        "age_range": "adult",
+        "is_vulnerable": false
+      },
+      "facts": {
+        "title": "Agression à caractère raciste en sortie de restaurant",
+        "description": "Un homme et sa famille ont été pris à partie verbalement puis physiquement par un groupe de trois individus à la sortie d'un restaurant. Les agresseurs ont tenu des propos racistes avant de frapper l'homme à plusieurs reprises. Son fils de 17 ans a également reçu des coups en tentant de s'interposer. Des clients du restaurant ont alerté la police.",
+        "keywords": ["racisme", "agression", "famille", "propos racistes", "coups", "témoins"]
+      },
+      "attachments": [
+        { "id": "ATT-2026-000062", "type": "document", "filename": "certificats_medicaux.pdf" }
+      ],
+      "metadata": { "created_by": "external_system", "updated_at": "2026-05-19T10:00:00Z" }
+    }
+  ],
+  "attachments": [
+    { "id": "ATT-2026-000021", "complaint_id": "SI-PLAINTE-000021", "mime_type": "video/mp4", "filename": "camera_parking_niv2.mp4", "url": "http://localhost:3000/files/camera_parking_niv2.mp4" },
+    { "id": "ATT-2026-000022", "complaint_id": "SI-PLAINTE-000022", "mime_type": "application/pdf", "filename": "rapport_balistique.pdf", "url": "http://localhost:3000/files/rapport_balistique.pdf" },
+    { "id": "ATT-2026-000023", "complaint_id": "SI-PLAINTE-000023", "mime_type": "image/jpeg", "filename": "preuve_de_vie.jpg", "url": "http://localhost:3000/files/preuve_de_vie.jpg" },
+    { "id": "ATT-2026-000024", "complaint_id": "SI-PLAINTE-000024", "mime_type": "application/pdf", "filename": "certificat_itt_police.pdf", "url": "http://localhost:3000/files/certificat_itt_police.pdf" },
+    { "id": "ATT-2026-000025", "complaint_id": "SI-PLAINTE-000025", "mime_type": "image/jpeg", "filename": "vehicule_incendie.jpg", "url": "http://localhost:3000/files/vehicule_incendie.jpg" },
+    { "id": "ATT-2026-000025B", "complaint_id": "SI-PLAINTE-000025", "mime_type": "audio/wav", "filename": "menaces_vocales.wav", "url": "http://localhost:3000/files/menaces_vocales.wav" },
+    { "id": "ATT-2026-000026", "complaint_id": "SI-PLAINTE-000026", "mime_type": "application/pdf", "filename": "rapport_association.pdf", "url": "http://localhost:3000/files/rapport_association.pdf" },
+    { "id": "ATT-2026-000027", "complaint_id": "SI-PLAINTE-000027", "mime_type": "application/pdf", "filename": "echanges_sms_corruption.pdf", "url": "http://localhost:3000/files/echanges_sms_corruption.pdf" },
+    { "id": "ATT-2026-000029", "complaint_id": "SI-PLAINTE-000029", "mime_type": "application/pdf", "filename": "capture_annonce_et_virement.pdf", "url": "http://localhost:3000/files/capture_annonce_et_virement.pdf" },
+    { "id": "ATT-2026-000030", "complaint_id": "SI-PLAINTE-000030", "mime_type": "video/mp4", "filename": "agression_saint_valentin.mp4", "url": "http://localhost:3000/files/agression_saint_valentin.mp4" },
+    { "id": "ATT-2026-000031", "complaint_id": "SI-PLAINTE-000031", "mime_type": "image/jpeg", "filename": "lettres_menaces.jpg", "url": "http://localhost:3000/files/lettres_menaces.jpg" },
+    { "id": "ATT-2026-000033", "complaint_id": "SI-PLAINTE-000033", "mime_type": "image/jpeg", "filename": "etat_animaux.jpg", "url": "http://localhost:3000/files/etat_animaux.jpg" },
+    { "id": "ATT-2026-000033B", "complaint_id": "SI-PLAINTE-000033", "mime_type": "application/pdf", "filename": "rapport_veterinaire.pdf", "url": "http://localhost:3000/files/rapport_veterinaire.pdf" },
+    { "id": "ATT-2026-000034", "complaint_id": "SI-PLAINTE-000034", "mime_type": "application/pdf", "filename": "attestations_collegues.pdf", "url": "http://localhost:3000/files/attestations_collegues.pdf" },
+    { "id": "ATT-2026-000035", "complaint_id": "SI-PLAINTE-000035", "mime_type": "application/pdf", "filename": "pv_alcoolemie.pdf", "url": "http://localhost:3000/files/pv_alcoolemie.pdf" },
+    { "id": "ATT-2026-000036", "complaint_id": "SI-PLAINTE-000036", "mime_type": "image/jpeg", "filename": "photo_signalement_mineure.jpg", "url": "http://localhost:3000/files/photo_signalement_mineure.jpg" },
+    { "id": "ATT-2026-000037", "complaint_id": "SI-PLAINTE-000037", "mime_type": "application/pdf", "filename": "ordonnance_jaf.pdf", "url": "http://localhost:3000/files/ordonnance_jaf.pdf" },
+    { "id": "ATT-2026-000039", "complaint_id": "SI-PLAINTE-000039", "mime_type": "image/jpeg", "filename": "tags_devanture.jpg", "url": "http://localhost:3000/files/tags_devanture.jpg" },
+    { "id": "ATT-2026-000040", "complaint_id": "SI-PLAINTE-000040", "mime_type": "video/mp4", "filename": "camera_marche.mp4", "url": "http://localhost:3000/files/camera_marche.mp4" },
+    { "id": "ATT-2026-000041", "complaint_id": "SI-PLAINTE-000041", "mime_type": "audio/mpeg", "filename": "appel_menaces.mp3", "url": "http://localhost:3000/files/appel_menaces.mp3" },
+    { "id": "ATT-2026-000042", "complaint_id": "SI-PLAINTE-000042", "mime_type": "application/pdf", "filename": "constatations_medico_legales.pdf", "url": "http://localhost:3000/files/constatations_medico_legales.pdf" },
+    { "id": "ATT-2026-000045", "complaint_id": "SI-PLAINTE-000045", "mime_type": "application/pdf", "filename": "rapport_comptable.pdf", "url": "http://localhost:3000/files/rapport_comptable.pdf" },
+    { "id": "ATT-2026-000046", "complaint_id": "SI-PLAINTE-000046", "mime_type": "application/pdf", "filename": "certificat_hospitalier.pdf", "url": "http://localhost:3000/files/certificat_hospitalier.pdf" },
+    { "id": "ATT-2026-000047", "complaint_id": "SI-PLAINTE-000047", "mime_type": "application/pdf", "filename": "amendes_recues.pdf", "url": "http://localhost:3000/files/amendes_recues.pdf" },
+    { "id": "ATT-2026-000048", "complaint_id": "SI-PLAINTE-000048", "mime_type": "video/mp4", "filename": "camera_voie_publique.mp4", "url": "http://localhost:3000/files/camera_voie_publique.mp4" },
+    { "id": "ATT-2026-000049", "complaint_id": "SI-PLAINTE-000049", "mime_type": "application/pdf", "filename": "rapport_ase.pdf", "url": "http://localhost:3000/files/rapport_ase.pdf" },
+    { "id": "ATT-2026-000050", "complaint_id": "SI-PLAINTE-000050", "mime_type": "application/pdf", "filename": "constat_medecin_legiste.pdf", "url": "http://localhost:3000/files/constat_medecin_legiste.pdf" },
+    { "id": "ATT-2026-000051", "complaint_id": "SI-PLAINTE-000051", "mime_type": "application/pdf", "filename": "preuves_transactions.pdf", "url": "http://localhost:3000/files/preuves_transactions.pdf" },
+    { "id": "ATT-2026-000052", "complaint_id": "SI-PLAINTE-000052", "mime_type": "image/jpeg", "filename": "capture_sms_phishing.jpg", "url": "http://localhost:3000/files/capture_sms_phishing.jpg" },
+    { "id": "ATT-2026-000053", "complaint_id": "SI-PLAINTE-000053", "mime_type": "application/pdf", "filename": "rapport_analyse_telephone.pdf", "url": "http://localhost:3000/files/rapport_analyse_telephone.pdf" },
+    { "id": "ATT-2026-000054", "complaint_id": "SI-PLAINTE-000054", "mime_type": "image/jpeg", "filename": "decharge_zone_naturelle.jpg", "url": "http://localhost:3000/files/decharge_zone_naturelle.jpg" },
+    { "id": "ATT-2026-000055", "complaint_id": "SI-PLAINTE-000055", "mime_type": "application/pdf", "filename": "analyse_financiere_dgfip.pdf", "url": "http://localhost:3000/files/analyse_financiere_dgfip.pdf" },
+    { "id": "ATT-2026-000056", "complaint_id": "SI-PLAINTE-000056", "mime_type": "application/pdf", "filename": "expertise_couvreur.pdf", "url": "http://localhost:3000/files/expertise_couvreur.pdf" },
+    { "id": "ATT-2026-000057", "complaint_id": "SI-PLAINTE-000057", "mime_type": "application/pdf", "filename": "bilan_radiologique.pdf", "url": "http://localhost:3000/files/bilan_radiologique.pdf" },
+    { "id": "ATT-2026-000058", "complaint_id": "SI-PLAINTE-000058", "mime_type": "video/mp4", "filename": "camera_banque.mp4", "url": "http://localhost:3000/files/camera_banque.mp4" },
+    { "id": "ATT-2026-000059", "complaint_id": "SI-PLAINTE-000059", "mime_type": "application/pdf", "filename": "journal_incidents.pdf", "url": "http://localhost:3000/files/journal_incidents.pdf" },
+    { "id": "ATT-2026-000060", "complaint_id": "SI-PLAINTE-000060", "mime_type": "image/jpeg", "filename": "animaux_braconnes.jpg", "url": "http://localhost:3000/files/animaux_braconnes.jpg" },
+    { "id": "ATT-2026-000060B", "complaint_id": "SI-PLAINTE-000060", "mime_type": "application/pdf", "filename": "rapport_ofb.pdf", "url": "http://localhost:3000/files/rapport_ofb.pdf" },
+    { "id": "ATT-2026-000061", "complaint_id": "SI-PLAINTE-000061", "mime_type": "application/pdf", "filename": "rapport_analyse_labo.pdf", "url": "http://localhost:3000/files/rapport_analyse_labo.pdf" },
+    { "id": "ATT-2026-000062", "complaint_id": "SI-PLAINTE-000062", "mime_type": "application/pdf", "filename": "certificats_medicaux.pdf", "url": "http://localhost:3000/files/certificats_medicaux.pdf" }
+  ],
+  "complaint_events": [
+    { "id": "EVT-2026-000032", "complaint_id": "SI-PLAINTE-000021", "type": "created", "occured_at": "2026-01-03T06:45:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000033", "complaint_id": "SI-PLAINTE-000021", "type": "updated", "occured_at": "2026-01-05T14:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000034", "complaint_id": "SI-PLAINTE-000022", "type": "created", "occured_at": "2026-01-08T03:20:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000035", "complaint_id": "SI-PLAINTE-000022", "type": "updated", "occured_at": "2026-01-09T10:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000036", "complaint_id": "SI-PLAINTE-000023", "type": "created", "occured_at": "2026-01-12T08:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000037", "complaint_id": "SI-PLAINTE-000023", "type": "updated", "occured_at": "2026-01-12T10:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000038", "complaint_id": "SI-PLAINTE-000024", "type": "created", "occured_at": "2026-01-18T22:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000039", "complaint_id": "SI-PLAINTE-000024", "type": "closed", "occured_at": "2026-02-01T09:00:00Z", "payload": { "status": "closed" } },
+    { "id": "EVT-2026-000040", "complaint_id": "SI-PLAINTE-000025", "type": "created", "occured_at": "2026-01-22T05:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000041", "complaint_id": "SI-PLAINTE-000025", "type": "updated", "occured_at": "2026-01-24T11:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000042", "complaint_id": "SI-PLAINTE-000026", "type": "created", "occured_at": "2026-01-28T10:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000043", "complaint_id": "SI-PLAINTE-000026", "type": "updated", "occured_at": "2026-02-03T14:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000044", "complaint_id": "SI-PLAINTE-000027", "type": "created", "occured_at": "2026-02-02T09:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000045", "complaint_id": "SI-PLAINTE-000028", "type": "created", "occured_at": "2026-02-06T14:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000046", "complaint_id": "SI-PLAINTE-000028", "type": "updated", "occured_at": "2026-02-10T09:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000047", "complaint_id": "SI-PLAINTE-000029", "type": "created", "occured_at": "2026-02-09T11:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000048", "complaint_id": "SI-PLAINTE-000029", "type": "closed", "occured_at": "2026-03-01T10:00:00Z", "payload": { "status": "closed" } },
+    { "id": "EVT-2026-000049", "complaint_id": "SI-PLAINTE-000030", "type": "created", "occured_at": "2026-02-14T21:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000050", "complaint_id": "SI-PLAINTE-000030", "type": "updated", "occured_at": "2026-02-16T09:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000051", "complaint_id": "SI-PLAINTE-000031", "type": "created", "occured_at": "2026-02-17T10:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000052", "complaint_id": "SI-PLAINTE-000032", "type": "created", "occured_at": "2026-02-20T12:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000053", "complaint_id": "SI-PLAINTE-000032", "type": "closed", "occured_at": "2026-03-05T09:00:00Z", "payload": { "status": "closed" } },
+    { "id": "EVT-2026-000054", "complaint_id": "SI-PLAINTE-000033", "type": "created", "occured_at": "2026-02-22T15:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000055", "complaint_id": "SI-PLAINTE-000034", "type": "created", "occured_at": "2026-02-25T09:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000056", "complaint_id": "SI-PLAINTE-000034", "type": "updated", "occured_at": "2026-03-01T11:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000057", "complaint_id": "SI-PLAINTE-000035", "type": "created", "occured_at": "2026-03-01T01:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000058", "complaint_id": "SI-PLAINTE-000035", "type": "closed", "occured_at": "2026-03-15T10:00:00Z", "payload": { "status": "closed" } },
+    { "id": "EVT-2026-000059", "complaint_id": "SI-PLAINTE-000036", "type": "created", "occured_at": "2026-03-04T18:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000060", "complaint_id": "SI-PLAINTE-000036", "type": "updated", "occured_at": "2026-03-04T19:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000061", "complaint_id": "SI-PLAINTE-000037", "type": "created", "occured_at": "2026-03-08T10:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000062", "complaint_id": "SI-PLAINTE-000037", "type": "updated", "occured_at": "2026-03-10T09:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000063", "complaint_id": "SI-PLAINTE-000038", "type": "created", "occured_at": "2026-03-11T07:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000064", "complaint_id": "SI-PLAINTE-000039", "type": "created", "occured_at": "2026-03-14T09:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000065", "complaint_id": "SI-PLAINTE-000039", "type": "updated", "occured_at": "2026-03-16T10:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000066", "complaint_id": "SI-PLAINTE-000040", "type": "created", "occured_at": "2026-03-17T14:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000067", "complaint_id": "SI-PLAINTE-000041", "type": "created", "occured_at": "2026-03-19T16:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000068", "complaint_id": "SI-PLAINTE-000041", "type": "updated", "occured_at": "2026-03-22T10:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000069", "complaint_id": "SI-PLAINTE-000042", "type": "created", "occured_at": "2026-03-21T11:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000070", "complaint_id": "SI-PLAINTE-000042", "type": "updated", "occured_at": "2026-03-22T14:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000071", "complaint_id": "SI-PLAINTE-000043", "type": "created", "occured_at": "2026-03-23T09:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000072", "complaint_id": "SI-PLAINTE-000043", "type": "updated", "occured_at": "2026-03-24T08:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000073", "complaint_id": "SI-PLAINTE-000044", "type": "created", "occured_at": "2026-03-26T10:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000074", "complaint_id": "SI-PLAINTE-000045", "type": "created", "occured_at": "2026-03-28T09:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000075", "complaint_id": "SI-PLAINTE-000045", "type": "updated", "occured_at": "2026-04-02T09:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000076", "complaint_id": "SI-PLAINTE-000046", "type": "created", "occured_at": "2026-04-01T07:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000077", "complaint_id": "SI-PLAINTE-000046", "type": "closed", "occured_at": "2026-04-20T10:00:00Z", "payload": { "status": "closed" } },
+    { "id": "EVT-2026-000078", "complaint_id": "SI-PLAINTE-000047", "type": "created", "occured_at": "2026-04-04T10:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000079", "complaint_id": "SI-PLAINTE-000047", "type": "updated", "occured_at": "2026-04-06T09:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000080", "complaint_id": "SI-PLAINTE-000048", "type": "created", "occured_at": "2026-04-06T22:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000081", "complaint_id": "SI-PLAINTE-000049", "type": "created", "occured_at": "2026-04-08T15:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000082", "complaint_id": "SI-PLAINTE-000049", "type": "closed", "occured_at": "2026-04-20T10:00:00Z", "payload": { "status": "closed" } },
+    { "id": "EVT-2026-000083", "complaint_id": "SI-PLAINTE-000050", "type": "created", "occured_at": "2026-04-10T11:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000084", "complaint_id": "SI-PLAINTE-000050", "type": "updated", "occured_at": "2026-04-12T09:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000085", "complaint_id": "SI-PLAINTE-000051", "type": "created", "occured_at": "2026-04-14T09:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000086", "complaint_id": "SI-PLAINTE-000052", "type": "created", "occured_at": "2026-04-16T14:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000087", "complaint_id": "SI-PLAINTE-000052", "type": "updated", "occured_at": "2026-04-18T09:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000088", "complaint_id": "SI-PLAINTE-000053", "type": "created", "occured_at": "2026-04-18T11:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000089", "complaint_id": "SI-PLAINTE-000053", "type": "updated", "occured_at": "2026-04-20T14:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000090", "complaint_id": "SI-PLAINTE-000054", "type": "created", "occured_at": "2026-04-20T09:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000091", "complaint_id": "SI-PLAINTE-000055", "type": "created", "occured_at": "2026-04-22T10:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000092", "complaint_id": "SI-PLAINTE-000055", "type": "updated", "occured_at": "2026-04-25T09:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000093", "complaint_id": "SI-PLAINTE-000056", "type": "created", "occured_at": "2026-04-25T14:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000094", "complaint_id": "SI-PLAINTE-000057", "type": "created", "occured_at": "2026-05-02T08:30:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000095", "complaint_id": "SI-PLAINTE-000057", "type": "updated", "occured_at": "2026-05-02T14:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000096", "complaint_id": "SI-PLAINTE-000058", "type": "created", "occured_at": "2026-05-05T11:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000097", "complaint_id": "SI-PLAINTE-000058", "type": "closed", "occured_at": "2026-05-25T09:00:00Z", "payload": { "status": "closed" } },
+    { "id": "EVT-2026-000098", "complaint_id": "SI-PLAINTE-000059", "type": "created", "occured_at": "2026-05-08T10:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000099", "complaint_id": "SI-PLAINTE-000059", "type": "updated", "occured_at": "2026-05-10T09:00:00Z", "payload": { "status": "pending_investigation" } },
+    { "id": "EVT-2026-000100", "complaint_id": "SI-PLAINTE-000060", "type": "created", "occured_at": "2026-05-12T07:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000101", "complaint_id": "SI-PLAINTE-000061", "type": "created", "occured_at": "2026-05-14T10:00:00Z", "payload": { "status": "received" } },
+    { "id": "EVT-2026-000102", "complaint_id": "SI-PLAINTE-000061", "type": "updated", "occured_at": "2026-05-16T10:00:00Z", "payload": { "status": "in_progress" } },
+    { "id": "EVT-2026-000103", "complaint_id": "SI-PLAINTE-000062", "type": "created", "occured_at": "2026-05-18T09:00:00Z", "payload": { "status": "received" } }
+  ]
 }
