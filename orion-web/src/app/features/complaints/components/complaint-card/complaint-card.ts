@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Complaint } from '../../models/complaint.model';
 
 @Component({
   selector: 'app-complaint-card',
   imports: [],
   templateUrl: './complaint-card.html',
-  styleUrl: './complaint-card.css',
+  styleUrls: ['./complaint-card.css'],
 })
-export class ComplaintCard {}
+export class ComplaintCard {
+  complaint = input.required<Complaint>();
+}
