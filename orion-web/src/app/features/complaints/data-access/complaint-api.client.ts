@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { API_CONFIG_TOKEN } from '@app/core/config/injection-token';
-import { map, tap } from 'rxjs';
+import { map } from 'rxjs';
 import { Complaint, ComplaintFilter } from '../models/complaint.model';
 
 @Service()
