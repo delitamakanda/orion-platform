@@ -21,8 +21,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import { MatRippleModule } from '@angular/material/core';
+import { MAT_DATE_LOCALE, MatRippleModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
 export const MATERIAL_IMPORTS = [
     MatTableModule,
@@ -51,4 +52,9 @@ export const MATERIAL_IMPORTS = [
     MatTreeModule,
     MatRippleModule,
     MatBadgeModule,
+];
+
+export const MATERIAL_PROVIDERS = [
+    provideNativeDateAdapter(),
+    { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' },
 ];
