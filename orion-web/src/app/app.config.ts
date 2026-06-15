@@ -6,6 +6,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { API_CONFIG_TOKEN } from '@app/core/config/injection-token';
 import { API_CONFIG } from '@app/core/config/api.config';
 import { authInterceptor } from '@app/core/api/auth.interceptor';
+import { MATERIAL_PROVIDERS } from './shared/material.imports';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,7 +18,8 @@ export const appConfig: ApplicationConfig = {
     {
       provide: API_CONFIG_TOKEN,
       useValue: API_CONFIG
-     },
+    },
+    ...MATERIAL_PROVIDERS,
     provideRouter(
       routes,
       withViewTransitions(),
