@@ -1,6 +1,6 @@
 import { inject, resource, Service, signal } from '@angular/core';
 import { ComplaintApiClient } from './complaint-api.client';
-import { ComplaintFilter } from '../models/complaint.model';
+import { ComplaintFilter } from '@app/features/complaints/models/complaint-filters.model';
 import { firstValueFrom } from 'rxjs';
 
 @Service()

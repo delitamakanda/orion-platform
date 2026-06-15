@@ -1,0 +1,1 @@
+export type ComplaintStatus = 'imported' | 'analyzed' | 'reviewed' | 'closed';

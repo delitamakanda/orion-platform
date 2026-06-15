@@ -1,7 +1,6 @@
 import { computed, inject, Service, signal } from '@angular/core';
 import { ComplaintRepository } from './complaint.repository';
-import { ComplaintFilter } from '../models/complaint.model';
-
+import { ComplaintFilter } from '@app/features/complaints/models/complaint-filters.model';
 @Service()
 export class ComplaintStore {
     private readonly repository = inject(ComplaintRepository);

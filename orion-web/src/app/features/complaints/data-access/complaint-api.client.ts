@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { API_CONFIG_TOKEN } from '@app/core/config/injection-token';
 import { map } from 'rxjs';
-import { Complaint, ComplaintFilter } from '../models/complaint.model';
+import { Complaint } from '../models/complaint.model';
+import { ComplaintFilter } from '@app/features/complaints/models/complaint-filters.model';
 
 @Service()
 export class ComplaintApiClient {
