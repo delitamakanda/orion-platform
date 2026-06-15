@@ -22,8 +22,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 MISTRAL_MODEL_NAME = os.getenv("MISTRAL_MODEL_NAME", "mistral-small-2603")
 PRIORITIZATION_PROVIDER = os.getenv("PRIORITIZATION_PROVIDER", "mistral")
-DEBUG = os.getenv("DEBUG", "False") == "True"
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -32,7 +30,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEBUG
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
@@ -139,7 +137,8 @@ STATIC_URL = 'static/'
 
 
 # CORS configuration
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
+CORS_ALLOW_CREDENTIALS = True
 
 
 # REST framework settings
