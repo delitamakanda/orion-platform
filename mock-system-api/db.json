@@ -736,366 +736,8 @@
                 "created_by": "external_system",
                 "updated_at": "2026-03-25T12:00:00Z"
             }
-        }
-    ],
-    "attachments": [
-        {
-            "id": "ATT-2026-000001",
-            "complaint_id": "SI-PLAINTE-000001",
-            "mime_type": "application/pdf",
-            "filename": "declaration.pdf",
-            "url": "http://localhost:3000/files/declaration.pdf"
         },
         {
-            "id": "ATT-2026-000002",
-            "complaint_id": "SI-PLAINTE-000002",
-            "mime_type": "audio/wav",
-            "filename": "audio_recording.wav",
-            "url": "http://localhost:3000/files/audio_recording.wav"
-        },
-        {
-            "id": "ATT-2026-000003",
-            "complaint_id": "SI-PLAINTE-000003",
-            "mime_type": "video/mp4",
-            "filename": "incident_video.mp4",
-            "url": "http://localhost:3000/files/incident_video.mp4"
-        },
-        {
-            "id": "ATT-2026-000004",
-            "complaint_id": "SI-PLAINTE-000004",
-            "mime_type": "image/jpeg",
-            "filename": "degradation_photo.jpg",
-            "url": "http://localhost:3000/files/degradation_photo.jpg"
-        },
-        {
-            "id": "ATT-2026-000005",
-            "complaint_id": "SI-PLAINTE-000005",
-            "mime_type": "application/pdf",
-            "filename": "medical_report.pdf",
-            "url": "http://localhost:3000/files/medical_report.pdf"
-        },
-        {
-            "id": "ATT-2026-000006",
-            "complaint_id": "SI-PLAINTE-000006",
-            "mime_type": "image/jpeg",
-            "filename": "blessures_visage.jpg",
-            "url": "http://localhost:3000/files/blessures_visage.jpg"
-        },
-        {
-            "id": "ATT-2026-000007",
-            "complaint_id": "SI-PLAINTE-000007",
-            "mime_type": "application/pdf",
-            "filename": "releve_bancaire.pdf",
-            "url": "http://localhost:3000/files/releve_bancaire.pdf"
-        },
-        {
-            "id": "ATT-2026-000009",
-            "complaint_id": "SI-PLAINTE-000009",
-            "mime_type": "video/mp4",
-            "filename": "video_entree_bar.mp4",
-            "url": "http://localhost:3000/files/video_entree_bar.mp4"
-        },
-        {
-            "id": "ATT-2026-000010",
-            "complaint_id": "SI-PLAINTE-000010",
-            "mime_type": "application/pdf",
-            "filename": "captures_ecran_harcelement.pdf",
-            "url": "http://localhost:3000/files/captures_ecran_harcelement.pdf"
-        },
-        {
-            "id": "ATT-2026-000011",
-            "complaint_id": "SI-PLAINTE-000011",
-            "mime_type": "image/jpeg",
-            "filename": "effraction_porte.jpg",
-            "url": "http://localhost:3000/files/effraction_porte.jpg"
-        },
-        {
-            "id": "ATT-2026-000012",
-            "complaint_id": "SI-PLAINTE-000012",
-            "mime_type": "application/pdf",
-            "filename": "certificat_medical.pdf",
-            "url": "http://localhost:3000/files/certificat_medical.pdf"
-        },
-        {
-            "id": "ATT-2026-000013",
-            "complaint_id": "SI-PLAINTE-000013",
-            "mime_type": "application/pdf",
-            "filename": "faux_documents_scans.pdf",
-            "url": "http://localhost:3000/files/faux_documents_scans.pdf"
-        },
-        {
-            "id": "ATT-2026-000014",
-            "complaint_id": "SI-PLAINTE-000014",
-            "mime_type": "application/pdf",
-            "filename": "rapport_medico_legal.pdf",
-            "url": "http://localhost:3000/files/rapport_medico_legal.pdf"
-        },
-        {
-            "id": "ATT-2026-000015",
-            "complaint_id": "SI-PLAINTE-000015",
-            "mime_type": "image/jpeg",
-            "filename": "graffitis_facade.jpg",
-            "url": "http://localhost:3000/files/graffitis_facade.jpg"
-        },
-        {
-            "id": "ATT-2026-000016",
-            "complaint_id": "SI-PLAINTE-000016",
-            "mime_type": "application/pdf",
-            "filename": "contrats_signes.pdf",
-            "url": "http://localhost:3000/files/contrats_signes.pdf"
-        },
-        {
-            "id": "ATT-2026-000018",
-            "complaint_id": "SI-PLAINTE-000018",
-            "mime_type": "image/jpeg",
-            "filename": "pollution_cours_eau.jpg",
-            "url": "http://localhost:3000/files/pollution_cours_eau.jpg"
-        },
-        {
-            "id": "ATT-2026-000018B",
-            "complaint_id": "SI-PLAINTE-000018",
-            "mime_type": "application/pdf",
-            "filename": "rapport_prelevement.pdf",
-            "url": "http://localhost:3000/files/rapport_prelevement.pdf"
-        },
-        {
-            "id": "ATT-2026-000019",
-            "complaint_id": "SI-PLAINTE-000019",
-            "mime_type": "image/jpeg",
-            "filename": "blessures_enfant.jpg",
-            "url": "http://localhost:3000/files/blessures_enfant.jpg"
-        },
-        {
-            "id": "ATT-2026-000020",
-            "complaint_id": "SI-PLAINTE-000020",
-            "mime_type": "application/pdf",
-            "filename": "message_rancon.pdf",
-            "url": "http://localhost:3000/files/message_rancon.pdf"
-        }
-    ],
-    "complaint_events": [
-        {
-            "id": "EVT-2026-000001",
-            "complaint_id": "SI-PLAINTE-000001",
-            "type": "created",
-            "occured_at": "2026-01-20T12:30:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000002",
-            "complaint_id": "SI-PLAINTE-000001",
-            "type": "closed",
-            "occured_at": "2026-01-25T18:00:00Z",
-            "payload": { "status": "closed" }
-        },
-        {
-            "id": "EVT-2026-000003",
-            "complaint_id": "SI-PLAINTE-000002",
-            "type": "created",
-            "occured_at": "2026-01-25T18:00:00Z",
-            "payload": { "status": "pending_investigation" }
-        },
-        {
-            "id": "EVT-2026-000004",
-            "complaint_id": "SI-PLAINTE-000003",
-            "type": "created",
-            "occured_at": "2026-01-30T12:00:00Z",
-            "payload": { "status": "closed" }
-        },
-        {
-            "id": "EVT-2026-000005",
-            "complaint_id": "SI-PLAINTE-000004",
-            "type": "created",
-            "occured_at": "2026-02-05T10:00:00Z",
-            "payload": { "status": "in_progress" }
-        },
-        {
-            "id": "EVT-2026-000006",
-            "complaint_id": "SI-PLAINTE-000005",
-            "type": "created",
-            "occured_at": "2026-02-15T15:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000007",
-            "complaint_id": "SI-PLAINTE-000006",
-            "type": "created",
-            "occured_at": "2026-02-12T09:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000008",
-            "complaint_id": "SI-PLAINTE-000006",
-            "type": "updated",
-            "occured_at": "2026-02-13T08:45:00Z",
-            "payload": { "status": "pending_investigation" }
-        },
-        {
-            "id": "EVT-2026-000009",
-            "complaint_id": "SI-PLAINTE-000007",
-            "type": "created",
-            "occured_at": "2026-02-14T11:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000010",
-            "complaint_id": "SI-PLAINTE-000007",
-            "type": "updated",
-            "occured_at": "2026-02-16T09:30:00Z",
-            "payload": { "status": "in_progress" }
-        },
-        {
-            "id": "EVT-2026-000011",
-            "complaint_id": "SI-PLAINTE-000008",
-            "type": "created",
-            "occured_at": "2026-02-19T08:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000012",
-            "complaint_id": "SI-PLAINTE-000009",
-            "type": "created",
-            "occured_at": "2026-02-20T10:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000013",
-            "complaint_id": "SI-PLAINTE-000009",
-            "type": "closed",
-            "occured_at": "2026-03-01T14:00:00Z",
-            "payload": { "status": "closed" }
-        },
-        {
-            "id": "EVT-2026-000014",
-            "complaint_id": "SI-PLAINTE-000010",
-            "type": "created",
-            "occured_at": "2026-02-25T14:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000015",
-            "complaint_id": "SI-PLAINTE-000010",
-            "type": "updated",
-            "occured_at": "2026-03-02T10:00:00Z",
-            "payload": { "status": "in_progress" }
-        },
-        {
-            "id": "EVT-2026-000016",
-            "complaint_id": "SI-PLAINTE-000011",
-            "type": "created",
-            "occured_at": "2026-03-03T08:30:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000017",
-            "complaint_id": "SI-PLAINTE-000011",
-            "type": "updated",
-            "occured_at": "2026-03-04T09:00:00Z",
-            "payload": { "status": "pending_investigation" }
-        },
-        {
-            "id": "EVT-2026-000018",
-            "complaint_id": "SI-PLAINTE-000012",
-            "type": "created",
-            "occured_at": "2026-03-05T20:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000019",
-            "complaint_id": "SI-PLAINTE-000013",
-            "type": "created",
-            "occured_at": "2026-03-07T10:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000020",
-            "complaint_id": "SI-PLAINTE-000013",
-            "type": "updated",
-            "occured_at": "2026-03-10T11:00:00Z",
-            "payload": { "status": "in_progress" }
-        },
-        {
-            "id": "EVT-2026-000021",
-            "complaint_id": "SI-PLAINTE-000014",
-            "type": "created",
-            "occured_at": "2026-03-10T12:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000022",
-            "complaint_id": "SI-PLAINTE-000015",
-            "type": "created",
-            "occured_at": "2026-03-12T09:30:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000023",
-            "complaint_id": "SI-PLAINTE-000015",
-            "type": "updated",
-            "occured_at": "2026-03-12T11:00:00Z",
-            "payload": { "status": "pending_investigation" }
-        },
-        {
-            "id": "EVT-2026-000024",
-            "complaint_id": "SI-PLAINTE-000016",
-            "type": "created",
-            "occured_at": "2026-03-15T14:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000025",
-            "complaint_id": "SI-PLAINTE-000016",
-            "type": "updated",
-            "occured_at": "2026-03-17T10:30:00Z",
-            "payload": { "status": "in_progress" }
-        },
-        {
-            "id": "EVT-2026-000026",
-            "complaint_id": "SI-PLAINTE-000017",
-            "type": "created",
-            "occured_at": "2026-03-18T08:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000027",
-            "complaint_id": "SI-PLAINTE-000018",
-            "type": "created",
-            "occured_at": "2026-03-20T11:00:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000028",
-            "complaint_id": "SI-PLAINTE-000018",
-            "type": "closed",
-            "occured_at": "2026-04-01T09:00:00Z",
-            "payload": { "status": "closed" }
-        },
-        {
-            "id": "EVT-2026-000029",
-            "complaint_id": "SI-PLAINTE-000019",
-            "type": "created",
-            "occured_at": "2026-03-22T15:30:00Z",
-            "payload": { "status": "received" }
-        },
-        {
-            "id": "EVT-2026-000030",
-            "complaint_id": "SI-PLAINTE-000019",
-            "type": "updated",
-            "occured_at": "2026-03-24T10:00:00Z",
-            "payload": { "status": "pending_investigation" }
-        },
-        {
-            "id": "EVT-2026-000031",
-            "complaint_id": "SI-PLAINTE-000020",
-            "type": "created",
-            "occured_at": "2026-03-25T12:00:00Z",
-            "payload": { "status": "received" }
-        }
-    ]
-},
-{
-  "complaints": [
-    {
       "id": "EXT-2026-000021",
       "reference": "SI-PLAINTE-000021",
       "source_system": "SI-PLAINTE",
@@ -2385,9 +2027,142 @@
       ],
       "metadata": { "created_by": "external_system", "updated_at": "2026-05-19T10:00:00Z" }
     }
-  ],
-  "attachments": [
-    { "id": "ATT-2026-000021", "complaint_id": "SI-PLAINTE-000021", "mime_type": "video/mp4", "filename": "camera_parking_niv2.mp4", "url": "http://localhost:3000/files/camera_parking_niv2.mp4" },
+    ],
+    "attachments": [
+        {
+            "id": "ATT-2026-000001",
+            "complaint_id": "SI-PLAINTE-000001",
+            "mime_type": "application/pdf",
+            "filename": "declaration.pdf",
+            "url": "http://localhost:3000/files/declaration.pdf"
+        },
+        {
+            "id": "ATT-2026-000002",
+            "complaint_id": "SI-PLAINTE-000002",
+            "mime_type": "audio/wav",
+            "filename": "audio_recording.wav",
+            "url": "http://localhost:3000/files/audio_recording.wav"
+        },
+        {
+            "id": "ATT-2026-000003",
+            "complaint_id": "SI-PLAINTE-000003",
+            "mime_type": "video/mp4",
+            "filename": "incident_video.mp4",
+            "url": "http://localhost:3000/files/incident_video.mp4"
+        },
+        {
+            "id": "ATT-2026-000004",
+            "complaint_id": "SI-PLAINTE-000004",
+            "mime_type": "image/jpeg",
+            "filename": "degradation_photo.jpg",
+            "url": "http://localhost:3000/files/degradation_photo.jpg"
+        },
+        {
+            "id": "ATT-2026-000005",
+            "complaint_id": "SI-PLAINTE-000005",
+            "mime_type": "application/pdf",
+            "filename": "medical_report.pdf",
+            "url": "http://localhost:3000/files/medical_report.pdf"
+        },
+        {
+            "id": "ATT-2026-000006",
+            "complaint_id": "SI-PLAINTE-000006",
+            "mime_type": "image/jpeg",
+            "filename": "blessures_visage.jpg",
+            "url": "http://localhost:3000/files/blessures_visage.jpg"
+        },
+        {
+            "id": "ATT-2026-000007",
+            "complaint_id": "SI-PLAINTE-000007",
+            "mime_type": "application/pdf",
+            "filename": "releve_bancaire.pdf",
+            "url": "http://localhost:3000/files/releve_bancaire.pdf"
+        },
+        {
+            "id": "ATT-2026-000009",
+            "complaint_id": "SI-PLAINTE-000009",
+            "mime_type": "video/mp4",
+            "filename": "video_entree_bar.mp4",
+            "url": "http://localhost:3000/files/video_entree_bar.mp4"
+        },
+        {
+            "id": "ATT-2026-000010",
+            "complaint_id": "SI-PLAINTE-000010",
+            "mime_type": "application/pdf",
+            "filename": "captures_ecran_harcelement.pdf",
+            "url": "http://localhost:3000/files/captures_ecran_harcelement.pdf"
+        },
+        {
+            "id": "ATT-2026-000011",
+            "complaint_id": "SI-PLAINTE-000011",
+            "mime_type": "image/jpeg",
+            "filename": "effraction_porte.jpg",
+            "url": "http://localhost:3000/files/effraction_porte.jpg"
+        },
+        {
+            "id": "ATT-2026-000012",
+            "complaint_id": "SI-PLAINTE-000012",
+            "mime_type": "application/pdf",
+            "filename": "certificat_medical.pdf",
+            "url": "http://localhost:3000/files/certificat_medical.pdf"
+        },
+        {
+            "id": "ATT-2026-000013",
+            "complaint_id": "SI-PLAINTE-000013",
+            "mime_type": "application/pdf",
+            "filename": "faux_documents_scans.pdf",
+            "url": "http://localhost:3000/files/faux_documents_scans.pdf"
+        },
+        {
+            "id": "ATT-2026-000014",
+            "complaint_id": "SI-PLAINTE-000014",
+            "mime_type": "application/pdf",
+            "filename": "rapport_medico_legal.pdf",
+            "url": "http://localhost:3000/files/rapport_medico_legal.pdf"
+        },
+        {
+            "id": "ATT-2026-000015",
+            "complaint_id": "SI-PLAINTE-000015",
+            "mime_type": "image/jpeg",
+            "filename": "graffitis_facade.jpg",
+            "url": "http://localhost:3000/files/graffitis_facade.jpg"
+        },
+        {
+            "id": "ATT-2026-000016",
+            "complaint_id": "SI-PLAINTE-000016",
+            "mime_type": "application/pdf",
+            "filename": "contrats_signes.pdf",
+            "url": "http://localhost:3000/files/contrats_signes.pdf"
+        },
+        {
+            "id": "ATT-2026-000018",
+            "complaint_id": "SI-PLAINTE-000018",
+            "mime_type": "image/jpeg",
+            "filename": "pollution_cours_eau.jpg",
+            "url": "http://localhost:3000/files/pollution_cours_eau.jpg"
+        },
+        {
+            "id": "ATT-2026-000018B",
+            "complaint_id": "SI-PLAINTE-000018",
+            "mime_type": "application/pdf",
+            "filename": "rapport_prelevement.pdf",
+            "url": "http://localhost:3000/files/rapport_prelevement.pdf"
+        },
+        {
+            "id": "ATT-2026-000019",
+            "complaint_id": "SI-PLAINTE-000019",
+            "mime_type": "image/jpeg",
+            "filename": "blessures_enfant.jpg",
+            "url": "http://localhost:3000/files/blessures_enfant.jpg"
+        },
+        {
+            "id": "ATT-2026-000020",
+            "complaint_id": "SI-PLAINTE-000020",
+            "mime_type": "application/pdf",
+            "filename": "message_rancon.pdf",
+            "url": "http://localhost:3000/files/message_rancon.pdf"
+        },
+        { "id": "ATT-2026-000021", "complaint_id": "SI-PLAINTE-000021", "mime_type": "video/mp4", "filename": "camera_parking_niv2.mp4", "url": "http://localhost:3000/files/camera_parking_niv2.mp4" },
     { "id": "ATT-2026-000022", "complaint_id": "SI-PLAINTE-000022", "mime_type": "application/pdf", "filename": "rapport_balistique.pdf", "url": "http://localhost:3000/files/rapport_balistique.pdf" },
     { "id": "ATT-2026-000023", "complaint_id": "SI-PLAINTE-000023", "mime_type": "image/jpeg", "filename": "preuve_de_vie.jpg", "url": "http://localhost:3000/files/preuve_de_vie.jpg" },
     { "id": "ATT-2026-000024", "complaint_id": "SI-PLAINTE-000024", "mime_type": "application/pdf", "filename": "certificat_itt_police.pdf", "url": "http://localhost:3000/files/certificat_itt_police.pdf" },
@@ -2427,9 +2202,226 @@
     { "id": "ATT-2026-000060B", "complaint_id": "SI-PLAINTE-000060", "mime_type": "application/pdf", "filename": "rapport_ofb.pdf", "url": "http://localhost:3000/files/rapport_ofb.pdf" },
     { "id": "ATT-2026-000061", "complaint_id": "SI-PLAINTE-000061", "mime_type": "application/pdf", "filename": "rapport_analyse_labo.pdf", "url": "http://localhost:3000/files/rapport_analyse_labo.pdf" },
     { "id": "ATT-2026-000062", "complaint_id": "SI-PLAINTE-000062", "mime_type": "application/pdf", "filename": "certificats_medicaux.pdf", "url": "http://localhost:3000/files/certificats_medicaux.pdf" }
-  ],
-  "complaint_events": [
-    { "id": "EVT-2026-000032", "complaint_id": "SI-PLAINTE-000021", "type": "created", "occured_at": "2026-01-03T06:45:00Z", "payload": { "status": "received" } },
+    ],
+    "complaint_events": [
+        {
+            "id": "EVT-2026-000001",
+            "complaint_id": "SI-PLAINTE-000001",
+            "type": "created",
+            "occured_at": "2026-01-20T12:30:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000002",
+            "complaint_id": "SI-PLAINTE-000001",
+            "type": "closed",
+            "occured_at": "2026-01-25T18:00:00Z",
+            "payload": { "status": "closed" }
+        },
+        {
+            "id": "EVT-2026-000003",
+            "complaint_id": "SI-PLAINTE-000002",
+            "type": "created",
+            "occured_at": "2026-01-25T18:00:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000004",
+            "complaint_id": "SI-PLAINTE-000003",
+            "type": "created",
+            "occured_at": "2026-01-30T12:00:00Z",
+            "payload": { "status": "closed" }
+        },
+        {
+            "id": "EVT-2026-000005",
+            "complaint_id": "SI-PLAINTE-000004",
+            "type": "created",
+            "occured_at": "2026-02-05T10:00:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000006",
+            "complaint_id": "SI-PLAINTE-000005",
+            "type": "created",
+            "occured_at": "2026-02-15T15:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000007",
+            "complaint_id": "SI-PLAINTE-000006",
+            "type": "created",
+            "occured_at": "2026-02-12T09:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000008",
+            "complaint_id": "SI-PLAINTE-000006",
+            "type": "updated",
+            "occured_at": "2026-02-13T08:45:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000009",
+            "complaint_id": "SI-PLAINTE-000007",
+            "type": "created",
+            "occured_at": "2026-02-14T11:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000010",
+            "complaint_id": "SI-PLAINTE-000007",
+            "type": "updated",
+            "occured_at": "2026-02-16T09:30:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000011",
+            "complaint_id": "SI-PLAINTE-000008",
+            "type": "created",
+            "occured_at": "2026-02-19T08:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000012",
+            "complaint_id": "SI-PLAINTE-000009",
+            "type": "created",
+            "occured_at": "2026-02-20T10:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000013",
+            "complaint_id": "SI-PLAINTE-000009",
+            "type": "closed",
+            "occured_at": "2026-03-01T14:00:00Z",
+            "payload": { "status": "closed" }
+        },
+        {
+            "id": "EVT-2026-000014",
+            "complaint_id": "SI-PLAINTE-000010",
+            "type": "created",
+            "occured_at": "2026-02-25T14:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000015",
+            "complaint_id": "SI-PLAINTE-000010",
+            "type": "updated",
+            "occured_at": "2026-03-02T10:00:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000016",
+            "complaint_id": "SI-PLAINTE-000011",
+            "type": "created",
+            "occured_at": "2026-03-03T08:30:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000017",
+            "complaint_id": "SI-PLAINTE-000011",
+            "type": "updated",
+            "occured_at": "2026-03-04T09:00:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000018",
+            "complaint_id": "SI-PLAINTE-000012",
+            "type": "created",
+            "occured_at": "2026-03-05T20:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000019",
+            "complaint_id": "SI-PLAINTE-000013",
+            "type": "created",
+            "occured_at": "2026-03-07T10:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000020",
+            "complaint_id": "SI-PLAINTE-000013",
+            "type": "updated",
+            "occured_at": "2026-03-10T11:00:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000021",
+            "complaint_id": "SI-PLAINTE-000014",
+            "type": "created",
+            "occured_at": "2026-03-10T12:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000022",
+            "complaint_id": "SI-PLAINTE-000015",
+            "type": "created",
+            "occured_at": "2026-03-12T09:30:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000023",
+            "complaint_id": "SI-PLAINTE-000015",
+            "type": "updated",
+            "occured_at": "2026-03-12T11:00:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000024",
+            "complaint_id": "SI-PLAINTE-000016",
+            "type": "created",
+            "occured_at": "2026-03-15T14:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000025",
+            "complaint_id": "SI-PLAINTE-000016",
+            "type": "updated",
+            "occured_at": "2026-03-17T10:30:00Z",
+            "payload": { "status": "in_progress" }
+        },
+        {
+            "id": "EVT-2026-000026",
+            "complaint_id": "SI-PLAINTE-000017",
+            "type": "created",
+            "occured_at": "2026-03-18T08:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000027",
+            "complaint_id": "SI-PLAINTE-000018",
+            "type": "created",
+            "occured_at": "2026-03-20T11:00:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000028",
+            "complaint_id": "SI-PLAINTE-000018",
+            "type": "closed",
+            "occured_at": "2026-04-01T09:00:00Z",
+            "payload": { "status": "closed" }
+        },
+        {
+            "id": "EVT-2026-000029",
+            "complaint_id": "SI-PLAINTE-000019",
+            "type": "created",
+            "occured_at": "2026-03-22T15:30:00Z",
+            "payload": { "status": "received" }
+        },
+        {
+            "id": "EVT-2026-000030",
+            "complaint_id": "SI-PLAINTE-000019",
+            "type": "updated",
+            "occured_at": "2026-03-24T10:00:00Z",
+            "payload": { "status": "pending_investigation" }
+        },
+        {
+            "id": "EVT-2026-000031",
+            "complaint_id": "SI-PLAINTE-000020",
+            "type": "created",
+            "occured_at": "2026-03-25T12:00:00Z",
+            "payload": { "status": "received" }
+        },
+        { "id": "EVT-2026-000032", "complaint_id": "SI-PLAINTE-000021", "type": "created", "occured_at": "2026-01-03T06:45:00Z", "payload": { "status": "received" } },
     { "id": "EVT-2026-000033", "complaint_id": "SI-PLAINTE-000021", "type": "updated", "occured_at": "2026-01-05T14:00:00Z", "payload": { "status": "in_progress" } },
     { "id": "EVT-2026-000034", "complaint_id": "SI-PLAINTE-000022", "type": "created", "occured_at": "2026-01-08T03:20:00Z", "payload": { "status": "received" } },
     { "id": "EVT-2026-000035", "complaint_id": "SI-PLAINTE-000022", "type": "updated", "occured_at": "2026-01-09T10:00:00Z", "payload": { "status": "pending_investigation" } },
@@ -2501,5 +2493,5 @@
     { "id": "EVT-2026-000101", "complaint_id": "SI-PLAINTE-000061", "type": "created", "occured_at": "2026-05-14T10:00:00Z", "payload": { "status": "received" } },
     { "id": "EVT-2026-000102", "complaint_id": "SI-PLAINTE-000061", "type": "updated", "occured_at": "2026-05-16T10:00:00Z", "payload": { "status": "in_progress" } },
     { "id": "EVT-2026-000103", "complaint_id": "SI-PLAINTE-000062", "type": "created", "occured_at": "2026-05-18T09:00:00Z", "payload": { "status": "received" } }
-  ]
+    ]
 }
