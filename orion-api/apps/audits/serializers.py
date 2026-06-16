@@ -19,5 +19,6 @@ class AuditSerializer(serializers.ModelSerializer):
             'ip_address',
             'user_agent',
             'timestamp',
+            'created_at',
         ]
-        read_only_fields = ['id', 'timestamp']
+        read_only_fields = ['id', 'timestamp', 'created_at']

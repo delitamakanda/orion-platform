@@ -11,12 +11,12 @@ from rest_framework.response import Response
 class AuditLogViewSet(viewsets.ModelViewSet):
     queryset = Audit.objects.all()
     serializer_class = AuditSerializer
-    filterset_fields = ['created_at', 'user__username', 'status']
+    filterset_fields = ['user__username', 'action', 'target_type']
     permission_classes = [permissions.IsAuthenticated]
     http_method_names = ['get']
 
     def get_queryset(self):
-        queryset = super().get_queryset()
+        queryset = super().get_queryset().order_by('-timestamp')
         user = self.request.user
 
         if user.is_superuser:
@@ -27,6 +27,8 @@ class AuditLogViewSet(viewsets.ModelViewSet):
 class LatestAuditLogAPIView(APIView):
     def get(self, request):
         latest_audit_log = AuditLogSelectors.get_latest_audit_log()
+        if not latest_audit_log:
+            return Response(data={}, status=status.HTTP_200_OK)
         serializer = AuditSerializer(latest_audit_log)
         return GenericResponse(data=serializer.data, status=status.HTTP_200_OK)
     
