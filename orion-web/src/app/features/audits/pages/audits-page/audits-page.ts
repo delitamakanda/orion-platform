@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuditStore } from '../../data-access/audit.store';
 
 @Component({
   selector: 'app-audits-page',
-  imports: [],
+  providers: [AuditStore],
   templateUrl: './audits-page.html',
-  styleUrl: './audits-page.css',
+  styleUrls: ['./audits-page.css'],
 })
-export class AuditsPage {}
+export class AuditsPage {
+  readonly store = inject(AuditStore);
+}

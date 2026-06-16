@@ -1,1 +1,11 @@
-<p>audits-page works!</p>
+@if (store.error()) {
+    <p>{{ store.error()?.message }}</p>
+}
+
+@if (store.isLoading()) {
+    <p>Loading...</p>
+}
+
+@for (audit of store.audits(); track $index) {
+    <p>{{ audit.id }}</p>
+}
