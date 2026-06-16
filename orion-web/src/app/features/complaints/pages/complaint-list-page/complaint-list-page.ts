@@ -4,7 +4,6 @@ import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { ComplaintFilters } from '../../components/complaint-filters/complaint-filters';
 import { ComplaintCard } from '../../components/complaint-card/complaint-card';
 import { ComplaintFilter } from '../../models/complaint-filters.model';
-import { formatDateForFilter } from '@app/shared/utils/date.utils';
 
 @Component({
   selector: 'app-complaint-list-page',

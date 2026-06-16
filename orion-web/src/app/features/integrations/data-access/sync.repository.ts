@@ -4,25 +4,25 @@ import { firstValueFrom } from 'rxjs';
 
 @Service()
 export class SyncRepository {
-    private readonly api = inject(SyncApiClient);
+  private readonly api = inject(SyncApiClient);
 
-    readonly filters = signal<({})>({});
+  readonly filters = signal<(obj: Record<string, unknown>) => boolean>(() => true);
 
-    readonly syncResource = resource({
-        loader: async () => {
-            return await firstValueFrom(this.api.findAll());
-        }
-    });
+  readonly syncResource = resource({
+    loader: async () => {
+      return await firstValueFrom(this.api.findAll());
+    },
+  });
 
-    get syncJobs() {
-        return this.syncResource.value() ?? [];
-    }
+  get syncJobs() {
+    return this.syncResource.value() ?? [];
+  }
 
-    get isLoading() {
-        return this.syncResource.isLoading();
-    }
+  get isLoading() {
+    return this.syncResource.isLoading();
+  }
 
-    get error() {
-        return this.syncResource.error();
-    }
+  get error() {
+    return this.syncResource.error();
+  }
 }

@@ -1,9 +1,4 @@
-import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Export } from '@app/core/models/export.model';
+import { Service } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class ExportService {
-}
+@Service()
+export class ExportService {}
