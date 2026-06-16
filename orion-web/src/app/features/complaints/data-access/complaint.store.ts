@@ -10,13 +10,14 @@ export class ComplaintStore {
     readonly isLoading = computed(() => this.repository.isLoading);
     readonly error = computed(() => this.repository.error);
 
-    readonly selectedComplaintId = signal<string | null>(null);
+    readonly selectedComplaintId = signal<string>('');
 
     updateFilters(filter: Partial<ComplaintFilter>) {
         this.repository.filters.update(current => ({ ...current, ...filter }));
     }
 
-    selectComplaint(id: string | null) {
+    selectComplaint(id: string) {
         this.selectedComplaintId.set(id);
     }
+    
 }

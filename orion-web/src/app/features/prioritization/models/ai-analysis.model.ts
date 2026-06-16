@@ -1,11 +1,20 @@
+import { Complaint } from "@app/features/complaints/models/complaint.model";
 import { PriorityLevel } from "./priority-level.model";
 
-export interface AIAnalysis {
-  priority_level: PriorityLevel;
+export interface PriorityAssessment {
+  complaint: Complaint;
+  level: PriorityLevel;
   confidence_score: number;
-  recommended_actions: string[];
   summary: string;
-  detected_risks: string[];
   score: number;
-  explanation: string;
+  explanation: Record<string, string>;
+  model_name: string;
+  provider: string;
+}
+
+export interface PriorityRecommendation {
+  assessment: PriorityAssessment;
+  label: string;
+  weight: number;
+  description: string;
 }
