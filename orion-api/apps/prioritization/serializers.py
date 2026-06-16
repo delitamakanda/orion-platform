@@ -3,9 +3,10 @@ from apps.complaints.serializers import ComplaintSerializer
 from apps.prioritization.models import PriorityAssessment, ReviewDecision
 
 
-class CreatePriorityAssessmentSerializer(serializers.Serializer):
+class CreatePriorityAssessmentSerializer(serializers.ModelSerializer):
 
     class Meta:
+        model = PriorityAssessment
         fields = [
             'complaint',
             'level',
@@ -28,5 +29,26 @@ class CreateReviewDecisionSerializer(serializers.ModelSerializer):
             'final_level',
             'comment',
             'is_override'
+        ]
+        read_only_fields = ['created_at', 'updated_at', 'id']
+
+
+class PriorityAssessmentSerializer(serializers.ModelSerializer):
+    complaint = ComplaintSerializer()
+
+    class Meta:
+        model = PriorityAssessment
+        fields = [
+            'id',
+            'complaint',
+            'score',
+            'level',
+            'confidence_score',
+            'summary',
+            'explanation',
+            'model_name',
+            'provider',
+            'created_at',
+            'updated_at'
         ]
         read_only_fields = ['created_at', 'updated_at', 'id']
