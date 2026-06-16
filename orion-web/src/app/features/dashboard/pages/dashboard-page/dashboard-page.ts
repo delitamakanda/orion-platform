@@ -7,6 +7,9 @@ import { JsonPipe } from '@angular/common';
   imports: [
     JsonPipe,
   ],
+  providers: [
+    DashboardStore,
+  ],
   standalone: true,
   templateUrl: './dashboard-page.html',
   styleUrls: ['./dashboard-page.css'],
