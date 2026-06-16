@@ -81,3 +81,22 @@ Responsabilités :
 
 * Tableaux de bord (KPI, Exports CSV, Excel...)
 
+### launch orion-api
+
+```bash
+C:\DEV\PROTO\orion-platform\orion-api\orion_venv\Scripts\activate
+python manage.py runserver
+```
+
+#### sync all complaints
+
+```bash
+python manage.py sync_job
+```
+
+### launch orion-web
+
+```bash
+npm run start:all
+```
+
