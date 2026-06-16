@@ -12,10 +12,10 @@ class KpiService:
                 'new': Complaint.objects.filter(status='IMPORTED').count(),
             },
             'priorities': {
-                'critical': PriorityAssessment.objects.filter(priority='CRITICAL').count(),
-                'urgent': PriorityAssessment.objects.filter(priority='HIGH').count(),
-                'standard': PriorityAssessment.objects.filter(priority='MEDIUM').count(),
-                'low': PriorityAssessment.objects.filter(priority='LOW').count()
+                'critical': PriorityAssessment.objects.filter(level='CRITICAL').count(),
+                'urgent': PriorityAssessment.objects.filter(level='HIGH').count(),
+                'standard': PriorityAssessment.objects.filter(level='MEDIUM').count(),
+                'low': PriorityAssessment.objects.filter(level='LOW').count()
             },
             'reviews': {
                 'pending': PriorityAssessment.objects.filter(reviews__isnull=True).count(),

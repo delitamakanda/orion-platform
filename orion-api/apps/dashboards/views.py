@@ -12,7 +12,7 @@ class KpiListAPIView(generics.ListAPIView):
 
 class DashboardListAPIView(generics.ListAPIView):
     def get(self, request, *args, **kwargs):
-        dashboard_data = DashboardSelectors.get_overview_dashboard()
+        dashboard_data = DashboardSelectors.get_overview_data()
         return Response(dashboard_data)
     
 

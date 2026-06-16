@@ -4,4 +4,4 @@ class KpiSelectors:
     @staticmethod
     def get_overview_kpi():
         service = KpiService()
-        return service.get_overview_kpi()
+        return service.get_kpi_data()
