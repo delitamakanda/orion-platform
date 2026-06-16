@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NotificationStore } from '../../data-access/notification.store';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-notifications-page',
-  imports: [],
+  imports: [DatePipe],
+  providers: [
+    NotificationStore,
+  ],
   templateUrl: './notifications-page.html',
-  styleUrl: './notifications-page.css',
+  styleUrls: ['./notifications-page.css'],
 })
-export class NotificationsPage {}
+export class NotificationsPage {
+  readonly store = inject(NotificationStore);
+}

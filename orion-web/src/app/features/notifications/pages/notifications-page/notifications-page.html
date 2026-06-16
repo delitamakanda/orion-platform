@@ -1,1 +1,26 @@
-<p>notifications-page works!</p>
+@if (store.isLoading()) {
+  <div class="loading-spinner">
+    is Loading...
+  </div>
+} @else if (store.error()) {
+  <div class="error-message">
+    <p>Error loading notifications: {{ store.error() }}</p>
+  </div>
+} @else {
+  <div class="notifications-list">
+    <ul>
+      @for (notification of store.notifications(); track $index) {
+        <li [class.unread]="!notification.is_read">
+          <p>{{ notification.message }}</p>
+          <small>{{ notification.created_at | date:'short' }}</small>
+          @if (!notification.is_read) {
+            <button (click)="store.markAsRead(notification.id)">Mark as Read</button>
+          }
+        </li>
+      }
+    </ul>
+    @if (store.unreadCount() > 0) {
+      <button (click)="store.markAllAsRead()">Mark All as Read</button>
+    }
+  </div>
+}
