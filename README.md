@@ -27,7 +27,7 @@ Responsabilités :
 * Permettre les tests d'intégration
 
 ### orion-api
-
+[![orion-api](https://github.com/delitamakanda/orion-platform/actions/workflows/django.yml/badge.svg?branch=main&event=push)](https://github.com/delitamakanda/orion-platform/actions/workflows/django.yml)
 Backend principal de la plateforme.
 
 Technologies :
