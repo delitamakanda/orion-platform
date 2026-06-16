@@ -1,1 +1,19 @@
-<p>dashboard-page works!</p>
+@if (store.isLoading()) {
+    <p>Loading...</p>
+}
+
+@if (store.error()) {
+    <p>Error: {{ store.error() }}</p>
+}
+
+@if (store.latest()) {
+    <p>Latest: {{ store.latest() | json }}</p>
+}
+
+@if (store.dashboards()) {
+    <p>Dashboards: {{ store.dashboards() | json }}</p>
+}
+
+@if (store.kpis()) {
+    <p>Kpis: {{ store.kpis() | json }}</p>
+}
