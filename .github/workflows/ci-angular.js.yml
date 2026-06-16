@@ -6,8 +6,12 @@ name: orion-web
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'orion-web/**'
   pull_request:
     branches: [ "main" ]
+    paths:
+      - 'orion-web/**'
 
 jobs:
   build:
