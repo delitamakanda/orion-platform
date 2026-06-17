@@ -1,0 +1,16 @@
+@if (imageUrl()) {
+  <img
+    class="avatar"
+    [src]="imageUrl()!"
+    [alt]="name()"
+    [matTooltip]="name()"
+  />
+} @else {
+  <span
+    class="avatar initials"
+    role="img"
+    [attr.aria-label]="name()"
+    [style.background-color]="color()"
+    [matTooltip]="name()"
+  >{{ initials() }}</span>
+}

@@ -1,0 +1,44 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  object-fit: cover;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.initials {
+  font-family: inherit;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* size variants driven by host class */
+:host.sm .avatar {
+  width: 28px;
+  height: 28px;
+  font-size: 11px;
+}
+
+:host.md .avatar {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+:host.lg .avatar {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+}
