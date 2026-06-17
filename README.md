@@ -4,6 +4,12 @@ Orion est une plateforme d'aide à la priorisation et à l'analyse des plaintes 
 
 L'objectif du projet est de démontrer comment l'ia peut assister les agents du ministère de la justice dans le traitement des dossiers tout en conservant une validation humaine à chaque étape de la plainte.
 
+
+## Screenshot
+
+![Demo](dashboard.png)
+
+
 ## Architecture
 
 ```text
