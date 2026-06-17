@@ -1,1 +1,6 @@
-<p>page-header works!</p>
+<div>
+    <h1 class="mat-headline">{{ title() }}</h1>
+    @if (subtitle()) {
+        <h2 class="mat-title">{{ subtitle() }}</h2>
+    }
+</div>

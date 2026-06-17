@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { MatDialogClose } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-page-header',
-  imports: [],
+  imports: [MatDialogClose],
   templateUrl: './page-header.html',
-  styleUrl: './page-header.css',
+  styleUrls: ['./page-header.css'],
 })
-export class PageHeader {}
+export class PageHeader {
+  readonly title = input.required<string>();
+  readonly subtitle = input<string>();
+}
