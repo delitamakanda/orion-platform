@@ -29,7 +29,11 @@
       [matMenuTriggerFor]="notificationsMenu"
       aria-label="Open notifications menu"
     >
-    <mat-icon>notifications</mat-icon>
+    @if (notificationStore.unreadCount() > 0) {
+      <mat-icon [matBadge]="notificationStore.unreadCount()">notifications</mat-icon>
+    } @else {
+      <mat-icon>notifications</mat-icon>
+    }
   </button>
 </mat-toolbar>
 
@@ -60,6 +64,14 @@
     <mat-divider></mat-divider>
 
     <div class="menu-notifications-content">
+      @if (notificationStore.notifications().length === 0) {
       <p>No notifications</p>
+      } @else {
+      <ul>
+        @for (notification of notificationStore.notifications(); track notification.id) {
+          <li>{{ notification.message }} ttt</li>
+        }
+      </ul>
+      }
     </div>
   </mat-menu>

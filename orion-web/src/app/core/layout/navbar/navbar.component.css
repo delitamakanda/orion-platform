@@ -16,7 +16,8 @@ mat-toolbar {
 }
 
 /* Menu content — rendered via TemplatePortal so component styles apply */
-.menu-user-header {
+.menu-user-header,
+.menu-notifications-content {
   display: flex;
   align-items: center;
   gap: 12px;

@@ -4,6 +4,7 @@ import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { AuthStore } from '@app/features/auth/data-access/auth.store';
 import { AvatarComponent } from '@app/shared/ui/avatar/avatar.component';
 import { siteConfig } from '@app/core/config/site.config';
+import { NotificationStore } from '@app/features/notifications/data-access/notification.store';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ import { siteConfig } from '@app/core/config/site.config';
 export class NavbarComponent {
   private readonly router = inject(Router);
   private readonly store = inject(AuthStore);
+  readonly notificationStore = inject(NotificationStore);
 
   readonly sidebarToggle = output<void>();
 
