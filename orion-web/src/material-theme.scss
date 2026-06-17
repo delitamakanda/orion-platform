@@ -36,3 +36,35 @@ body {
   margin: 0;
   height: 100%;
 }
+
+// snackbar styles
+
+.mat-mdc-snack-bar-container {
+  &.green-success-snackbar {
+    --mat-snack-bar-container-color: #2bbe68;
+    --mat-snack-bar-button-color: #fff;
+    --mat-snack-bar-supporting-text-color: #fff;
+    font-weight: 500;
+  }
+
+  &.red-error-snackbar {
+    --mat-snack-bar-container-color: #ff3737;
+    --mat-snack-bar-button-color: #fff;
+    --mat-snack-bar-supporting-text-color: #fff;
+    font-weight: 500;
+  }
+
+  &.orange-warning-snackbar {
+    --mat-snack-bar-container-color: #ff6f00;
+    --mat-snack-bar-button-color: #fff;
+    --mat-snack-bar-supporting-text-color: #fff;
+    font-weight: 500;
+  }
+
+  &.blue-info-snackbar {
+    --mat-snack-bar-container-color: #2196f3;
+    --mat-snack-bar-button-color: #fff;
+    --mat-snack-bar-supporting-text-color: #fff;
+    font-weight: 500;
+  }
+}
