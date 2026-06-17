@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    (click)="sidebarToggle.emit()"
+    aria-label="Toggle navigation sidebar"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="app-title">{{ title }}</span>
+  <span class="flex-spacer" aria-hidden="true"></span>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="userMenu"
+    aria-label="Open user account menu"
+    [matTooltip]="fullName()"
+    matTooltipPosition="left"
+  >
+    @if (user()) {
+      <app-avatar [name]="fullName()" size="sm" />
+    } @else {
+      <mat-icon>account_circle</mat-icon>
+    }
+  </button>
+</mat-toolbar>
+
+<mat-menu #userMenu="matMenu" xPosition="before">
+  <div class="menu-user-header" role="presentation" (click)="$event.stopPropagation()">
+    <app-avatar [name]="fullName()" size="md" />
+    <div class="user-meta">
+      <span class="user-name">{{ fullName() }}</span>
+      @if (user(); as u) {
+        <span class="user-role">{{ u.role }}</span>
+      }
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span>Log out</span>
+  </button>
+</mat-menu>
