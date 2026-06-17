@@ -23,6 +23,14 @@
       <mat-icon>account_circle</mat-icon>
     }
   </button>
+
+    <button 
+      mat-icon-button
+      [matMenuTriggerFor]="notificationsMenu"
+      aria-label="Open notifications menu"
+    >
+    <mat-icon>notifications</mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-menu #userMenu="matMenu" xPosition="before">
@@ -43,3 +51,15 @@
     <span>Log out</span>
   </button>
 </mat-menu>
+
+ <mat-menu #notificationsMenu="matMenu" xPosition="before">
+    <div class="menu-user-header" role="presentation" (click)="$event.stopPropagation()">
+      <span class="user-name">Notifications</span>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="menu-notifications-content">
+      <p>No notifications</p>
+    </div>
+  </mat-menu>
