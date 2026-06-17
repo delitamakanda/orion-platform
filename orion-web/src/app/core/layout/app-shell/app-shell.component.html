@@ -1,6 +1,10 @@
+@if (service.loading()) {
+  <mat-spinner></mat-spinner>
+} @else {
 <app-navbar (sidebarToggle)="onSidebarToggle()"></app-navbar>
 <app-sidebar>
   <main>
     <router-outlet></router-outlet>
   </main>
 </app-sidebar>
+}
