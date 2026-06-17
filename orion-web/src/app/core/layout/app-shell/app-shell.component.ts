@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
+import { NavbarComponent } from '../navbar/navbar.component';
+
 @Component({
   selector: 'app-shell',
-  imports: [
-    SidebarComponent,
-    RouterOutlet,
-    MATERIAL_IMPORTS,
-  ],
-  standalone: true,
+  imports: [SidebarComponent, NavbarComponent, RouterOutlet],
   templateUrl: './app-shell.component.html',
   styleUrls: ['./app-shell.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppShellComponent {
+  @ViewChild(SidebarComponent) private readonly sidebar!: SidebarComponent;
+
+  protected onSidebarToggle(): void {
+    this.sidebar.toggle();
+  }
 }
