@@ -4,17 +4,50 @@
 }
 
 @if (store.error()) {
-    <p>Error: {{ store.error() }}</p>
+    <app-alert type="error" [message]="'Error: ' + store.error()"></app-alert>
 }
 
-@if (store.latest()) {
+@if (store.latest().length > 0) {
     <p>Latest: {{ store.latest() | json }}</p>
 }
 
+
 @if (store.dashboards()) {
-    <p>Dashboards: {{ store.dashboards() | json }}</p>
+<mat-grid-list cols="4" rowHeight="2:1">
+    <!-- complaints -->
+    <mat-grid-tile><app-stat-card [title]="'Total Complaints'" [value]="store.dashboards()?.complaints?.total"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'New Complaints'" [value]="store.dashboards()?.complaints?.new"></app-stat-card></mat-grid-tile>
+    <!-- priorities -->
+    <mat-grid-tile><app-stat-card [title]="'Critical'" [value]="store.dashboards()?.priorities?.critical"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'High'" [value]="store.dashboards()?.priorities?.urgent"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'Medium'" [value]="store.dashboards()?.priorities?.standard"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'Low'" [value]="store.dashboards()?.priorities?.low"></app-stat-card></mat-grid-tile>
+    <!-- reviews -->
+     <mat-grid-tile><app-stat-card [title]="'Pending Reviews'" [value]="store.dashboards()?.reviews?.pending"></app-stat-card></mat-grid-tile>
+     <mat-grid-tile><app-stat-card [title]="'Completed Reviews'" [value]="store.dashboards()?.reviews?.completed"></app-stat-card></mat-grid-tile>
+     <mat-grid-tile><app-stat-card [title]="'Overrides Reviews'" [value]="store.dashboards()?.reviews?.overrides"></app-stat-card></mat-grid-tile>
+     <!-- integrations -->
+    <mat-grid-tile><app-stat-card [title]="'Last sync status'" [value]="store.dashboards()?.integrations?.last_sync_status"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'Last sync time'" [value]="store.dashboards()?.integrations?.last_sync_at | date:'short'"></app-stat-card></mat-grid-tile>
+</mat-grid-list>
 }
 
 @if (store.kpis()) {
-    <p>Kpis: {{ store.kpis() | json }}</p>
+    <mat-grid-list cols="4" rowHeight="2:1">
+    <!-- complaints -->
+    <mat-grid-tile><app-stat-card [title]="'Total Complaints'" [value]="store.kpis()?.complaints?.total"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'New Complaints'" [value]="store.kpis()?.complaints?.new"></app-stat-card></mat-grid-tile>
+    <!-- priorities -->
+    <mat-grid-tile><app-stat-card [title]="'Critical'" [value]="store.kpis()?.priorities?.critical"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'High'" [value]="store.kpis()?.priorities?.urgent"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'Medium'" [value]="store.kpis()?.priorities?.standard"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'Low'" [value]="store.kpis()?.priorities?.low"></app-stat-card></mat-grid-tile>
+    <!-- reviews -->
+     <mat-grid-tile><app-stat-card [title]="'Pending Reviews'" [value]="store.kpis()?.reviews?.pending"></app-stat-card></mat-grid-tile>
+     <mat-grid-tile><app-stat-card [title]="'Completed Reviews'" [value]="store.kpis()?.reviews?.completed"></app-stat-card></mat-grid-tile>
+     <mat-grid-tile><app-stat-card [title]="'Overrides Reviews'" [value]="store.kpis()?.reviews?.overrides"></app-stat-card></mat-grid-tile>
+     <!-- integrations -->
+    <mat-grid-tile><app-stat-card [title]="'Last sync status'" [value]="store.kpis()?.integrations?.last_sync_status"></app-stat-card></mat-grid-tile>
+    <mat-grid-tile><app-stat-card [title]="'Last sync time'" [value]="store.kpis()?.integrations?.last_sync_at | date:'short'"></app-stat-card></mat-grid-tile>
+</mat-grid-list>
 }
