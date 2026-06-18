@@ -8,4 +8,6 @@
 
 @for (audit of store.audits(); track $index) {
     <p>{{ audit.id }}</p>
+    <p>{{ audit.action }}</p>
+    <p>{{ audit.timestamp }}</p>
 }

@@ -6,22 +6,22 @@ import { Audit } from '../models/audit.model';
 
 @Service()
 export class AuditApiClient {
-    private readonly http = inject(HttpClient);
-    private readonly config = inject(API_CONFIG_TOKEN);
+  private readonly http = inject(HttpClient);
+  private readonly config = inject(API_CONFIG_TOKEN);
 
-    findAll() {
-        return this.http.get<{ data: { results: Audit[] } }>(`${this.config.backendUrl}/audits/`).pipe(
-            map(response => response.data.results)
-        );
-    }
+  findAll() {
+    return this.http
+      .get<{ data: { results: Audit[] } }>(`${this.config.backendUrl}/audits/`)
+      .pipe(map((response) => response.data.results));
+  }
 
-    findOne(username: string) {
-        return this.http.get<{ data: Audit }>(`${this.config.backendUrl}/audits/${username}/`).pipe(
-            map(response => response.data)
-        );
-    }
+  findOne(username: string) {
+    return this.http
+      .get<{ data: Audit }>(`${this.config.backendUrl}/audits/user/${username}/`)
+      .pipe(map((response) => response.data));
+  }
 
-    findLatest() {
-        return this.http.get<{ data: Audit }>(`${this.config.backendUrl}/audits/latest/`);
-    }
+  findLatest() {
+    return this.http.get<{ data: Audit }>(`${this.config.backendUrl}/audits/latest/`);
+  }
 }
