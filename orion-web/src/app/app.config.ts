@@ -4,6 +4,7 @@ import {
   provideBrowserGlobalErrorListeners,
   provideAppInitializer,
   provideZonelessChangeDetection,
+  LOCALE_ID,
 } from '@angular/core';
 import { provideRouter, withComponentInputBinding, withInMemoryScrolling, withViewTransitions } from '@angular/router';
 
@@ -18,6 +19,9 @@ import { errorInterceptor } from './core/api/error.interceptor';
 import { AuthStore, TOKEN_KEY } from '@app/features/auth/data-access/auth.store';
 import { StorageService } from '@app/core/services/storage.service';
 import { catchError, firstValueFrom, of } from 'rxjs';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr-FR');
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -29,6 +33,10 @@ export const appConfig: ApplicationConfig = {
       useValue: API_CONFIG,
     },
     ...MATERIAL_PROVIDERS,
+    {
+      provide: LOCALE_ID,
+      useValue: 'fr-FR',
+    },
     provideRouter(
       routes,
       withViewTransitions(),
