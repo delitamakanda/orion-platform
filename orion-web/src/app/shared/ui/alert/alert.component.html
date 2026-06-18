@@ -1,0 +1,6 @@
+<div #alert class="alert" [ngClass]="'alert-' + type()" role="alert">
+  <span>{{ message() }}</span>
+  <button mat-icon-button class="close" aria-label="Close" (click)="dismiss()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
