@@ -4,10 +4,11 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { LoadingService } from '@app/core/services/loading.service';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-shell',
-  imports: [SidebarComponent, NavbarComponent, RouterOutlet, MATERIAL_IMPORTS],
+  imports: [SidebarComponent, NavbarComponent, FooterComponent, RouterOutlet, MATERIAL_IMPORTS],
   templateUrl: './app-shell.component.html',
   styleUrls: ['./app-shell.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
