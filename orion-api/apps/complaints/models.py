@@ -1,6 +1,6 @@
 
 from django.db import models
-
+from apps.accounts.models import CustomUser
 class Complaint(models.Model):
     class Status(models.TextChoices):
         IMPORTED = 'imported', 'Imported'
@@ -29,3 +29,8 @@ class Complaint(models.Model):
 
     received_at = models.DateTimeField()
     imported_at = models.DateTimeField(auto_now_add=True)
+
+    def assigned_to(self):
+        # assigned to random user with role magistrat or procureur
+        magistrat_or_procureur_users = CustomUser.objects.filter(role__in=['magistrat', 'procureur'])
+        return magistrat_or_procureur_users.order_by('?').first() if magistrat_or_procureur_users.exists() else None
