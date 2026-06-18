@@ -5,8 +5,10 @@ from apps.complaints.models import Complaint
 from apps.prioritization.serializers import CreatePriorityAssessmentSerializer, CreateReviewDecisionSerializer, PriorityAssessmentSerializer
 from apps.common.responses import GenericResponse
 from rest_framework import status
+from apps.accounts.permissions import IsMagistratOrHigher
 
 class CreateAssessmentAPIView(APIView):
+    permission_classes = [IsMagistratOrHigher]
     def post(self, request):
         complaint = Complaint.objects.get(id=request.data.get('complaint_id'))
         assessment = PrioritizationService().prioritize(complaint)
@@ -16,6 +18,7 @@ class CreateAssessmentAPIView(APIView):
         return GenericResponse(serializer.data, status=status.HTTP_201_CREATED)
 
 class CreateReviewDecisionAPIView(APIView):
+    permission_classes = [IsMagistratOrHigher]
     def post(self, request):
         serializer = CreateReviewDecisionSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)

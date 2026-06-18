@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, logout
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from apps.accounts.permissions import IsAdministrateur
+from rest_framework.viewsets import ModelViewSet
 
 class RegisterUserView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
@@ -64,4 +66,15 @@ class UserDetailView(generics.RetrieveAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+    
+
+class UserAdminViewSet(ModelViewSet):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+
+    def get_permissions(self):
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:
+            if not IsAdministrateur().has_permission(self.request, self):
+                self.permission_denied(self.request, message="You do not have permission to perform this action.")
+        return super().get_permissions()
 
