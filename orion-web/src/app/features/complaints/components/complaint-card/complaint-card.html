@@ -1,5 +1,16 @@
-<div class="complaint-item">
-    <h3>{{ complaint().title }}</h3>
-    <p>{{ complaint().description }}</p>
-    <p>Status: {{ complaint().status }}</p>
-</div>
+<mat-card class="complaint-item">
+    <mat-card-title>{{ complaint().title }}</mat-card-title>
+    <mat-card-content>
+        <p>{{ complaint().description }}</p>
+        <p>Created At: {{ complaint().created_at | date }}</p>
+        <p>Incident Date: {{ complaint().incident_date | date }}</p>
+        <p>Reference: {{ complaint().reference }}</p>
+        <p>Victime vulnérable: {{ complaint().vulnerability_victim ? 'Oui' : 'Non' }}</p>
+        <p>Localisation: {{ complaint().location }}</p>
+        <p>Category: {{ complaint().category }}</p>
+        
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="onSelectComplaint()">Voir les détails</button>
+    </mat-card-actions>
+</mat-card>
