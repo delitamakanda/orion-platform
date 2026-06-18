@@ -1,5 +1,14 @@
+:host {
+  display: block;
+}
+
 mat-sidenav-container {
   height: 100%;
+}
+
+/* Allow inner flex layout to control scroll instead of mat-sidenav-content */
+:host ::ng-deep .mat-drawer-content {
+  overflow: hidden;
 }
 
 mat-sidenav {
