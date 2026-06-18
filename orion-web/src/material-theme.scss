@@ -8,6 +8,7 @@
 html {
   color-scheme: light dark;
   height: 100%;
+  overflow: hidden;
   @include mat.theme(
     (
       color: (
@@ -29,6 +30,8 @@ body {
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
   // user's system settings.
   color-scheme: light;
+  height: 100%;
+  overflow: hidden;
 
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
@@ -39,7 +42,7 @@ body {
 
   // Reset the user agent margin.
   margin: 0;
-  height: 100%;
+  padding: 0;
 }
 
 // snackbar styles
