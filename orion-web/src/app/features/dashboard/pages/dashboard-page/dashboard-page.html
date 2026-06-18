@@ -1,53 +1,74 @@
-<app-page-header title="Dashboard" subtitle="Overview"></app-page-header>
+<app-page-header title="Dashboard" subtitle="Vue d'ensemble des indicateurs clés"></app-page-header>
+
 @if (store.isLoading()) {
-    <p>Loading...</p>
+  <div class="flex items-center justify-center py-16">
+    <mat-spinner diameter="40" aria-label="Chargement en cours"></mat-spinner>
+  </div>
 }
 
 @if (store.error()) {
-    <app-alert type="error" [message]="'Error: ' + store.error()"></app-alert>
+  <div class="mt-4">
+    <app-alert type="error" [message]="'Erreur : ' + store.error()"></app-alert>
+  </div>
 }
 
-@if (store.latest().length > 0) {
-    <p>Latest: {{ store.latest() | json }}</p>
-}
+@if (data(); as d) {
+  <div class="mt-6 space-y-8">
 
+    <!-- Complaints -->
+    <section aria-labelledby="section-complaints">
+      <h2 id="section-complaints" class="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+        Plaintes
+      </h2>
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <app-stat-card title="Total des plaintes" [value]="d.complaints?.total" icon="inbox" variant="info" />
+        <app-stat-card title="Nouvelles plaintes" [value]="d.complaints?.new" icon="fiber_new" variant="default" />
+      </div>
+    </section>
 
-@if (store.dashboards()) {
-<mat-grid-list cols="4" rowHeight="2:1">
-    <!-- complaints -->
-    <mat-grid-tile><app-stat-card [title]="'Total Complaints'" [value]="store.dashboards()?.complaints?.total"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'New Complaints'" [value]="store.dashboards()?.complaints?.new"></app-stat-card></mat-grid-tile>
-    <!-- priorities -->
-    <mat-grid-tile><app-stat-card [title]="'Critical'" [value]="store.dashboards()?.priorities?.critical"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'High'" [value]="store.dashboards()?.priorities?.urgent"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'Medium'" [value]="store.dashboards()?.priorities?.standard"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'Low'" [value]="store.dashboards()?.priorities?.low"></app-stat-card></mat-grid-tile>
-    <!-- reviews -->
-     <mat-grid-tile><app-stat-card [title]="'Pending Reviews'" [value]="store.dashboards()?.reviews?.pending"></app-stat-card></mat-grid-tile>
-     <mat-grid-tile><app-stat-card [title]="'Completed Reviews'" [value]="store.dashboards()?.reviews?.completed"></app-stat-card></mat-grid-tile>
-     <mat-grid-tile><app-stat-card [title]="'Overrides Reviews'" [value]="store.dashboards()?.reviews?.overrides"></app-stat-card></mat-grid-tile>
-     <!-- integrations -->
-    <mat-grid-tile><app-stat-card [title]="'Last sync status'" [value]="store.dashboards()?.integrations?.last_sync_status"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'Last sync time'" [value]="store.dashboards()?.integrations?.last_sync_at | date:'short'"></app-stat-card></mat-grid-tile>
-</mat-grid-list>
-}
+    <!-- Priorities -->
+    <section aria-labelledby="section-priorities">
+      <h2 id="section-priorities" class="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+        Priorités
+      </h2>
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <app-stat-card title="Critique" [value]="d.priorities?.critical" icon="report" variant="critical" />
+        <app-stat-card title="Élevée" [value]="d.priorities?.urgent" icon="warning" variant="high" />
+        <app-stat-card title="Moyenne" [value]="d.priorities?.standard" icon="remove_circle_outline" variant="medium" />
+        <app-stat-card title="Faible" [value]="d.priorities?.low" icon="arrow_circle_down" variant="low" />
+      </div>
+    </section>
 
-@if (store.kpis()) {
-    <mat-grid-list cols="4" rowHeight="2:1">
-    <!-- complaints -->
-    <mat-grid-tile><app-stat-card [title]="'Total Complaints'" [value]="store.kpis()?.complaints?.total"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'New Complaints'" [value]="store.kpis()?.complaints?.new"></app-stat-card></mat-grid-tile>
-    <!-- priorities -->
-    <mat-grid-tile><app-stat-card [title]="'Critical'" [value]="store.kpis()?.priorities?.critical"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'High'" [value]="store.kpis()?.priorities?.urgent"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'Medium'" [value]="store.kpis()?.priorities?.standard"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'Low'" [value]="store.kpis()?.priorities?.low"></app-stat-card></mat-grid-tile>
-    <!-- reviews -->
-     <mat-grid-tile><app-stat-card [title]="'Pending Reviews'" [value]="store.kpis()?.reviews?.pending"></app-stat-card></mat-grid-tile>
-     <mat-grid-tile><app-stat-card [title]="'Completed Reviews'" [value]="store.kpis()?.reviews?.completed"></app-stat-card></mat-grid-tile>
-     <mat-grid-tile><app-stat-card [title]="'Overrides Reviews'" [value]="store.kpis()?.reviews?.overrides"></app-stat-card></mat-grid-tile>
-     <!-- integrations -->
-    <mat-grid-tile><app-stat-card [title]="'Last sync status'" [value]="store.kpis()?.integrations?.last_sync_status"></app-stat-card></mat-grid-tile>
-    <mat-grid-tile><app-stat-card [title]="'Last sync time'" [value]="store.kpis()?.integrations?.last_sync_at | date:'short'"></app-stat-card></mat-grid-tile>
-</mat-grid-list>
+    <!-- Reviews -->
+    <section aria-labelledby="section-reviews">
+      <h2 id="section-reviews" class="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+        Révisions
+      </h2>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <app-stat-card title="En attente" [value]="d.reviews?.pending" icon="pending_actions" variant="medium" />
+        <app-stat-card title="Complétées" [value]="d.reviews?.completed" icon="check_circle" variant="success" />
+        <app-stat-card title="Dérogations" [value]="d.reviews?.overrides" icon="rule" variant="high" />
+      </div>
+    </section>
+
+    <!-- Integration -->
+    <section aria-labelledby="section-integration">
+      <h2 id="section-integration" class="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+        Intégration
+      </h2>
+      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <app-stat-card
+          title="Statut de synchronisation"
+          [value]="d.integrations?.last_sync_status"
+          icon="sync"
+          variant="info" />
+        <app-stat-card
+          title="Dernière synchronisation"
+          [value]="d.integrations?.last_sync_at | date: 'short'"
+          icon="schedule"
+          variant="default" />
+      </div>
+    </section>
+
+  </div>
 }
