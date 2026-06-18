@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from apps.accounts.permissions import IsAdministrateur
 from rest_framework.viewsets import ModelViewSet
+from apps.audits.services.audit_log_service import AuditLogService
 
 class RegisterUserView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
@@ -40,6 +41,13 @@ class LoginView(views.APIView):
             return Response({'error': 'Invalid email or password'}, status=status.HTTP_401_UNAUTHORIZED)
 
         token, created = Token.objects.get_or_create(user=user)
+        AuditLogService.record(
+            user=user,
+            action='USER_LOGGED_IN',
+            target_type='CustomUser',
+            metadata={'email': user.email},
+            request=request
+        )
         return Response({'user': CustomUserSerializer(user).data, 'token': token.key}, status=status.HTTP_200_OK)
     
 
@@ -47,6 +55,13 @@ class LogoutView(views.APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
+        AuditLogService.record(
+            user=request.user,
+            action='USER_LOGGED_OUT',
+            target_type='CustomUser',
+            metadata={'email': request.user.email},
+            request=request
+        )
         logout(request)
         return Response(status=status.HTTP_200_OK)
 
