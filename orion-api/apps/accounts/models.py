@@ -43,6 +43,18 @@ class CustomUser(AbstractUser):
     class Meta:
         ordering = ['-id']
 
+    def is_agent(self):
+        return self.role == 'agent'
+    
+    def is_magistrat(self):
+        return self.role == 'magistrat'
+    
+    def is_procureur(self):
+        return self.role == 'procureur'
+    
+    def is_administrateur(self):
+        return self.role == 'administrateur'
+
 class Profile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='profile')
     phone_number = models.CharField(max_length=20, null=True, blank=True)
