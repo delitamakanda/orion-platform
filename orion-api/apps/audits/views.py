@@ -27,20 +27,11 @@ class AuditLogViewSet(viewsets.ModelViewSet):
 class LatestAuditLogAPIView(APIView):
     def get(self, request):
         latest_audit_log = AuditLogSelectors.get_latest_audit_log()
-        if not latest_audit_log:
-            return Response(data={}, status=status.HTTP_200_OK)
         serializer = AuditSerializer(latest_audit_log)
         return GenericResponse(data=serializer.data, status=status.HTTP_200_OK)
     
 class UserAuditLogsAPIView(APIView):
-    def get(self, request):
-        user = request.user
-        audit_logs = AuditLogSelectors.get_audit_logs_by_user(user.id)
-        serializer = AuditSerializer(audit_logs, many=True)
-        return Response(data=serializer.data, status=status.HTTP_200_OK)
-    
-class ListAuditLogsAPIView(APIView):
-    def get(self, request):
-        audit_logs = AuditLogSelectors.get_audit_logs()
+    def get(self, request, username):
+        audit_logs = AuditLogSelectors.get_audit_logs_by_user(username)
         serializer = AuditSerializer(audit_logs, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)

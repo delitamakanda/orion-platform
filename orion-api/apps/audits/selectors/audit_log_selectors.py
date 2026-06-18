@@ -6,5 +6,5 @@ class AuditLogSelectors:
         return Audit.objects.order_by('-timestamp').first() or None
 
     @staticmethod
-    def get_audit_logs_by_user(user_id):
-        return Audit.objects.filter(user_id=user_id).order_by('-timestamp') or None
+    def get_audit_logs_by_user(username):
+        return Audit.objects.filter(user__username=username).order_by('-timestamp') or None
