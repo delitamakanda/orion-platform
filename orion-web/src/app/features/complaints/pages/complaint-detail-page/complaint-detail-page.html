@@ -3,4 +3,5 @@
 {{ store.selectedComplaint()?.description}}
 {{ store.selectedComplaint()?.status}}
 {{ store.selectedComplaint()?.created_at | date:'short'}}
+<a mat-raised-button color="primary" role="button" tabindex="0" (keydown)="analyzeComplaint()" (click)="analyzeComplaint()">Analyze Complaint</a>
 
