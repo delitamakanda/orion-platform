@@ -1,6 +1,7 @@
 import json
 from django.conf import settings
 from mistralai.client import Mistral
+from apps.prioritization.services.rule_based_prioritization_service import RuleBasedPrioritizationService
 
 from apps.complaints.models import Complaint
 
@@ -8,6 +9,7 @@ class MistralProvider:
     def __init__(self):
         self.client = Mistral(api_key=settings.MISTRAL_API_KEY)
         self.model_name = settings.MISTRAL_MODEL_NAME
+        self.rule_based_service = RuleBasedPrioritizationService()
 
     def analyze(self, complaint):
         prompt = self._build_prompt(complaint)
@@ -32,6 +34,7 @@ class MistralProvider:
         return json.loads(content)
     
     def _build_prompt(self, complaint: Complaint) -> str:
+        score = self.rule_based_service.apply_rules(complaint)
         return f"""
 
         Analyse cette plainte et retourne un JSON valide.
@@ -44,11 +47,19 @@ class MistralProvider:
         - Date de dépôt: {complaint.received_at.isoformat() if complaint.received_at else 'N/A'}
         - Localisation: {complaint.location if complaint.location else 'N/A'}
 
+        Le score de priorisation calculé par les règles métier est : {score}.
+        Détermine le niveau (level) STRICTEMENT selon ce barème basé sur le score :
+        - score <= 0    → "low"
+        - 1  à 29      → "medium"
+        - 30 à 59      → "high"
+        - 60 et plus   → "critical"
+        Ne dévie pas de ce barème, même si la description semble grave.
+
         Format attendu:
         {{
-        "confidence_score": 0,
-        "level": "low|medium|high|critical",
-        "score": 0,
+        "confidence_score": {score},
+        "level": "<low|medium|high|critical selon le barème ci-dessus>",
+        "score": {score},
         "summary": "<string>",
         "model_name": "{self.model_name}",
         "provider": "mistral",

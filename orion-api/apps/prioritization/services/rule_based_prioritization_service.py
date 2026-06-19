@@ -1,4 +1,4 @@
-from django.utils import timedelta
+from datetime import timedelta
 
 from apps.complaints.models import Complaint
 
