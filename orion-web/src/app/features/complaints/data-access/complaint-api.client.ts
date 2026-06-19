@@ -7,19 +7,19 @@ import { ComplaintFilter } from '@app/features/complaints/models/complaint-filte
 
 @Service()
 export class ComplaintApiClient {
-    private readonly http = inject(HttpClient);
-    private readonly config = inject(API_CONFIG_TOKEN);
+  private readonly http = inject(HttpClient);
+  private readonly config = inject(API_CONFIG_TOKEN);
 
-    findAll(filter?: ComplaintFilter) {
-        const params = { ...filter };
-        return this.http.get<{ data: { results: Complaint[]} }>(`${this.config.backendUrl}/complaints/`, { params }).pipe(
-            map(response => response.data.results || [])
-        );
-    }
+  findAll(filter?: ComplaintFilter) {
+    const params = { ...filter };
+    return this.http
+      .get<{ data: { results: Complaint[] } }>(`${this.config.backendUrl}/complaints/`, { params })
+      .pipe(map((response) => response.data.results || []));
+  }
 
-    findOne(id: string) {
-        return this.http.get<{ data: Complaint }>(`${this.config.backendUrl}/complaints/${id}/`).pipe(
-            map(complaint => complaint['data'] || complaint)
-        );
-    }
+  findOne(id: number) {
+    return this.http
+      .get<{ data: Complaint }>(`${this.config.backendUrl}/complaints/${id}/`)
+      .pipe(map((complaint) => complaint['data'] || complaint));
+  }
 }

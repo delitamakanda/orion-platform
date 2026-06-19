@@ -1,7 +1,7 @@
-import { ComplaintStatus } from "./complaint-status.model";
+import { ComplaintStatus } from './complaint-status.model';
 
 export interface Complaint {
-  id: string;
+  id: number;
   reference: string;
   title: string;
   source_system: string;
@@ -16,4 +16,3 @@ export interface Complaint {
   created_at: string;
   updated_at: string;
 }
-

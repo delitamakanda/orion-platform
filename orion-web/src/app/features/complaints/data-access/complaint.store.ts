@@ -24,7 +24,7 @@ export class ComplaintStore {
     this._selectedComplaint.set(complaint);
   }
 
-  findComplaintById(id: string) {
+  findComplaintById(id: number) {
     return this.repository.findComplaintById(id);
   }
 }

@@ -34,7 +34,7 @@ export class ComplaintRepository {
     return this.complaintsResource.error();
   }
 
-  findComplaintById(id: string) {
+  findComplaintById(id: number) {
     return this.api.findOne(id);
   }
 }
