@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, ViewChild } from '@angular/core';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
+import { RbacService } from '@app/core/services/rbac.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,8 +11,9 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./sidebar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   @ViewChild('sidenav') private readonly sidenav!: MatSidenav;
+  readonly service = inject(RbacService);
 
   protected readonly routes: { path: string; label: string; icon: string }[] = [
     { path: '/dashboard', label: 'Dashboard', icon: 'dashboard' },
@@ -24,5 +26,17 @@ export class SidebarComponent {
 
   toggle(): void {
     this.sidenav.toggle();
+  }
+
+  ngOnInit(): void {
+    if (!this.service.canAccess(['administrateur', 'procureur'])) {
+      this.routes.splice(0, 1);
+    } else if (!this.service.canReviewPriority()) {
+      this.routes.splice(2, 1);
+    } else if (!this.service.canViewAudits()) {
+      this.routes.splice(4, 1);
+    } else if (!this.service.canAccess(['administrateur'])) {
+      this.routes.splice(3, 1);
+    }
   }
 }
