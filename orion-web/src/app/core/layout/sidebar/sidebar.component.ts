@@ -22,6 +22,7 @@ export class SidebarComponent implements OnInit {
     { path: '/integrations/sync', label: 'Synchronisation', icon: 'sync' },
     { path: '/audits', label: 'Audits', icon: 'gavel' },
     { path: '/notifications', label: 'Notifications', icon: 'notifications' },
+    { path: '/administration', label: 'Administration', icon: 'admin_panel_settings' },
   ];
 
   toggle(): void {
@@ -35,7 +36,9 @@ export class SidebarComponent implements OnInit {
       this.routes.splice(2, 1);
     } else if (!this.service.canViewAudits()) {
       this.routes.splice(4, 1);
-    } else if (!this.service.canAccess(['administrateur'])) {
+    } else if (!this.service.canManageUsers()) {
+      this.routes.splice(6, 1);
+    } else if (!this.service.canViewSynchronization()) {
       this.routes.splice(3, 1);
     }
   }

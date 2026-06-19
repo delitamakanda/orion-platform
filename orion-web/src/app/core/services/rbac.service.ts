@@ -25,4 +25,8 @@ export class RbacService {
   canSyncComplaints(): boolean {
     return this.canAccess(['administrateur', 'agent']);
   }
+
+  canViewSynchronization(): boolean {
+    return this.canAccess(['administrateur']);
+  }
 }
