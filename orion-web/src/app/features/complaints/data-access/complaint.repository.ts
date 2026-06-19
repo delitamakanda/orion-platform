@@ -6,31 +6,35 @@ import { ComplaintFilter } from '@app/features/complaints/models/complaint-filte
 
 @Service()
 export class ComplaintRepository {
-    private readonly api = inject(ComplaintApiClient);
+  private readonly api = inject(ComplaintApiClient);
 
-    readonly filters = signal<ComplaintFilter>({
-        reference: '',
-        vulnerability_victim: true,
-        incident_date_lte: '',
-        incident_date_gte: '',
-        created_at_lte: '',
-        created_at_gte: '',
-    });
+  readonly filters = signal<ComplaintFilter>({
+    reference: '',
+    vulnerability_victim: true,
+    incident_date_lte: '',
+    incident_date_gte: '',
+    created_at_lte: '',
+    created_at_gte: '',
+  });
 
-    readonly complaintsResource = rxResource<Complaint[], ComplaintFilter>({
-        params: () => this.filters(),
-        stream: ({ params: filter }) => this.api.findAll(filter)
-    });
+  readonly complaintsResource = rxResource<Complaint[], ComplaintFilter>({
+    params: () => this.filters(),
+    stream: ({ params: filter }) => this.api.findAll(filter),
+  });
 
-    get complaints() {
-        return this.complaintsResource.value() ?? [];
-    }
+  get complaints() {
+    return this.complaintsResource.value() ?? [];
+  }
 
-    get isLoading() {
-        return this.complaintsResource.isLoading();
-    }
+  get isLoading() {
+    return this.complaintsResource.isLoading();
+  }
 
-    get error() {
-        return this.complaintsResource.error();
-    }
+  get error() {
+    return this.complaintsResource.error();
+  }
+
+  findComplaintById(id: string) {
+    return this.api.findOne(id);
+  }
 }

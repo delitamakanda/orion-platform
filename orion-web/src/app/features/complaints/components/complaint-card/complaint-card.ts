@@ -1,7 +1,9 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Complaint } from '../../models/complaint.model';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { DatePipe } from '@angular/common';
+import { ComplaintStore } from '../../data-access/complaint.store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-complaint-card',
@@ -10,10 +12,12 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./complaint-card.css'],
 })
 export class ComplaintCard {
-  complaint = input.required<Complaint>();
+  readonly complaint = input.required<Complaint>();
+  readonly store = inject(ComplaintStore);
+  private readonly router = inject(Router);
 
   onSelectComplaint(): void {
-    // Logic to handle complaint selection, e.g., navigate to a detail page or emit an event
-    console.log('Selected complaint:', this.complaint());
+    this.store.selectComplaint(this.complaint());
+    this.router.navigate(['/complaints', this.complaint().id]);
   }
 }

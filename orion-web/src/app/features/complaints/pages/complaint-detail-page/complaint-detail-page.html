@@ -1,1 +1,6 @@
-<p>complaint-detail-page works!</p>
+{{ store.selectedComplaint()?.category}}
+{{ store.selectedComplaint()?.title}}
+{{ store.selectedComplaint()?.description}}
+{{ store.selectedComplaint()?.status}}
+{{ store.selectedComplaint()?.created_at | date:'short'}}
+
