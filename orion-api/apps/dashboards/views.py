@@ -23,6 +23,6 @@ class TopPriorityComplaintsAPIView(generics.ListAPIView):
     permission_classes = [IsProcureurOrHigher]
     def get(self, request, *args, **kwargs):
         top_complaints = DashboardSelectors.get_top_priority_categories()
-        data = [{'id': c.id, 'title': c.title} for c in top_complaints]
+        data = [{'id': c.id, 'title': c.complaint.title} for c in top_complaints]
         return Response(data)
     

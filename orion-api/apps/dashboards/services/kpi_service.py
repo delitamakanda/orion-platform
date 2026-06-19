@@ -9,13 +9,13 @@ class KpiService:
         return {
             'complaints': {
                 'total': Complaint.objects.count(),
-                'new': Complaint.objects.filter(status='IMPORTED').count(),
+                'new': Complaint.objects.filter(status='imported').count(),
             },
             'priorities': {
-                'critical': PriorityAssessment.objects.filter(level='CRITICAL').count(),
-                'urgent': PriorityAssessment.objects.filter(level='HIGH').count(),
-                'standard': PriorityAssessment.objects.filter(level='MEDIUM').count(),
-                'low': PriorityAssessment.objects.filter(level='LOW').count()
+                'critical': PriorityAssessment.objects.filter(level='critical').count(),
+                'urgent': PriorityAssessment.objects.filter(level='high').count(),
+                'standard': PriorityAssessment.objects.filter(level='medium').count(),
+                'low': PriorityAssessment.objects.filter(level='low').count()
             },
             'reviews': {
                 'pending': PriorityAssessment.objects.filter(reviews__isnull=True).count(),
