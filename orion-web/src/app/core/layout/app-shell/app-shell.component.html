@@ -1,14 +1,16 @@
+<app-navbar (sidebarToggle)="onSidebarToggle()"></app-navbar>
+<app-sidebar class="flex-1 min-h-0">
+  <main class="flex flex-col h-full">
+    <div class="flex-1 overflow-y-auto min-h-0 px-4 py-6 sm:px-6 lg:px-8">
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer />
+  </main>
+</app-sidebar>
+
 @if (service.loading()) {
-  <mat-spinner></mat-spinner>
-} @else {
-  <app-navbar (sidebarToggle)="onSidebarToggle()"></app-navbar>
-  <app-sidebar class="flex-1 min-h-0">
-    <main class="flex flex-col h-full">
-      <div class="flex-1 overflow-y-auto min-h-0 px-4 py-6 sm:px-6 lg:px-8">
-        <router-outlet></router-outlet>
-      </div>
-      <app-footer />
-    </main>
-  </app-sidebar>
+  <div class="h-screen w-screen top-0 left-0 z-50 flex items-center justify-center">
+    <mat-spinner></mat-spinner>
+  </div>
 }
   
