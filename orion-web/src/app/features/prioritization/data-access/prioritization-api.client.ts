@@ -15,8 +15,8 @@ export class PrioritizationApiClient {
     return this.api.get(`${this.config.backendUrl}/prioritization/assessments/${complaintId}/`);
   }
 
-  createAssessment(assessment: Record<string, unknown>) {
-    return this.api.post(`${this.config.backendUrl}/prioritization/assessments/`, assessment);
+  createAssessment(complaintId: number) {
+    return this.api.post(`${this.config.backendUrl}/prioritization/assessments/`, { complaint_id: complaintId });
   }
 
   createReviewDecision(reviewDecision: Record<string, unknown>) {
