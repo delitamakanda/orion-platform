@@ -51,6 +51,17 @@ export const routes: Routes = [
         canActivate: [roleGuard],
       },
       {
+        path: 'administration',
+        loadChildren: () =>
+          import('./features/administration/administration.routes').then((m) => m.administrationRoutes),
+        data: { title: 'Administration', roles: ['administrateur'] },
+        canActivate: [roleGuard],
+      },
+      {
+        path: 'unauthorized',
+        loadChildren: () => import('./features/unauthorized/unauthorized.routes').then((m) => m.unauthorizedRoutes),
+      },
+      {
         path: '**',
         pathMatch: 'full',
         redirectTo: 'dashboard',
