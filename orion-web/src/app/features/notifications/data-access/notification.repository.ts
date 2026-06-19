@@ -4,42 +4,42 @@ import { firstValueFrom } from 'rxjs';
 
 @Service()
 export class NotificationRepository {
-    private readonly api = inject(NotificationApiClient);
+  private readonly api = inject(NotificationApiClient);
 
-    readonly notificationsResource = resource({
-        loader: async () => {
-            return await firstValueFrom(this.api.findAll());
-        }
-    });
+  readonly notificationsResource = resource({
+    loader: async () => {
+      return await firstValueFrom(this.api.findAll());
+    },
+  });
 
-    readonly unreadCountResource = resource({
-        loader: async () => {
-            const response = await firstValueFrom(this.api.findUnreadCount());
-            return response.unread_count;
-        }
-    });
+  readonly unreadCountResource = resource({
+    loader: async () => {
+      const response = await firstValueFrom(this.api.findUnreadCount());
+      return response.unread_count;
+    },
+  });
 
-    get unreadCount() {
-        return this.unreadCountResource.value() ?? 0;
-    }
+  get unreadCount() {
+    return this.unreadCountResource.value() ?? 0;
+  }
 
-    get notifications() {
-        return this.notificationsResource.value() ?? [];
-    }
+  get notifications() {
+    return this.notificationsResource.value() ?? [];
+  }
 
-    get isLoading() {
-        return this.notificationsResource.isLoading() || this.unreadCountResource.isLoading();
-    }
+  get isLoading() {
+    return this.notificationsResource.isLoading() || this.unreadCountResource.isLoading();
+  }
 
-    get error() {
-        return this.notificationsResource.error() || this.unreadCountResource.error();
-    }
+  get error() {
+    return this.notificationsResource.error() || this.unreadCountResource.error();
+  }
 
-    markAsRead(notificationId: string) {
-        return firstValueFrom(this.api.markAsRead(notificationId));
-    }
+  markAsRead(notificationId: string) {
+    return this.api.markAsRead(notificationId);
+  }
 
-    markAllAsRead() {
-        return firstValueFrom(this.api.markAllAsRead());
-    }
+  markAllAsRead() {
+    return this.api.markAllAsRead();
+  }
 }
