@@ -14,12 +14,12 @@ class ComplaintViewSet(viewsets.ModelViewSet):
     
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
-            permission_classes = [IsAgentOrHigher]
+            return [IsAgentOrHigher()]
         if self.action in ['create', 'update', 'partial_update']:
-            permission_classes = [IsMagistratOrHigher]
-        if self.action in ['destroy']:
-            permission_classes = [IsAdministrateur]
-        return [permission() for permission in permission_classes]
+            return [IsMagistratOrHigher()]
+        if self.action == 'destroy':
+            return [IsAdministrateur()]
+        return [IsAdministrateur()]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
