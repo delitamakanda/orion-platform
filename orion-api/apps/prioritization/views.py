@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from apps.prioritization.selectors.priority_assessment_selectors import PriorityAssessmentSelectors
 from apps.prioritization.services.prioritization_service import PrioritizationService
 from apps.complaints.models import Complaint
-from apps.prioritization.serializers import CreatePriorityAssessmentSerializer, CreateReviewDecisionSerializer, PriorityAssessmentSerializer
+from apps.prioritization.serializers import CreateReviewDecisionSerializer, PriorityAssessmentSerializer
 from apps.common.responses import GenericResponse
 from rest_framework import status
 from apps.accounts.permissions import IsMagistratOrHigher
@@ -13,13 +13,11 @@ class CreateAssessmentAPIView(APIView):
     def post(self, request):
         complaint = Complaint.objects.get(id=request.data.get('complaint_id'))
         assessment = PrioritizationService().prioritize(complaint)
-        serializer = CreatePriorityAssessmentSerializer(data=assessment)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
+        serializer = PriorityAssessmentSerializer(assessment)
         AuditLogService.record(
             user=request.user,
             action='PRIORITY_ASSESSED',
-            target_id=str(serializer.instance.id),
+            target_id=str(assessment.id),
             target_type='PriorityAssessment',
             metadata={'complaint_id': str(complaint.id)},
             request=request
