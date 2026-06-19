@@ -10,6 +10,6 @@
 
 @if (store.complaints().length > 0) {
     @for (complaint of store.complaints(); track complaint.id) {
-        <app-complaint-card [complaint]="complaint" (click)="store.selectComplaint(complaint.id)"></app-complaint-card>
+        <app-complaint-card [complaint]="complaint" (click)="store.selectComplaint(complaint)"></app-complaint-card>
     }
 }
