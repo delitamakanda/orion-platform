@@ -14,7 +14,7 @@ export class ComplaintFilters {
 
   filterModel = signal<Partial<ComplaintFilter>>({
     reference: '',
-    vulnerability_victim: false,
+    vulnerability_victim: true,
     incident_date_lte: '',
     incident_date_gte: '',
     created_at_lte: '',
@@ -22,18 +22,21 @@ export class ComplaintFilters {
   });
 
   onChangeFilter(field: keyof ComplaintFilter, value: ComplaintFilter[keyof ComplaintFilter]) {
-    this.filterModel.update(model => ({ ...model, [field]: value }));
+    this.filterModel.update((model) => ({ ...model, [field]: value }));
     this.filterChange.emit(this.filterModel());
   }
 
-  onDateChange(field: 'incident_date_lte' | 'incident_date_gte' | 'created_at_lte' | 'created_at_gte', value: Date | null) {
+  onDateChange(
+    field: 'incident_date_lte' | 'incident_date_gte' | 'created_at_lte' | 'created_at_gte',
+    value: Date | null,
+  ) {
     this.onChangeFilter(field, formatDateForFilter(value));
   }
 
   resetFilters() {
     this.filterModel.set({
       reference: '',
-      vulnerability_victim: undefined,
+      vulnerability_victim: true,
       incident_date_lte: '',
       incident_date_gte: '',
       created_at_lte: '',
