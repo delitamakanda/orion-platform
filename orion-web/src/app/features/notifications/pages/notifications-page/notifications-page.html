@@ -14,13 +14,13 @@
           <p>{{ notification.message }}</p>
           <small>{{ notification.created_at | date:'short' }}</small>
           @if (!notification.is_read) {
-            <button (click)="store.markAsRead(notification.id)">Mark as Read</button>
+            <button (click)="markAsRead(notification.id)">Mark as Read</button>
           }
         </li>
       }
     </ul>
     @if (store.unreadCount() > 0) {
-      <button (click)="store.markAllAsRead()">Mark All as Read</button>
+      <button (click)="markAllAsRead()">Mark All as Read</button>
     }
   </div>
 }
