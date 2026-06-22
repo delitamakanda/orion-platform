@@ -64,11 +64,11 @@
     <mat-divider></mat-divider>
 
     <div class="menu-notifications-content">
-      @if (notificationStore.notifications().length === 0) {
+      @if (notificationStore.unreadNotifications().length === 0) {
       <p>No notifications</p>
       } @else {
       <ul>
-        @for (notification of notificationStore.notifications(); track notification.id) {
+        @for (notification of notificationStore.unreadNotifications(); track notification.id) {
           <li>{{ notification.message }}</li>
         }
       </ul>
