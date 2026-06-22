@@ -34,3 +34,11 @@ class UnreadNotificationsCountAPIView(APIView):
         user = request.user
         count = NotificationSelectors.get_unread_notifications_count_for_user(user)
         return Response({'unread_count': count}, status=status.HTTP_200_OK)
+    
+
+class GetUnreadNotificationsAPIView(APIView):
+    def get(self, request):
+        user = request.user
+        notifications = NotificationSelectors.get_unread_notifications_for_user(user)
+        serializer = NotificationSerializer(notifications, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

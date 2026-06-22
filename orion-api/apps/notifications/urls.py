@@ -3,6 +3,7 @@ from apps.notifications.views import (
     MarkNotificationAsReadAPIView,
     MarkAllNotificationsAsReadAPIView,
     UnreadNotificationsCountAPIView,
+    GetUnreadNotificationsAPIView,
 )
 from django.urls import path
 
@@ -13,4 +14,5 @@ urlpatterns = [
     path('mark-as-read/<str:notification_id>/', MarkNotificationAsReadAPIView.as_view(), name='mark-notification-as-read'),
     path('mark-all-as-read/', MarkAllNotificationsAsReadAPIView.as_view(), name='mark-all-notifications-as-read'),
     path('unread-count/', UnreadNotificationsCountAPIView.as_view(), name='unread-notifications-count'),
+    path('unread/', GetUnreadNotificationsAPIView.as_view(), name='get-unread-notifications'),
 ]
