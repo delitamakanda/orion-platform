@@ -8,12 +8,17 @@ from rest_framework import status
 from apps.accounts.permissions import IsMagistratOrHigher
 from apps.audits.services.audit_log_service import AuditLogService
 from apps.notifications.services.notification_service import NotificationService
+from django.utils import timezone
+
 class CreateAssessmentAPIView(APIView):
     permission_classes = [IsMagistratOrHigher]
     def post(self, request):
         complaint = Complaint.objects.get(id=request.data.get('complaint_id'))
         assessment = PrioritizationService().prioritize(complaint)
         serializer = PriorityAssessmentSerializer(assessment)
+        complaint.status = Complaint.Status.ANALYZED
+        complaint.updated_at = timezone.now()
+        complaint.save()
         AuditLogService.record(
             user=request.user,
             action='PRIORITY_ASSESSED',
@@ -38,6 +43,10 @@ class CreateReviewDecisionAPIView(APIView):
     def post(self, request):
         serializer = CreateReviewDecisionSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        complaint = serializer.validated_data['assessment'].complaint
+        complaint.status = Complaint.Status.REVIEWED
+        complaint.updated_at = timezone.now()
+        complaint.save()
         serializer.save()
         AuditLogService.record(
             user=request.user,
