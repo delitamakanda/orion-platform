@@ -8,7 +8,7 @@ export interface PriorityAssessment {
   confidence_score: number;
   summary: string;
   score: number;
-  explanation: Record<string, string>;
+  explanation: Record<string, string | boolean | number>;
   model_name: string;
   provider: string;
 }
