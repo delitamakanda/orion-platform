@@ -1,1 +1,57 @@
-<p>review-decision-form works!</p>
+<section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div class="mb-4 flex items-center justify-between">
+        <h3 class="text-lg font-semibold">Review Decision</h3>
+
+        <p class="text-sm text-slate-500">
+            La priorité proposée par l'IA doit être validée par un utilisateur habilité.
+        </p>
+    </div>
+
+    <div class="mb-4">
+        <p class="text-sm text-slate-500">
+            La priorité proposée par l'IA est <strong>{{ suggestedLevel() }}</strong>.
+        </p>
+
+        @if (suggestedScore() !== null) {
+        <p class="text-sm text-slate-500">
+            Le score de priorité proposé par l'IA est <strong>{{ suggestedScore() }} / 100</strong>.
+        </p>
+        }
+    </div>
+
+    @if (isOverride()) {
+    <div class="mb-4">
+        <p class="text-sm text-slate-500">
+            Vous avez choisi de modifier la priorité proposée par l'IA. Veuillez fournir un commentaire expliquant votre décision.
+        </p>
+    </div>} @else {
+        <p class="text-sm text-slate-500">
+            Vous avez choisi de valider la priorité proposée par l'IA. Veuillez fournir un commentaire expliquant votre décision.
+        </p>
+    }
+
+    <label class="block mb-2 text-sm font-medium text-slate-700" for="comment">Priorité finale</label>
+
+    <select class="block w-full p-2 mb-4 text-sm text-slate-700 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" id="final_level" name="final_level" [ngModel]="finalLevel()" (ngModelChange)="finalLevel.set($event)">
+        @for (level of levels; track level) {
+        <option value="{{ level }}">{{ level }}</option>
+        }
+    </select>
+
+    <label class="block mb-2 text-sm font-medium text-slate-700" for="comment">Commentaire</label>
+    <textarea class="block w-full p-2 mb-4 text-sm text-slate-700 border border-slate-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" id="comment" name="comment" rows="4" [ngModel]="comment()" (ngModelChange)="comment.set($event)"></textarea>
+
+    @if (isOverride() && comment().trim().length < 10) {
+        <p class="text-sm text-red-500">Le commentaire doit contenir au moins 10 caractères.</p>
+    }
+
+    <div class="flex justify-end">
+        <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" type="button" (click)="submit()" [disabled]="!isValid()">
+            @if (isOverride()) {
+                Soumettre la décision
+            } @else {
+                Valider la décision
+            }
+        </button>
+    </div>
+</section>
