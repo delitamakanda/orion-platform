@@ -1,1 +1,10 @@
-<p>priority-detail-page works!</p>
+{{ store.selectedAssessment()?.complaint?.title }}
+{{ store.selectedAssessment()?.complaint?.description }}
+<app-priority-badge [priority]="store.selectedAssessment()?.level"></app-priority-badge>
+<app-priority-factor-list [factors]="store.selectedAssessment()?.explanation!"></app-priority-factor-list>
+<app-review-decision-form
+  [assessmentId]="store.selectedAssessment()?.id"
+  [suggestedLevel]="store.selectedAssessment()?.level"
+  [suggestedScore]="store.selectedAssessment()?.score"
+  (submitDecision)="handleSubmitDecision($event)"
+></app-review-decision-form>
