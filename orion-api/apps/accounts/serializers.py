@@ -22,6 +22,7 @@ class CustomUserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = [
+            'id',
             'username',
             'email',
             'first_name',
@@ -30,6 +31,7 @@ class CustomUserRegistrationSerializer(serializers.ModelSerializer):
             'password',
             'password2',
         ]
+        read_only_fields = ('id',)
         extra_kwargs = {
             'first_name': {'required': True},
             'last_name': {'required': True},
@@ -71,6 +73,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = (
+            'id',
             'username',
             'email',
             'first_name',
