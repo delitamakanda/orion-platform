@@ -21,3 +21,7 @@ class NotificationSelectors:
         for notification in notifications:
             NotificationService.mark_as_read(notification)
         return notifications.count()
+    
+    @staticmethod
+    def get_unread_notifications_for_user(user):
+        return Notification.objects.filter(recipient=user, is_read=False).order_by('-created_at')
