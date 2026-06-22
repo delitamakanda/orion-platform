@@ -1,1 +1,11 @@
-<p>priority-factor-list works!</p>
+<div class="list-group"> 
+  <div
+    class="list-group-item d-flex justify-content-between align-items-start"
+>
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">{{ factors()?.['human_review_required'] ? 'Human review required' : 'No human review required' }}</div>
+      <div> {{ factors()?.['limitations'] }}</div>
+    <div> {{ factors()?.['reasoning'] }}</div>
+    </div>
+</div>
+</div>
