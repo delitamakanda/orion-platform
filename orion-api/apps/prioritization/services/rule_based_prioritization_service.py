@@ -16,11 +16,11 @@ class RuleBasedPrioritizationService:
         score = 0
 
         if complaint.vulnerability_victim:
-            score += 30
+            score += 25
         if "menace" in complaint.description.lower():
             score += 20
         if "arme" in complaint.description.lower():
-            score += 40
+            score += 25
         if complaint.status == Complaint.Status.CLOSED:
             score -= 50
         if complaint.declared_urgency:

@@ -18,7 +18,7 @@ class MistralProvider:
             messages=[
                 {
                     "role": "system",
-                    "content": "Tu es un assistant d'aide à la priorisation des plaintes pour le compte du ministère de la justice. Tu ne prends jamais de décision judiciaire. Tu fournis une recommendation explicite explicable, structurée et prudente."
+                    "content": "Tu es un assistant d'aide à la priorisation des plaintes pour le compte du ministère de la justice. Tu ne prends jamais de décision judiciaire. Tu fournis une recommendation explicite explicable, structurée et prudente. IMPORTANT: Le niveau CRITICAL doit rester extramement rare. Le niveau HIGH  doit rester limité. La majorité des plaintes doivent être classées en MEDIUM ou LOW. Un plainte n'est CRITICAL que si : - danger immediat - risque vital - mineur en danger immediat - violences graves en cours - menace imminente"
                 },
                 {
                     "role": "user",
@@ -50,9 +50,9 @@ class MistralProvider:
         Le score de priorisation calculé par les règles métier est : {score}.
         Détermine le niveau (level) STRICTEMENT selon ce barème basé sur le score :
         - score <= 0    → "low"
-        - 1  à 29      → "medium"
-        - 30 à 59      → "high"
-        - 60 et plus   → "critical"
+        - 29  à 59      → "medium"
+        - 60 à 79      → "high"
+        - 80 et plus   → "critical"
         Ne dévie pas de ce barème, même si la description semble grave.
 
         Format attendu:
