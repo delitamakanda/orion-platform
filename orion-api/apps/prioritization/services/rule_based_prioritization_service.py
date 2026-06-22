@@ -17,7 +17,7 @@ class RuleBasedPrioritizationService:
 
         if complaint.vulnerability_victim:
             score += 25
-        if "menace" in complaint.description.lower():
+        if "violence" in complaint.description.lower():
             score += 20
         if "arme" in complaint.description.lower():
             score += 25
