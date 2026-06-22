@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { complaintResolverResolver } from './resolvers/complaint.resolver-resolver';
+import { complaintResolver } from './resolvers/complaint.resolver';
 
 export const complaintsRoutes: Routes = [
   {
@@ -11,7 +11,7 @@ export const complaintsRoutes: Routes = [
     loadComponent: () =>
       import('./pages/complaint-detail-page/complaint-detail-page').then((m) => m.ComplaintDetailPage),
     resolve: {
-      complaintData: complaintResolverResolver,
+      complaintData: complaintResolver,
     },
   },
 ];
