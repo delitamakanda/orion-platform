@@ -15,8 +15,10 @@ export class PrioritizationApiClient {
       .pipe(map((response) => response.data));
   }
 
-  findByComplaintId(complaintId: string) {
-    return this.api.get(`${this.config.backendUrl}/prioritization/assessments/${complaintId}/`);
+  findByComplaintId(complaintId: number) {
+    return this.api
+      .get<{ data: PriorityAssessment }>(`${this.config.backendUrl}/prioritization/assessments/${complaintId}/`)
+      .pipe(map((response) => response.data));
   }
 
   createAssessment(complaintId: number) {

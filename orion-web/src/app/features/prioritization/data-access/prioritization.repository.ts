@@ -14,7 +14,7 @@ export class PrioritizationRepository {
     loader: () => firstValueFrom(this.api.findAll()),
   });
 
-  assessmentByComplaintId(complaintId: string) {
+  assessmentByComplaintId(complaintId: number) {
     return this.api.findByComplaintId(complaintId);
   }
 

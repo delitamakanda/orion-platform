@@ -1,6 +1,7 @@
-import { computed, inject, Service } from '@angular/core';
+import { computed, inject, Service, signal } from '@angular/core';
 import { PrioritizationRepository } from './prioritization.repository';
 import { ComplaintStore } from '@app/features/complaints/data-access/complaint.store';
+import { PriorityAssessment } from '../models/ai-analysis.model';
 
 @Service()
 export class PrioritizationStore {
@@ -11,6 +12,14 @@ export class PrioritizationStore {
 
   readonly assessments = computed(() => this.repository.assessments.value());
 
+  readonly _selectedAssessment = signal<PriorityAssessment | null>(null);
+
+  readonly selectedAssessment = this._selectedAssessment.asReadonly();
+
+  selectAssessment(assessment: PriorityAssessment) {
+    this._selectedAssessment.set(assessment);
+  }
+
   createAssessment(complaintId: number) {
     return this.repository.createAssessment(complaintId);
   }
@@ -19,5 +28,9 @@ export class PrioritizationStore {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   createReviewDecision(reviewDecision: Record<string, any>) {
     return this.repository.createReviewDecision(reviewDecision);
+  }
+
+  assessmentByComplaintId(complaintId: number) {
+    return this.repository.assessmentByComplaintId(complaintId);
   }
 }
