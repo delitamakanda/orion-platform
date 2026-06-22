@@ -35,6 +35,7 @@ export class PriorityDetailPage implements OnInit {
       final_level: event.final_level,
       comment: event.comment,
       reviewer: event.reviewer,
+      is_override: event.previous_level !== event.final_level,
     };
     this.store.createReviewDecision(reviewDecision).subscribe({
       next: (response) => {
