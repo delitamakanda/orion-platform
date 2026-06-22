@@ -1,1 +1,45 @@
-<p>ai-assessement-panel works!</p>
+<div [routerLink]="'/prioritization/details/' + assessment()?.id" class="flex flex-wrap">
+    <div class="w-full md:w-1/2 p-4">
+        <h3 class="text-lg font-semibold mb-2">Résumé de l'évaluation</h3>
+        <div class="mb-2">
+            <span class="inline-block px-2 py-1 text-sm font-semibold rounded" [ngClass]="{
+                'bg-red-100 text-red-800': assessment()?.level === 'critical',
+                'bg-yellow-100 text-yellow-800': assessment()?.level === 'high',
+                'bg-green-100 text-green-800': assessment()?.level === 'medium',
+                'bg-gray-100 text-gray-800': assessment()?.level === 'low'
+            }">
+                {{ assessment()?.level | titlecase }}
+            </span>
+            <span class="ml-2 text-sm text-gray-600">Score : {{ assessment()?.score }}%</span>
+            <span class="ml-2 text-sm text-gray-600">Confiance : {{ assessment()?.confidence_score }}%</span>
+        </div>
+        <p class="mb-4">{{ assessment()?.summary }}</p>
+        <h3 class="text-lg font-semibold mb-2">Explication de l'évaluation</h3>
+        <p>{{ assessment()?.explanation?.['reasoning'] }}</p>
+    </div>
+    <div class="w-full md:w-1/2 p-4">
+        <h3 class="text-lg font-semibold mb-2">Détails de la plainte</h3>
+        <p><strong>Catégorie :</strong> {{ assessment()?.complaint?.category }}</p>
+        <p><strong>Localisation :</strong> {{ assessment()?.complaint?.location }}</p>
+        <p><strong>Date de l'incident :</strong> {{ assessment()?.complaint?.incident_date | date:'short' }}</p>
+        <p><strong>Vulnérabilité de la victime :</strong> {{ assessment()?.complaint?.vulnerability_victim ? 'Oui' : 'Non' }}</p>
+    </div>
+</div>
+
+<!---
+{
+    "score": 95,
+    "level": "critical",
+    "confidence_score": "98.00",
+    "summary": "Enfant de 9 ans victime présumée de violences physiques répétées par son beau-père, avec fractures multiples des côtes à différents stades de cicatrisation, confirmées par des aveux indirects de l'enfant et des incohérences dans les déclarations du beau-père. Une garde à vue a été ouverte.",
+    "explanation": {
+        "reasoning": "La plainte présente des éléments graves et convergents : fractures multiples à différents stades de cicatrisation (signe de violences répétées), aveux indirects de l'enfant, et incohérences dans les déclarations du beau-père. Ces éléments indiquent un risque immédiat pour la sécurité de l'enfant et justifient une intervention urgente des autorités compétentes.",
+        "human_review_required": true,
+        "limitations": "L'analyse repose sur des informations médicales et testimoniales rapportées, sans accès aux dossiers judiciaires ou aux examens complémentaires. Une revue humaine est nécessaire pour valider les preuves et prioriser les actions en fonction du contexte familial et social."
+    },
+    "model_name": "mistral-small-2603",
+    "provider": "mistral",
+    "created_at": "2026-06-19T16:23:28.594969Z",
+    "updated_at": "2026-06-19T16:23:28.595008Z"
+}
+-->

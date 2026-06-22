@@ -1,1 +1,3 @@
-<p>prioritization-page works!</p>
+@for (item of store.assessments(); track item.id) {
+    <app-ai-assessement-panel [assessment]="item"></app-ai-assessement-panel>
+}
