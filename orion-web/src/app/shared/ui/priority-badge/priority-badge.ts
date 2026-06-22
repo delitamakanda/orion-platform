@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { CommonModule, TitleCasePipe } from '@angular/common';
+import { Component, input } from '@angular/core';
+import { PriorityLevel } from '@app/features/prioritization/models/priority-level.model';
 
 @Component({
   selector: 'app-priority-badge',
-  imports: [],
+  imports: [CommonModule, TitleCasePipe],
   templateUrl: './priority-badge.html',
-  styleUrl: './priority-badge.css',
+  styleUrls: ['./priority-badge.css'],
 })
-export class PriorityBadge {}
+export class PriorityBadge {
+  readonly priority = input<PriorityLevel>();
+}
