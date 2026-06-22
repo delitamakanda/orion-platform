@@ -1,22 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { API_CONFIG_TOKEN } from '@app/core/config/injection-token';
-import { Kpi } from '../models/kpi.model';
+import { DashboardKpi, Kpi } from '../models/kpi.model';
 
 @Service()
 export class DashboardApiClient {
-    private readonly http = inject(HttpClient);
-    private readonly config = inject(API_CONFIG_TOKEN);
+  private readonly http = inject(HttpClient);
+  private readonly config = inject(API_CONFIG_TOKEN);
 
-    findAll() {
-        return this.http.get<Kpi>(`${this.config.backendUrl}/dashboards/`);
-    }
+  findAll() {
+    return this.http.get<DashboardKpi>(`${this.config.backendUrl}/dashboards/`);
+  }
 
-    findAllKpis() {
-        return this.http.get<Kpi>(`${this.config.backendUrl}/dashboards/kpis/`);
-    }
+  findAllKpis() {
+    return this.http.get<Kpi>(`${this.config.backendUrl}/dashboards/kpis/`);
+  }
 
-    findLatest() {
-        return this.http.get<Record<string, string>[]>(`${this.config.backendUrl}/dashboards/top-priority-complaints/`);
-    }
+  findLatest() {
+    return this.http.get<Record<string, string>[]>(`${this.config.backendUrl}/dashboards/top-priority-complaints/`);
+  }
 }
