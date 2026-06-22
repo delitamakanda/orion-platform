@@ -1,1 +1,82 @@
-<p>unauthorized-page works!</p>
+<main
+  class="flex min-h-screen flex-col items-center justify-center px-4"
+  role="main"
+  aria-labelledby="unauthorized-title"
+>
+  <!-- Glow backdrop -->
+  <div
+    class="pointer-events-none absolute inset-0 overflow-hidden"
+    aria-hidden="true"
+  >
+    <div
+      class="absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500/10 blur-3xl"
+    ></div>
+    <div
+      class="absolute left-2/3 top-2/3 h-64 w-64 rounded-full bg-orange-500/8 blur-2xl"
+    ></div>
+  </div>
+
+  <div class="relative z-10 flex w-full max-w-md flex-col items-center text-center">
+
+    <!-- Icon badge -->
+    <div
+      class="mb-8 flex h-28 w-28 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10 shadow-lg shadow-red-500/20 ring-4 ring-red-500/10"
+    >
+      <mat-icon
+        class="!h-14 !w-14 !text-[3.5rem] text-red-400"
+        aria-hidden="true"
+      >
+        lock
+      </mat-icon>
+    </div>
+
+    <!-- 403 code -->
+    <p
+      class="mb-1 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-8xl font-black tracking-tight text-transparent"
+      aria-hidden="true"
+    >
+      403
+    </p>
+
+    <!-- Title -->
+    <h1
+      id="unauthorized-title"
+      class="mb-3 text-2xl font-bold tracking-tight text-slate-400"
+    >
+      Accès non autorisé
+    </h1>
+
+    <!-- Description -->
+    <p class="mb-10 leading-relaxed text-slate-400">
+      Vous ne disposez pas des permissions nécessaires pour accéder à cette
+      ressource. Si vous pensez qu'il s'agit d'une erreur, contactez votre
+      administrateur.
+    </p>
+
+    <!-- Divider -->
+    <div
+      class="mb-8 h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Actions -->
+    <div class="flex w-full flex-col gap-3 sm:flex-row">
+      <button
+        mat-stroked-button
+        class="flex-1 !border-slate-600 !text-slate-400 hover:!border-slate-800 hover:!text-slate-400"
+        (click)="goBack()"
+        aria-label="Retourner à la page précédente"
+      >
+        <mat-icon class="!text-base">arrow_back</mat-icon>
+        Retour
+      </button>
+
+    </div>
+
+    <!-- Support hint -->
+    <p class="mt-8 text-xs text-slate-600">
+      Code d'erreur&nbsp;:
+      <span class="font-mono text-slate-500">HTTP 403 Forbidden</span>
+    </p>
+  </div>
+</main>

@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 
 @Component({
   selector: 'app-unauthorized-page',
-  imports: [],
+  imports: [MATERIAL_IMPORTS],
   templateUrl: './unauthorized-page.html',
-  styleUrl: './unauthorized-page.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UnauthorizedPage {}
+export class UnauthorizedPage {
+  goBack(): void {
+    history.back();
+  }
+}
