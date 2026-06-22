@@ -12,6 +12,12 @@ export class NotificationRepository {
     },
   });
 
+  readonly unreadNotificationsResource = resource({
+    loader: async () => {
+      return await firstValueFrom(this.api.findUnreadNotifications());
+    },
+  });
+
   readonly unreadCountResource = resource({
     loader: async () => {
       const response = await firstValueFrom(this.api.findUnreadCount());
@@ -27,12 +33,22 @@ export class NotificationRepository {
     return this.notificationsResource.value() ?? [];
   }
 
+  get unreadNotifications() {
+    return this.unreadNotificationsResource.value() ?? [];
+  }
+
   get isLoading() {
-    return this.notificationsResource.isLoading() || this.unreadCountResource.isLoading();
+    return (
+      this.notificationsResource.isLoading() ||
+      this.unreadCountResource.isLoading() ||
+      this.unreadNotificationsResource.isLoading()
+    );
   }
 
   get error() {
-    return this.notificationsResource.error() || this.unreadCountResource.error();
+    return (
+      this.notificationsResource.error() || this.unreadCountResource.error() || this.unreadNotificationsResource.error()
+    );
   }
 
   markAsRead(notificationId: string) {

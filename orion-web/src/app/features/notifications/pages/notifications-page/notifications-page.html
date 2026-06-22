@@ -1,26 +1,101 @@
-@if (store.isLoading()) {
-  <div class="loading-spinner">
-    is Loading...
-  </div>
-} @else if (store.error()) {
-  <div class="error-message">
-    <p>Error loading notifications: {{ store.error() }}</p>
-  </div>
-} @else {
-  <div class="notifications-list">
-    <ul>
-      @for (notification of store.notifications(); track $index) {
-        <li [class.unread]="!notification.is_read">
-          <p>{{ notification.message }}</p>
-          <small>{{ notification.created_at | date:'short' }}</small>
-          @if (!notification.is_read) {
-            <button (click)="markAsRead(notification.id)">Mark as Read</button>
-          }
-        </li>
+<div class="page-container">
+  <div class="page-header">
+    <div class="page-title-group">
+      <h1 class="page-title">
+        <mat-icon class="title-icon" aria-hidden="true">notifications</mat-icon>
+        Notifications
+      </h1>
+      @if (store.unreadCount() > 0) {
+        <span class="unread-count-badge">{{ store.unreadCount() }} non lue(s)</span>
       }
-    </ul>
+    </div>
     @if (store.unreadCount() > 0) {
-      <button (click)="markAllAsRead()">Mark All as Read</button>
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="markAllAsRead()"
+        aria-label="Marquer toutes les notifications comme lues">
+        <mat-icon>done_all</mat-icon>
+        Tout marquer comme lu
+      </button>
     }
   </div>
-}
+
+  @if (store.isLoading()) {
+    <div class="state-container" role="status" aria-live="polite" aria-label="Chargement des notifications">
+      <mat-progress-spinner mode="indeterminate" diameter="48" />
+      <p class="state-text">Chargement des notifications...</p>
+    </div>
+  } @else if (store.error()) {
+    <mat-card appearance="outlined" class="error-card" role="alert">
+      <mat-card-content class="error-content">
+        <mat-icon color="warn" aria-hidden="true">error_outline</mat-icon>
+        <p>{{ store.error() }}</p>
+      </mat-card-content>
+    </mat-card>
+  } @else if (store.notifications().length === 0) {
+    <div class="state-container" aria-live="polite">
+      <mat-icon class="empty-icon" aria-hidden="true">notifications_none</mat-icon>
+      <p class="state-text">Aucune notification pour le moment</p>
+    </div>
+  } @else {
+    <mat-card appearance="outlined" class="notifications-card">
+      <mat-list role="list" aria-label="Liste des notifications">
+        @for (notification of store.notifications(); track notification.id; let last = $last) {
+          <mat-list-item
+            class="notification-item"
+            [class.notification-item--unread]="!notification.is_read"
+            role="listitem">
+            <mat-icon
+              matListItemIcon
+              aria-hidden="true"
+              class="type-icon"
+              [class.type-icon--normal]="notification.priority === 'normal'"
+              [class.type-icon--high]="notification.priority === 'high'"
+              [class.type-icon--critical]="notification.priority === 'critical'">
+              {{ getTypeIcon(notification.type) }}
+            </mat-icon>
+
+            <div matListItemTitle class="notification-title">{{ notification.title }}</div>
+            <div matListItemLine class="notification-message">{{ notification.message }}</div>
+            <div matListItemLine class="notification-meta">
+              <mat-icon class="meta-icon" aria-hidden="true">schedule</mat-icon>
+              <span>{{ notification.created_at | date: 'd MMM y, HH:mm' }}</span>
+              <span
+                class="priority-badge"
+                [class.priority-badge--normal]="notification.priority === 'normal'"
+                [class.priority-badge--high]="notification.priority === 'high'"
+                [class.priority-badge--critical]="notification.priority === 'critical'"
+                [attr.aria-label]="'Priorité ' + notification.priority">
+                {{ notification.priority }}
+              </span>
+            </div>
+
+            <div matListItemMeta class="notification-actions">
+              @if (!notification.is_read) {
+                <button
+                  mat-icon-button
+                  color="primary"
+                  (click)="markAsRead(notification.id)"
+                  matTooltip="Marquer comme lu"
+                  aria-label="Marquer cette notification comme lue">
+                  <mat-icon>mark_email_read</mat-icon>
+                </button>
+              } @else {
+                <mat-icon
+                  class="read-icon"
+                  matTooltip="Lu"
+                  aria-label="Notification lue">
+                  check_circle
+                </mat-icon>
+              }
+            </div>
+          </mat-list-item>
+          @if (!last) {
+            <mat-divider />
+          }
+        }
+      </mat-list>
+    </mat-card>
+  }
+</div>

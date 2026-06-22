@@ -1,24 +1,41 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NotificationStore } from '../../data-access/notification.store';
 import { DatePipe } from '@angular/common';
+import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
+import { SnackbarService } from '@app/core/services/snackbar.service';
+import { NOTIFICATION_TYPE } from '../../models/notification.model';
 
 @Component({
   selector: 'app-notifications-page',
-  imports: [DatePipe],
+  imports: [DatePipe, MATERIAL_IMPORTS],
   providers: [NotificationStore],
   templateUrl: './notifications-page.html',
   styleUrls: ['./notifications-page.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotificationsPage {
+  private readonly snackbarService = inject(SnackbarService);
   readonly store = inject(NotificationStore);
+
+  getTypeIcon(type: NOTIFICATION_TYPE): string {
+    const icons: Record<NOTIFICATION_TYPE, string> = {
+      critical_complaint: 'report_problem',
+      priority_review_required: 'assignment_late',
+      sync_completed: 'cloud_done',
+      sync_failed: 'cloud_off',
+    };
+    return icons[type] ?? 'notifications';
+  }
 
   markAsRead(notificationId: string) {
     this.store.markAsRead(notificationId).subscribe({
       next: () => {
-        console.log(`Notification ${notificationId} marked as read.`);
+        this.snackbarService.showSuccessSnackbar(`Notification ${notificationId} marked as read.`);
+        this.store.updateUnreadCount();
+        this.store.updateNotifications();
       },
       error: (error) => {
-        console.error(`Error marking notification ${notificationId} as read:`, error);
+        this.snackbarService.showErrorSnackbar(`Error marking notification ${notificationId} as read: ${error}`);
       },
     });
   }
@@ -26,10 +43,12 @@ export class NotificationsPage {
   markAllAsRead() {
     this.store.markAllAsRead().subscribe({
       next: () => {
-        console.log('All notifications marked as read.');
+        this.snackbarService.showSuccessSnackbar('All notifications marked as read.');
+        this.store.updateUnreadCount();
+        this.store.updateNotifications();
       },
       error: (error) => {
-        console.error('Error marking all notifications as read:', error);
+        this.snackbarService.showErrorSnackbar(`Error marking all notifications as read: ${error}`);
       },
     });
   }

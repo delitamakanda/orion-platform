@@ -12,6 +12,10 @@ export class NotificationApiClient {
     return this.http.get<Notification[]>(`${this.config.backendUrl}/notifications/`);
   }
 
+  findUnreadNotifications() {
+    return this.http.get<Notification[]>(`${this.config.backendUrl}/notifications/unread/`);
+  }
+
   markAsRead(notificationId: string) {
     return this.http.post(`${this.config.backendUrl}/notifications/mark-as-read/${notificationId}/`, {});
   }
