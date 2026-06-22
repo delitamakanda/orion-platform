@@ -15,5 +15,6 @@ import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 export class DashboardPage {
   readonly store = inject(DashboardStore);
 
-  readonly data = computed(() => this.store.kpis() ?? this.store.dashboards());
+  readonly kpis = computed(() => this.store.kpis() ?? null);
+  readonly dashboards = computed(() => this.store.dashboards() ?? null);
 }
