@@ -12,7 +12,7 @@
   </div>
 }
 
-@if (data(); as d) {
+@if (dashboards(); as d) {
   <div class="mt-6 space-y-8">
 
     <!-- Complaints -->
@@ -21,21 +21,8 @@
         Plaintes
       </h2>
       <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <app-stat-card title="Total des plaintes" [value]="d.complaints?.total" icon="inbox" variant="info" />
-        <app-stat-card title="Nouvelles plaintes" [value]="d.complaints?.new" icon="fiber_new" variant="default" />
-      </div>
-    </section>
-
-    <!-- Priorities -->
-    <section aria-labelledby="section-priorities">
-      <h2 id="section-priorities" class="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
-        Priorités
-      </h2>
-      <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <app-stat-card title="Critique" [value]="d.priorities?.critical" icon="report" variant="critical" />
-        <app-stat-card title="Élevée" [value]="d.priorities?.urgent" icon="warning" variant="high" />
-        <app-stat-card title="Moyenne" [value]="d.priorities?.standard" icon="remove_circle_outline" variant="medium" />
-        <app-stat-card title="Faible" [value]="d.priorities?.low" icon="arrow_circle_down" variant="low" />
+        <app-stat-card title="Total des plaintes" [value]="d?.complaints?.total" icon="inbox" variant="info" />
+        <app-stat-card title="Nouvelles plaintes" [value]="d?.complaints?.new" icon="fiber_new" variant="default" />
       </div>
     </section>
 
@@ -49,7 +36,7 @@
         <app-stat-card title="Complétées" [value]="d.reviews?.completed" icon="check_circle" variant="success" />
         <app-stat-card title="Dérogations" [value]="d.reviews?.overrides" icon="rule" variant="high" />
       </div>
-    </section>
+    </section> 
 
     <!-- Integration -->
     <section aria-labelledby="section-integration">
@@ -70,5 +57,28 @@
       </div>
     </section>
 
+  </div>
+}
+
+@if (kpis(); as k) {
+  <div class="mt-6 space-y-8">
+    <!-- Priorities -->
+      <section aria-labelledby="section-priorities">
+        <h2 id="section-priorities" class="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+          Priorités
+        </h2>
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <app-stat-card title="Critique" [value]="k?.priorities?.critical" icon="report" variant="critical" />
+          <app-stat-card title="Élevée" [value]="k?.priorities?.urgent" icon="warning" variant="high" />
+          <app-stat-card title="Moyenne" [value]="k?.priorities?.standard" icon="remove_circle_outline" variant="medium" />
+          <app-stat-card title="Faible" [value]="k?.priorities?.low" icon="arrow_circle_down" variant="low" />
+      </div>
+    </section>
+
+    <section aria-labelledby="section-sla">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <app-stat-card title="Temps de révision moyen" [value]="k?.mean_time_to_review" icon="schedule" variant="medium" />
+      </div>
+    </section>
   </div>
 }
