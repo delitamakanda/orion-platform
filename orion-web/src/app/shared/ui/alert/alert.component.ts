@@ -1,10 +1,9 @@
 import { Component, ElementRef, input, OnDestroy, OnInit, signal, viewChild } from '@angular/core';
-import { NgClass } from '@angular/common';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 
 @Component({
   selector: 'app-alert',
-  imports: [NgClass, MATERIAL_IMPORTS],
+  imports: [MATERIAL_IMPORTS],
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css'],
 })
