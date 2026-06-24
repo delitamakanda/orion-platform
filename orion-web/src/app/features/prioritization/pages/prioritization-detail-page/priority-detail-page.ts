@@ -1,9 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PrioritizationStore } from '../../data-access/prioritization.store';
 import { SHARED_UI_COMPONENTS } from '@app/shared/ui/components.module';
 import { ReviewDecisionForm } from '../../components/review-decision-form/review-decision-form';
 import { PriorityFactorList } from '../../components/priority-factor-list/priority-factor-list';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/internal/operators/map';
 
 @Component({
   selector: 'app-priority-detail-page',
@@ -13,13 +15,18 @@ import { PriorityFactorList } from '../../components/priority-factor-list/priori
 })
 export class PriorityDetailPage implements OnInit {
   private readonly route = inject(ActivatedRoute);
+  private readonly destroyRef = inject(DestroyRef);
   readonly store = inject(PrioritizationStore);
 
   ngOnInit(): void {
-    this.route.data.subscribe((data) => {
-      const assessment = data['prioritizationData'];
-      this.store.selectAssessment(assessment);
-    });
+    this.route.data
+      .pipe(
+        map((data) => data['prioritizationData']),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe((assessment) => {
+        this.store.selectAssessment(assessment);
+      });
   }
 
   handleSubmitDecision(event: {
@@ -37,13 +44,16 @@ export class PriorityDetailPage implements OnInit {
       reviewer: event.reviewer,
       is_override: event.previous_level !== event.final_level,
     };
-    this.store.createReviewDecision(reviewDecision).subscribe({
-      next: (response) => {
-        console.log('Review decision submitted successfully:', response);
-      },
-      error: (error) => {
-        console.error('Error submitting review decision:', error);
-      },
-    });
+    this.store
+      .createReviewDecision(reviewDecision)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => {
+          console.log('Review decision submitted successfully:', response);
+        },
+        error: (error) => {
+          console.error('Error submitting review decision:', error);
+        },
+      });
   }
 }
