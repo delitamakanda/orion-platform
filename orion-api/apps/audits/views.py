@@ -13,6 +13,8 @@ class AuditLogViewSet(viewsets.ModelViewSet):
     serializer_class = AuditSerializer
     filterset_fields = ['user__username', 'action', 'target_type']
     permission_classes = [permissions.IsAuthenticated]
+    search_fields = ['user__username', 'action', 'target_type', 'metadata', 'ip_address', 'user_agent']
+    ordering_fields = ['timestamp']
     http_method_names = ['get']
 
     def get_queryset(self):
