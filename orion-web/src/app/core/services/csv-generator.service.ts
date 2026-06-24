@@ -1,13 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { ExportRow } from '@app/core/models/export-row.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class CsvGeneratorService {
   generate(rows: ExportRow[]): string {
-    const headers = ['learner_first_name', 'leaner_last_name', 'email', 'course_code', 'course_name','session_date', 'quantity', 'unit_price',];
-    const csvRows = rows.map(row => [
+    const headers = [
+      'learner_first_name',
+      'leaner_last_name',
+      'email',
+      'course_code',
+      'course_name',
+      'session_date',
+      'quantity',
+      'unit_price',
+    ];
+    const csvRows = rows.map((row) => [
       row.leaner_first_name,
       row.leaner_last_name,
       row.email,
@@ -19,7 +26,8 @@ export class CsvGeneratorService {
       row.total_price,
     ]);
     return [headers, ...csvRows]
-      .map(cols => cols.map(value => `"${String(value ?? '').replace(/"/g,'""')}"`).join(',')).join('\n');
+      .map((cols) => cols.map((value) => `"${String(value ?? '').replace(/"/g, '""')}"`).join(','))
+      .join('\n');
   }
 
   downloadCsv(filename: string, content: string): void {
@@ -30,8 +38,6 @@ export class CsvGeneratorService {
     a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
-    setTimeout(() => {
-      a.remove();
-    }, 0);
+    a.remove();
   }
 }
