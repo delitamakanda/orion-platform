@@ -6,6 +6,7 @@ import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { DatePipe } from '@angular/common';
 import { PrioritizationStore } from '@app/features/prioritization/data-access/prioritization.store';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SnackbarService } from '@app/core/services/snackbar.service';
 
 @Component({
   selector: 'app-complaint-detail-page',
@@ -16,6 +17,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export class ComplaintDetailPage implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly service = inject(SnackbarService);
   readonly store = inject(ComplaintStore);
   readonly storePrioritization = inject(PrioritizationStore);
 
@@ -38,10 +40,10 @@ export class ComplaintDetailPage implements OnInit {
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe({
           next: (assessment) => {
-            console.log('Assessment created:', assessment);
+            this.service.showSuccessSnackbar(`Assessment created successfully with ID: ${assessment}`);
           },
           error: (error) => {
-            console.error('Error creating assessment:', error);
+            this.service.showErrorSnackbar(`Failed to create assessment: ${error.message}`);
           },
         });
     }
