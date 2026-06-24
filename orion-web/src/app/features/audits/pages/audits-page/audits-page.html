@@ -6,7 +6,7 @@
     <p>Loading...</p>
 }
 
-@for (audit of store.audits(); track $index) {
+@for (audit of store.audits(); track audit.id) {
     <p>{{ audit.id }}</p>
     <p>{{ audit.action }}</p>
     <p>{{ audit.timestamp }}</p>
