@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject } from '@angular/core';
 import { NotificationStore } from '../../data-access/notification.store';
 import { DatePipe } from '@angular/common';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { SnackbarService } from '@app/core/services/snackbar.service';
 import { NOTIFICATION_TYPE } from '../../models/notification.model';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-notifications-page',
@@ -15,6 +16,7 @@ import { NOTIFICATION_TYPE } from '../../models/notification.model';
 })
 export class NotificationsPage {
   private readonly snackbarService = inject(SnackbarService);
+  private readonly destroyRef = inject(DestroyRef);
   readonly store = inject(NotificationStore);
 
   getTypeIcon(type: NOTIFICATION_TYPE): string {
@@ -28,28 +30,34 @@ export class NotificationsPage {
   }
 
   markAsRead(notificationId: string) {
-    this.store.markAsRead(notificationId).subscribe({
-      next: () => {
-        this.snackbarService.showSuccessSnackbar(`Notification ${notificationId} marked as read.`);
-        this.store.updateUnreadCount();
-        this.store.updateNotifications();
-      },
-      error: (error) => {
-        this.snackbarService.showErrorSnackbar(`Error marking notification ${notificationId} as read: ${error}`);
-      },
-    });
+    this.store
+      .markAsRead(notificationId)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: () => {
+          this.snackbarService.showSuccessSnackbar(`Notification ${notificationId} marked as read.`);
+          this.store.updateUnreadCount();
+          this.store.updateNotifications();
+        },
+        error: (error) => {
+          this.snackbarService.showErrorSnackbar(`Error marking notification ${notificationId} as read: ${error}`);
+        },
+      });
   }
 
   markAllAsRead() {
-    this.store.markAllAsRead().subscribe({
-      next: () => {
-        this.snackbarService.showSuccessSnackbar('All notifications marked as read.');
-        this.store.updateUnreadCount();
-        this.store.updateNotifications();
-      },
-      error: (error) => {
-        this.snackbarService.showErrorSnackbar(`Error marking all notifications as read: ${error}`);
-      },
-    });
+    this.store
+      .markAllAsRead()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: () => {
+          this.snackbarService.showSuccessSnackbar('All notifications marked as read.');
+          this.store.updateUnreadCount();
+          this.store.updateNotifications();
+        },
+        error: (error) => {
+          this.snackbarService.showErrorSnackbar(`Error marking all notifications as read: ${error}`);
+        },
+      });
   }
 }
