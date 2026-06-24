@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, DestroyRef, inject, output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { AuthStore } from '@app/features/auth/data-access/auth.store';
 import { AvatarComponent } from '@app/shared/ui/avatar/avatar.component';
 import { siteConfig } from '@app/core/config/site.config';
 import { NotificationStore } from '@app/features/notifications/data-access/notification.store';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-navbar',
@@ -16,6 +17,7 @@ import { NotificationStore } from '@app/features/notifications/data-access/notif
 export class NavbarComponent {
   private readonly router = inject(Router);
   private readonly store = inject(AuthStore);
+  private readonly destroyRef = inject(DestroyRef);
   readonly notificationStore = inject(NotificationStore);
 
   readonly sidebarToggle = output<void>();
@@ -29,8 +31,11 @@ export class NavbarComponent {
   });
 
   protected logout(): void {
-    this.store.logout().subscribe(() => {
-      this.router.navigate(['/login']);
-    });
+    this.store
+      .logout()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        this.router.navigate(['/login']);
+      });
   }
 }
