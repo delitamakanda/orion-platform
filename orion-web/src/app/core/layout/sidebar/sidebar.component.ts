@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, ViewChild, computed } from '@angular/core';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -11,7 +11,7 @@ import { RbacService } from '@app/core/services/rbac.service';
   styleUrls: ['./sidebar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   @ViewChild('sidenav') private readonly sidenav!: MatSidenav;
   readonly service = inject(RbacService);
 
@@ -25,21 +25,23 @@ export class SidebarComponent implements OnInit {
     { path: '/administration', label: 'Administration', icon: 'admin_panel_settings' },
   ];
 
+  protected readonly routesToShow = computed(() => {
+    const filteredRoutes = [...this.routes];
+    if (!this.service.canAccess(['administrateur', 'procureur'])) {
+      filteredRoutes.splice(0, 1);
+    } else if (!this.service.canReviewPriority()) {
+      filteredRoutes.splice(2, 1);
+    } else if (!this.service.canViewAudits()) {
+      filteredRoutes.splice(4, 1);
+    } else if (!this.service.canManageUsers()) {
+      filteredRoutes.splice(6, 1);
+    } else if (!this.service.canViewSynchronization()) {
+      filteredRoutes.splice(3, 1);
+    }
+    return filteredRoutes;
+  });
+
   toggle(): void {
     this.sidenav.toggle();
-  }
-
-  ngOnInit(): void {
-    if (!this.service.canAccess(['administrateur', 'procureur'])) {
-      this.routes.splice(0, 1);
-    } else if (!this.service.canReviewPriority()) {
-      this.routes.splice(2, 1);
-    } else if (!this.service.canViewAudits()) {
-      this.routes.splice(4, 1);
-    } else if (!this.service.canManageUsers()) {
-      this.routes.splice(6, 1);
-    } else if (!this.service.canViewSynchronization()) {
-      this.routes.splice(3, 1);
-    }
   }
 }

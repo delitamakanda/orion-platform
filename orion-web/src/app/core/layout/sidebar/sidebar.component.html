@@ -1,7 +1,7 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav [opened]="true" mode="side">
     <mat-nav-list>
-      @for (entry of routes; track entry.path) {
+      @for (entry of routesToShow(); track entry.path) {
         <a
           mat-list-item
           [routerLink]="entry.path"
