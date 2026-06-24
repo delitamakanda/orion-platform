@@ -1,10 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ComplaintStore } from '../../data-access/complaint.store';
 import { map } from 'rxjs';
 import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { DatePipe } from '@angular/common';
 import { PrioritizationStore } from '@app/features/prioritization/data-access/prioritization.store';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-complaint-detail-page',
@@ -14,26 +15,35 @@ import { PrioritizationStore } from '@app/features/prioritization/data-access/pr
 })
 export class ComplaintDetailPage implements OnInit {
   private readonly route = inject(ActivatedRoute);
+  private readonly destroyRef = inject(DestroyRef);
   readonly store = inject(ComplaintStore);
   readonly storePrioritization = inject(PrioritizationStore);
 
   ngOnInit(): void {
-    this.route.data.pipe(map((data) => data['complaintData'])).subscribe((complaint) => {
-      this.store.selectComplaint(complaint);
-    });
+    this.route.data
+      .pipe(
+        map((data) => data['complaintData']),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe((complaint) => {
+        this.store.selectComplaint(complaint);
+      });
   }
 
   analyzeComplaint(): void {
     const selectedComplaint = this.store.selectedComplaint();
     if (selectedComplaint) {
-      this.storePrioritization.createAssessment(selectedComplaint.id).subscribe({
-        next: (assessment) => {
-          console.log('Assessment created:', assessment);
-        },
-        error: (error) => {
-          console.error('Error creating assessment:', error);
-        },
-      });
+      this.storePrioritization
+        .createAssessment(selectedComplaint.id)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe({
+          next: (assessment) => {
+            console.log('Assessment created:', assessment);
+          },
+          error: (error) => {
+            console.error('Error creating assessment:', error);
+          },
+        });
     }
   }
 }
