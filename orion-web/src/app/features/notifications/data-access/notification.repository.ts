@@ -20,8 +20,8 @@ export class NotificationRepository {
 
   readonly unreadCountResource = resource({
     loader: async () => {
-      const response = await firstValueFrom(this.api.findUnreadCount());
-      return response.unread_count;
+      const { unread_count } = await firstValueFrom(this.api.findUnreadCount());
+      return unread_count ?? 0;
     },
   });
 
