@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, DestroyRef, inject, output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthStore } from '@app/features/auth/data-access/auth.store';
 import { AvatarComponent } from '@app/shared/ui/avatar/avatar.component';
 import { siteConfig } from '@app/core/config/site.config';
@@ -23,6 +23,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatTooltipModule,
     MatBadgeModule,
     MatToolbarModule,
+    RouterLink,
+    RouterLinkActive,
     AvatarComponent,
   ],
   templateUrl: './navbar.component.html',

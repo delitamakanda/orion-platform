@@ -26,7 +26,9 @@
 
     <button 
       mat-icon-button
-      [matMenuTriggerFor]="notificationsMenu"
+      [routerLink]="'/notifications'"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
       aria-label="Open notifications menu"
     >
     @if (notificationStore.unreadCount() > 0) {
@@ -56,22 +58,3 @@
   </button>
 </mat-menu>
 
- <mat-menu #notificationsMenu="matMenu" xPosition="before">
-    <div class="menu-user-header" role="presentation" (click)="$event.stopPropagation()">
-      <span class="user-name">Notifications</span>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <div class="menu-notifications-content">
-      @if (notificationStore.unreadNotifications().length === 0) {
-      <p>No notifications</p>
-      } @else {
-      <ul>
-        @for (notification of notificationStore.unreadNotifications(); track notification.id) {
-          <li>{{ notification.message }}</li>
-        }
-      </ul>
-      }
-    </div>
-  </mat-menu>
