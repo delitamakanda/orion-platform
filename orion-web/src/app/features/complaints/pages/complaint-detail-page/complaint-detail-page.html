@@ -1,7 +1,10 @@
-{{ store.selectedComplaint()?.category}}
-{{ store.selectedComplaint()?.title}}
-{{ store.selectedComplaint()?.description}}
-{{ store.selectedComplaint()?.status}}
-{{ store.selectedComplaint()?.created_at | date:'short'}}
-<a mat-raised-button color="primary" role="button" tabindex="0" (keydown)="analyzeComplaint()" (click)="analyzeComplaint()">Analyze Complaint</a>
+<app-complaint-card [complaint]="store.selectedComplaint()"></app-complaint-card>
+
+<app-complaint-timeline
+    [events]="timelineEvents()"
+></app-complaint-timeline>
+
+@if (roleService.canReviewPriority() && store.selectedComplaint()?.status === 'imported') {
+  <a mat-raised-button color="primary" role="button" tabindex="0" (keydown)="analyzeComplaint()" (click)="analyzeComplaint()">Analyze Complaint</a>
+}
 

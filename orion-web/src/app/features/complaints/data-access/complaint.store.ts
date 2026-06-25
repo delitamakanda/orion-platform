@@ -7,7 +7,7 @@ export class ComplaintStore {
   private readonly repository = inject(ComplaintRepository);
 
   private readonly _loading = signal<boolean>(false);
-  private readonly _selectedComplaint = signal<Complaint | null>(null);
+  private readonly _selectedComplaint = signal<Complaint>(null as unknown as Complaint);
 
   readonly complaints = computed(() => this.repository.complaints);
   readonly isLoading = computed(() => this.repository.isLoading);
