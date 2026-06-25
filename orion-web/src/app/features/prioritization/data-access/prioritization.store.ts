@@ -1,4 +1,5 @@
 import { computed, inject, Service, signal } from '@angular/core';
+import { tap } from 'rxjs/operators';
 import { PrioritizationRepository } from './prioritization.repository';
 import { ComplaintStore } from '@app/features/complaints/data-access/complaint.store';
 import { PriorityAssessment } from '../models/ai-analysis.model';
@@ -21,12 +22,15 @@ export class PrioritizationStore {
   }
 
   createAssessment(complaintId: number) {
-    return this.repository.createAssessment(complaintId);
+    return this.repository.createAssessment(complaintId).pipe(
+      tap((assessment) => {
+        this._selectedAssessment.set(assessment);
+        this.store.selectComplaint(assessment.complaint);
+      }),
+    );
   }
 
-  // todo: remove this when we have a proper review decision model
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  createReviewDecision(reviewDecision: Record<string, any>) {
+  createReviewDecision(reviewDecision: Record<string, string | number | boolean | unknown[] | null>) {
     return this.repository.createReviewDecision(reviewDecision);
   }
 

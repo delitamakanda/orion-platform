@@ -3,6 +3,7 @@ import { inject, Service } from '@angular/core';
 import { API_CONFIG_TOKEN } from '@app/core/config/injection-token';
 import { map } from 'rxjs/operators';
 import { PriorityAssessment } from '../models/ai-analysis.model';
+import { ReviewDecision } from '../models/review-decision.model';
 
 @Service()
 export class PrioritizationApiClient {
@@ -22,10 +23,16 @@ export class PrioritizationApiClient {
   }
 
   createAssessment(complaintId: number) {
-    return this.api.post(`${this.config.backendUrl}/prioritization/assessments/`, { complaint_id: complaintId });
+    return this.api
+      .post<{
+        data: PriorityAssessment;
+      }>(`${this.config.backendUrl}/prioritization/assessments/`, { complaint_id: complaintId })
+      .pipe(map((response) => response['data']));
   }
 
   createReviewDecision(reviewDecision: Record<string, unknown>) {
-    return this.api.post(`${this.config.backendUrl}/prioritization/reviews/`, reviewDecision);
+    return this.api
+      .post<{ data: ReviewDecision }>(`${this.config.backendUrl}/prioritization/reviews/`, reviewDecision)
+      .pipe(map((response) => response['data']));
   }
 }
