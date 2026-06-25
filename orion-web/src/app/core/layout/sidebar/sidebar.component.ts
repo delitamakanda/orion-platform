@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject, ViewChild, computed } from '@angular/core';
-import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
 import { RbacService } from '@app/core/services/rbac.service';
+import { SHELL_MATERIAL_IMPORTS } from '@app/shared/material/shell-material.imports';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [MATERIAL_IMPORTS, RouterLink, RouterLinkActive],
+  imports: [SHELL_MATERIAL_IMPORTS, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
