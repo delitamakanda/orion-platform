@@ -1,0 +1,6 @@
+<mat-chip color="primary"
+  [attr.aria-label]="'Statut: ' + status()"
+  [color]="colorStatus()" selected>
+  <mat-icon>{{ iconStatus() }}</mat-icon>
+  {{ status() }}
+</mat-chip>
