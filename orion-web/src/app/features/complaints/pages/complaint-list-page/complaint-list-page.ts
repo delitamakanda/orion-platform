@@ -10,6 +10,8 @@ import { Complaint } from '../../models/complaint.model';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { A11yModule } from '@angular/cdk/a11y';
 import { RouterLink } from '@angular/router';
+import { CategoryBadge } from '@app/shared/ui/components.module';
+import { ComplaintStatus } from '../../components/complaint-status/complaint-status';
 
 @Component({
   selector: 'app-complaint-list-page',
@@ -22,6 +24,8 @@ import { RouterLink } from '@angular/router';
     MatProgressSpinnerModule,
     A11yModule,
     RouterLink,
+    CategoryBadge,
+    ComplaintStatus,
   ],
   templateUrl: './complaint-list-page.html',
   styleUrls: ['./complaint-list-page.css'],
