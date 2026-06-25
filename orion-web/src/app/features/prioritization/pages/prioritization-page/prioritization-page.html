@@ -1,3 +1,66 @@
-@for (item of store.assessments(); track item.id) {
-    <app-ai-assessement-panel [assessment]="item"></app-ai-assessement-panel>
+@if (store.isLoading()) {
+    <mat-spinner diameter="50" strokeWidth="4"></mat-spinner>
+}
+
+@if (store.error()) {
+    <p class="text-red-600 text-sm px-1" role="alert">Erreur : {{ store.error() }}</p>
+}
+
+@if (store.assessments()?.length === 0 && !store.isLoading() && !store.error()) {
+    <p class="text-gray-500 text-sm px-1">Aucune évaluation de priorisation trouvée.</p>
+}
+
+@if (store.assessments()?.length) {
+<!--<cdk-virtual-scroll-viewport itemSize="52" class="flex-1" role="rowgroup"> -->
+    <table mat-table [dataSource]="dataSource" role="table" aria-label="Liste des évaluations de priorisation">
+        <ng-container matColumnDef="complaint_reference">
+            <th mat-header-cell *matHeaderCellDef>Référence</th>
+            <td mat-cell *matCellDef="let assessment">{{ assessment.complaint.reference }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="complaint_status">
+            <th mat-header-cell *matHeaderCellDef>Statut</th>
+            <td mat-cell *matCellDef="let assessment">
+                <app-complaint-status [status]="assessment.complaint.status"></app-complaint-status>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="complaint_declared_urgency">
+            <th mat-header-cell *matHeaderCellDef>Urgence déclarée</th>
+            <td mat-cell *matCellDef="let assessment">{{ assessment.complaint.declared_urgency }}/5</td>
+        </ng-container>
+
+        <ng-container matColumnDef="level">
+            <th mat-header-cell *matHeaderCellDef>Niveau de priorité</th>
+            <td mat-cell *matCellDef="let assessment">
+                <app-priority-badge [priority]="assessment.level"></app-priority-badge>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+            <th mat-header-cell *matHeaderCellDef>Score</th>
+            <td mat-cell *matCellDef="let assessment">{{ assessment.score }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="complaint_location">
+            <th mat-header-cell *matHeaderCellDef>Localisation</th>
+            <td mat-cell *matCellDef="let assessment">{{ assessment.complaint.location }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="complaint_incident_date">
+            <th mat-header-cell *matHeaderCellDef>Date de l'incident</th>
+            <td mat-cell *matCellDef="let assessment">{{ assessment.complaint.incident_date | date: 'short' }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+            mat-row
+            [routerLink]="['/prioritization/details/' + assessment?.complaint?.id]"
+            *matRowDef="let assessment; columns: displayedColumns"
+            (click)="store.selectAssessment(assessment)"
+            [class.selected]="assessment === store.selectedAssessment()"
+            tabindex="0"
+        ></tr>
+    </table>
+<!--</cdk-virtual-scroll-viewport> -->
 }
