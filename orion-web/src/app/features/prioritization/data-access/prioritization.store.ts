@@ -11,7 +11,9 @@ export class PrioritizationStore {
 
   readonly selectedComplaintId = computed(() => this.store.selectedComplaint()?.id);
 
-  readonly assessments = computed(() => this.repository.assessments.value());
+  readonly assessments = computed(() => this.repository.assessments);
+  readonly isLoading = computed(() => this.repository.loading);
+  readonly error = computed(() => this.repository.error);
 
   readonly _selectedAssessment = signal<PriorityAssessment | null>(null);
 

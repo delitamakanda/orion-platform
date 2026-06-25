@@ -13,13 +13,13 @@ export class PrioritizationApiClient {
   findAll() {
     return this.api
       .get<{ data: PriorityAssessment[] }>(`${this.config.backendUrl}/prioritization/assessments/list/`)
-      .pipe(map((response) => response.data));
+      .pipe(map((response) => response.data || []));
   }
 
   findByComplaintId(complaintId: number) {
     return this.api
       .get<{ data: PriorityAssessment }>(`${this.config.backendUrl}/prioritization/assessments/${complaintId}/`)
-      .pipe(map((response) => response.data));
+      .pipe(map(({ data }) => data || null));
   }
 
   createAssessment(complaintId: number) {
@@ -27,12 +27,12 @@ export class PrioritizationApiClient {
       .post<{
         data: PriorityAssessment;
       }>(`${this.config.backendUrl}/prioritization/assessments/`, { complaint_id: complaintId })
-      .pipe(map((response) => response['data']));
+      .pipe(map(({ data }) => data));
   }
 
   createReviewDecision(reviewDecision: Record<string, unknown>) {
     return this.api
       .post<{ data: ReviewDecision }>(`${this.config.backendUrl}/prioritization/reviews/`, reviewDecision)
-      .pipe(map((response) => response['data']));
+      .pipe(map(({ data }) => data));
   }
 }

@@ -1,18 +1,29 @@
-import { inject, resource, Service, signal } from '@angular/core';
+import { inject, Service, signal } from '@angular/core';
 import { PrioritizationApiClient } from './prioritization-api.client';
-import { firstValueFrom } from 'rxjs';
-import { ComplaintStore } from '@app/features/complaints/data-access/complaint.store';
+import { rxResource } from '@angular/core/rxjs-interop';
+import { PriorityAssessment } from '../models/ai-analysis.model';
 
 @Service()
 export class PrioritizationRepository {
   private readonly api = inject(PrioritizationApiClient);
-  private readonly store = inject(ComplaintStore);
 
   readonly assessmentCreated = signal<Record<string, unknown> | null>(null);
 
-  readonly assessments = resource({
-    loader: () => firstValueFrom(this.api.findAll()),
+  readonly assessmentsResource = rxResource<PriorityAssessment[], void>({
+    stream: () => this.api.findAll(),
   });
+
+  get assessments() {
+    return this.assessmentsResource.value() ?? [];
+  }
+
+  get loading() {
+    return this.assessmentsResource.isLoading();
+  }
+
+  get error() {
+    return this.assessmentsResource.error();
+  }
 
   assessmentByComplaintId(complaintId: number) {
     return this.api.findByComplaintId(complaintId);
