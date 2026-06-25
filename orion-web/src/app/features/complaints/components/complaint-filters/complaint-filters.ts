@@ -1,11 +1,15 @@
 import { Component, output, signal } from '@angular/core';
 import { ComplaintFilter } from '../../models/complaint-filters.model';
-import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { formatDateForFilter } from '@app/shared/utils/date.utils';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-complaint-filters',
-  imports: [MATERIAL_IMPORTS],
+  imports: [MatInputModule, MatSelectModule, MatCheckboxModule, MatDatepickerModule, MatButtonModule],
   templateUrl: './complaint-filters.html',
   styleUrls: ['./complaint-filters.css'],
 })
