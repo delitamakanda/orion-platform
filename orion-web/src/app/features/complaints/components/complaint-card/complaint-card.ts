@@ -1,23 +1,22 @@
-import { Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Complaint } from '../../models/complaint.model';
-import { MATERIAL_IMPORTS } from '@app/shared/material.imports';
 import { DatePipe } from '@angular/common';
 import { ComplaintStore } from '../../data-access/complaint.store';
-import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { ComplaintStatus } from '../complaint-status/complaint-status';
+import { CategoryBadge } from '@app/shared/ui/category-badge/category-badge';
 
 @Component({
   selector: 'app-complaint-card',
-  imports: [MATERIAL_IMPORTS, DatePipe],
+  imports: [MatCardModule, CategoryBadge, ComplaintStatus, MatIconModule, MatListModule, MatButtonModule, DatePipe],
   templateUrl: './complaint-card.html',
   styleUrls: ['./complaint-card.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComplaintCard {
   readonly complaint = input.required<Complaint>();
   readonly store = inject(ComplaintStore);
-  private readonly router = inject(Router);
-
-  onSelectComplaint(): void {
-    this.store.selectComplaint(this.complaint());
-    this.router.navigate(['/complaints', this.complaint().id]);
-  }
 }
