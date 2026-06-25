@@ -4,10 +4,12 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RbacService } from '@app/core/services/rbac.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatBadgeModule } from '@angular/material/badge';
+import { NotificationStore } from '@app/features/notifications/data-access/notification.store';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink, RouterLinkActive, MatSidenavModule, MatListModule, MatIconModule],
+  imports: [RouterLink, RouterLinkActive, MatBadgeModule, MatSidenavModule, MatListModule, MatIconModule],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 export class SidebarComponent {
   @ViewChild('sidenav') private readonly sidenav!: MatSidenav;
   readonly service = inject(RbacService);
+  readonly store = inject(NotificationStore);
 
   protected readonly routes: { path: string; label: string; icon: string }[] = [
     { path: '/dashboard', label: 'Dashboard', icon: 'dashboard' },
