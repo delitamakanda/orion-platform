@@ -32,7 +32,7 @@
       aria-label="Open notifications menu"
     >
     @if (notificationStore.unreadCount() > 0) {
-      <mat-icon [matBadge]="notificationStore.unreadCount()">notifications</mat-icon>
+      <mat-icon aria-label="You have unread notifications" aria-hidden="false" [matBadge]="notificationStore.unreadCount()">notifications</mat-icon>
     } @else {
       <mat-icon>notifications</mat-icon>
     }
