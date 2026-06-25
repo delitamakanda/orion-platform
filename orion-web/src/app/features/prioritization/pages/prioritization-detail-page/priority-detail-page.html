@@ -1,5 +1,4 @@
-{{ store.selectedAssessment()?.complaint?.title }}
-{{ store.selectedAssessment()?.complaint?.description }}
+<app-ai-assessement-panel [assessment]="store.selectedAssessment()!"></app-ai-assessement-panel>
 <app-priority-badge [priority]="store.selectedAssessment()?.level"></app-priority-badge>
 <app-priority-factor-list [factors]="store.selectedAssessment()?.explanation!"></app-priority-factor-list>
 <app-review-decision-form

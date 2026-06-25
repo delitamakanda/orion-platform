@@ -6,10 +6,11 @@ import { ReviewDecisionForm } from '../../components/review-decision-form/review
 import { PriorityFactorList } from '../../components/priority-factor-list/priority-factor-list';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/internal/operators/map';
+import { AiAssessementPanel } from '../../components/ai-assessement-panel/ai-assessement-panel';
 
 @Component({
   selector: 'app-priority-detail-page',
-  imports: [SHARED_UI_COMPONENTS, ReviewDecisionForm, PriorityFactorList],
+  imports: [SHARED_UI_COMPONENTS, ReviewDecisionForm, PriorityFactorList, AiAssessementPanel],
   templateUrl: './priority-detail-page.html',
   styleUrls: ['./priority-detail-page.css'],
 })
