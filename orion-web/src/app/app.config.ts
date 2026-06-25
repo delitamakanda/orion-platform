@@ -6,7 +6,7 @@ import {
   provideZonelessChangeDetection,
   LOCALE_ID,
 } from '@angular/core';
-import { provideRouter, withComponentInputBinding, withInMemoryScrolling, withViewTransitions } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
@@ -39,7 +39,6 @@ export const appConfig: ApplicationConfig = {
     },
     provideRouter(
       routes,
-      withViewTransitions(),
       withComponentInputBinding(),
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' }),
     ),
