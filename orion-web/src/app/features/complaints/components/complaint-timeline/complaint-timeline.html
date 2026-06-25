@@ -1,1 +1,14 @@
-<p>complaint-timeline works!</p>
+<div mat-card-content class="timeline-container">
+    @for (event of events(); track event.id) {
+        <div class="timeline-event">
+            <div class="event-header">
+                <span class="event-title">{{ event.title }}</span>
+                <span class="event-timestamp">{{ event.timestamp | date:'short' }}</span>
+            </div>
+            <div class="event-description">{{ event.description }}</div>
+            @if (event.author) {
+                <div class="event-author">Author: {{ event.author }}</div>
+            }
+        </div>
+    }
+</div>
