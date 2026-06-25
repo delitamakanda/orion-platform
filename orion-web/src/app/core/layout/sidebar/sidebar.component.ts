@@ -6,10 +6,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NotificationStore } from '@app/features/notifications/data-access/notification.store';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink, RouterLinkActive, MatBadgeModule, MatSidenavModule, MatListModule, MatIconModule],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    MatBadgeModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatInputModule,
+  ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

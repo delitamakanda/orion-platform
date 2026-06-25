@@ -10,7 +10,7 @@
           [attr.aria-label]="entry.label"
         >
           <span class="nav-entry">
-            <mat-icon [matBadge]="(store.unreadCount() > 0 && entry.path === '/notifications') ? store.unreadCount() : null">{{ entry.icon }}</mat-icon>
+            <mat-icon aria-label="You have unread notifications" aria-hidden="false" [matBadge]="(store.unreadCount() > 0 && entry.path === '/notifications') ? store.unreadCount() : null">{{ entry.icon }}</mat-icon>
             <span>{{ entry.label }}</span>
           </span>
         </a>
