@@ -13,7 +13,9 @@ export class ComplaintApiClient {
   findAll(filter?: ComplaintFilter) {
     const params = { ...filter };
     return this.http
-      .get<{ data: { results: Complaint[] } }>(`${this.config.backendUrl}/complaints/`, { params })
+      .get<{
+        data: { results: Complaint[]; next: string; previous: string };
+      }>(`${this.config.backendUrl}/complaints/`, { params })
       .pipe(map((response) => response.data.results || []));
   }
 
