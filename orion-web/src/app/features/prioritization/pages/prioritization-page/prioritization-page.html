@@ -9,6 +9,8 @@
 @if (store.assessments()?.length === 0 && !store.isLoading() && !store.error()) {
     <p class="text-gray-500 text-sm px-1">Aucune évaluation de priorisation trouvée.</p>
 }
+<app-prioritization-filter
+    (filterChange)="setFilter($event)"></app-prioritization-filter>
 
 @if (store.assessments()?.length) {
 <!--<cdk-virtual-scroll-viewport itemSize="52" class="flex-1" role="rowgroup"> -->

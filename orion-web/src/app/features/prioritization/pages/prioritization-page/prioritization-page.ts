@@ -12,6 +12,8 @@ import { PriorityAssessment } from '../../models/ai-analysis.model';
 import { ComplaintStatus } from '@app/features/complaints/components/complaint-status/complaint-status';
 import { PriorityBadge } from '@app/shared/ui/components.module';
 import { PriorityScoreCard } from '../../components/priority-score-card/priority-score-card';
+import { PrioritizationFilter } from '../../components/prioritization-filter/prioritization-filter';
+import { AssessmentFilter } from '../../models/assessment-filter.model';
 
 @Component({
   selector: 'app-prioritization-page',
@@ -27,6 +29,7 @@ import { PriorityScoreCard } from '../../components/priority-score-card/priority
     ComplaintStatus,
     PriorityBadge,
     PriorityScoreCard,
+    PrioritizationFilter,
   ],
   templateUrl: './prioritization-page.html',
   styleUrls: ['./prioritization-page.css'],
@@ -51,5 +54,9 @@ export class PrioritizationPage {
     effect(() => {
       this.dataSource.data = this.store.assessments();
     });
+  }
+
+  setFilter(filter: Partial<AssessmentFilter>) {
+    this.store.setFilter(filter);
   }
 }
