@@ -6,8 +6,49 @@
     <p>Loading...</p>
 }
 
-@for (audit of store.audits(); track audit.id) {
-    <p>{{ audit.id }}</p>
-    <p>{{ audit.action }}</p>
-    <p>{{ audit.timestamp }}</p>
+@if (store.audits().length === 0 && !store.isLoading() && !store.error()) {
+    <p>Aucun audit trouvé.</p>
+}
+
+@if (store.audits().length > 0) {
+    <!-- <cdk-virtual-scroll-viewport itemSize="52" class="flex-1" role="rowgroup"> -->
+        <table mat-table [dataSource]="dataSource" role="table" aria-label="Liste des audits">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Id</th>
+                <td mat-cell *matCellDef="let audit">{{ audit.id }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="user_username">
+                <th mat-header-cell *matHeaderCellDef>Utilisateur</th>
+                <td mat-cell *matCellDef="let audit">{{ audit.user.username }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="ip_address">
+                <th mat-header-cell *matHeaderCellDef>Adresse IP</th>
+                <td mat-cell *matCellDef="let audit">{{ audit.ip_address }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let audit">{{ audit.action }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="timestamp">
+                <th mat-header-cell *matHeaderCellDef>Date</th>
+                <td mat-cell *matCellDef="let audit">{{ audit.timestamp | date:'short' }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action_details">
+                <th mat-header-cell *matHeaderCellDef>Détails</th>
+                <td mat-cell *matCellDef="let audit">
+                    <button mat-icon-button [matTooltip]="audit.user_agent" aria-label="Détails de l'action">
+                        <mat-icon>info</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    <!-- </cdk-virtual-scroll-viewport> -->
 }
