@@ -61,7 +61,8 @@ class CreateReviewDecisionAPIView(APIView):
 
 class ListAssessmentsAPIView(APIView):
     def get(self, request):
-        assessments = PriorityAssessmentSelectors.list_assessments()
+        # filter assessments based on query string if needed
+        assessments = PriorityAssessmentSelectors.list_assessments(request.query_params)
         serializer = PriorityAssessmentSerializer(assessments, many=True)
         return GenericResponse(serializer.data, status=status.HTTP_200_OK)
     
