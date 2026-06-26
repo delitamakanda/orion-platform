@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpContext } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { API_CONFIG_TOKEN } from '@app/core/config/injection-token';
 import { map } from 'rxjs/operators';
 import { PriorityAssessment } from '../models/ai-analysis.model';
 import { ReviewDecision } from '../models/review-decision.model';
+import { SKIP_LOADING_INTERCEPTOR } from '@app/core/api/loading.interceptor';
 
 @Service()
 export class PrioritizationApiClient {
@@ -26,13 +27,21 @@ export class PrioritizationApiClient {
     return this.api
       .post<{
         data: PriorityAssessment;
-      }>(`${this.config.backendUrl}/prioritization/assessments/`, { complaint_id: complaintId })
+      }>(
+        `${this.config.backendUrl}/prioritization/assessments/`,
+        { complaint_id: complaintId },
+        {
+          context: new HttpContext().set(SKIP_LOADING_INTERCEPTOR, true),
+        },
+      )
       .pipe(map(({ data }) => data));
   }
 
   createReviewDecision(reviewDecision: Record<string, unknown>) {
     return this.api
-      .post<{ data: ReviewDecision }>(`${this.config.backendUrl}/prioritization/reviews/`, reviewDecision)
+      .post<{ data: ReviewDecision }>(`${this.config.backendUrl}/prioritization/reviews/`, reviewDecision, {
+        context: new HttpContext().set(SKIP_LOADING_INTERCEPTOR, true),
+      })
       .pipe(map(({ data }) => data));
   }
 }
