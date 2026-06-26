@@ -11,6 +11,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { PriorityAssessment } from '../../models/ai-analysis.model';
 import { ComplaintStatus } from '@app/features/complaints/components/complaint-status/complaint-status';
 import { PriorityBadge } from '@app/shared/ui/components.module';
+import { PriorityScoreCard } from '../../components/priority-score-card/priority-score-card';
 
 @Component({
   selector: 'app-prioritization-page',
@@ -25,6 +26,7 @@ import { PriorityBadge } from '@app/shared/ui/components.module';
     A11yModule,
     ComplaintStatus,
     PriorityBadge,
+    PriorityScoreCard,
   ],
   templateUrl: './prioritization-page.html',
   styleUrls: ['./prioritization-page.css'],

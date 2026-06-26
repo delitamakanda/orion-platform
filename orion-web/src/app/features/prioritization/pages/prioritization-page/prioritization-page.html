@@ -39,7 +39,9 @@
 
         <ng-container matColumnDef="score">
             <th mat-header-cell *matHeaderCellDef>Score</th>
-            <td mat-cell *matCellDef="let assessment">{{ assessment.score }}</td>
+            <td mat-cell *matCellDef="let assessment">
+                <app-priority-score-card [score]="assessment.score"></app-priority-score-card>
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="complaint_location">
