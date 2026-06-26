@@ -1,0 +1,38 @@
+<form>
+    <div class="filters-grid">
+        <mat-form-field>
+            <mat-label>Statut</mat-label>
+            <mat-select [value]="filterModel().status" (selectionChange)="onChangeFilter('status', $event.value)">
+                <mat-option [value]="''">Tous</mat-option>
+                <mat-option [value]="'imported'">Importée</mat-option>
+                <mat-option [value]="'reviewed'">En cours</mat-option>
+                <mat-option [value]="'analyzed'">Analysée</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Urgence déclarée</mat-label>
+            <input matInput [value]="filterModel().urgency ?? ''" type="number" min="1" max="5" (input)="onChangeFilter('urgency', $any($event.target).value)" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Niveau</mat-label>
+            <mat-select [value]="filterModel().level" (selectionChange)="onChangeFilter('level', $event.value)">
+                <mat-option [value]="''">Tous</mat-option>
+                <mat-option [value]="'low'">Faible</mat-option>
+                <mat-option [value]="'medium'">Moyen</mat-option>
+                <mat-option [value]="'high'">Élevé</mat-option>
+                <mat-option [value]="'critical'">Critique</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Localisation</mat-label>
+            <input matInput [value]="filterModel().location ?? ''" (input)="onChangeFilter('location', $any($event.target).value)" />
+        </mat-form-field>
+    </div>
+
+    <div class="actions">
+        <button mat-stroked-button color="primary" (click)="resetFilters()">Réinitialiser</button>
+    </div>
+</form>
