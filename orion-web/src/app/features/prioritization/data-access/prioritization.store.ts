@@ -3,6 +3,7 @@ import { tap } from 'rxjs/operators';
 import { PrioritizationRepository } from './prioritization.repository';
 import { ComplaintStore } from '@app/features/complaints/data-access/complaint.store';
 import { PriorityAssessment } from '../models/ai-analysis.model';
+import { AssessmentFilter } from '../models/assessment-filter.model';
 
 @Service()
 export class PrioritizationStore {
@@ -18,6 +19,10 @@ export class PrioritizationStore {
   readonly _selectedAssessment = signal<PriorityAssessment | null>(null);
 
   readonly selectedAssessment = this._selectedAssessment.asReadonly();
+
+  setFilter(filter: Partial<AssessmentFilter>) {
+    this.repository.filters.update((current) => ({ ...current, ...filter }));
+  }
 
   selectAssessment(assessment: PriorityAssessment) {
     this._selectedAssessment.set(assessment);

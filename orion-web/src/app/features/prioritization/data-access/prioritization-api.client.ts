@@ -5,16 +5,23 @@ import { map } from 'rxjs/operators';
 import { PriorityAssessment } from '../models/ai-analysis.model';
 import { ReviewDecision } from '../models/review-decision.model';
 import { SKIP_LOADING_INTERCEPTOR } from '@app/core/api/loading.interceptor';
+import { AssessmentFilter } from '../models/assessment-filter.model';
 
 @Service()
 export class PrioritizationApiClient {
   private readonly api = inject(HttpClient);
   private readonly config = inject(API_CONFIG_TOKEN);
 
-  findAll() {
+  findAll(filter?: Partial<AssessmentFilter>) {
+    const params = {
+      declared_urgency: filter?.urgency ?? '',
+      ...filter,
+    };
     return this.api
-      .get<{ data: PriorityAssessment[] }>(`${this.config.backendUrl}/prioritization/assessments/list/`)
-      .pipe(map((response) => response.data || []));
+      .get<{
+        data: PriorityAssessment[];
+      }>(`${this.config.backendUrl}/prioritization/assessments/list/`, { params, context: new HttpContext().set(SKIP_LOADING_INTERCEPTOR, true) })
+      .pipe(map(({ data }) => data || []));
   }
 
   findByComplaintId(complaintId: number) {

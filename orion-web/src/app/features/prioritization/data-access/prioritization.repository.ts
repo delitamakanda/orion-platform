@@ -2,6 +2,7 @@ import { inject, Service, signal } from '@angular/core';
 import { PrioritizationApiClient } from './prioritization-api.client';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { PriorityAssessment } from '../models/ai-analysis.model';
+import { AssessmentFilter } from '../models/assessment-filter.model';
 
 @Service()
 export class PrioritizationRepository {
@@ -9,8 +10,16 @@ export class PrioritizationRepository {
 
   readonly assessmentCreated = signal<Record<string, unknown> | null>(null);
 
-  readonly assessmentsResource = rxResource<PriorityAssessment[], void>({
-    stream: () => this.api.findAll(),
+  readonly filters = signal<Partial<AssessmentFilter>>({
+    status: '',
+    urgency: '',
+    level: '',
+    location: '',
+  });
+
+  readonly assessmentsResource = rxResource<PriorityAssessment[], Partial<AssessmentFilter>>({
+    params: () => this.filters(),
+    stream: ({ params: filter }) => this.api.findAll(filter),
   });
 
   get assessments() {
