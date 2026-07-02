@@ -91,22 +91,36 @@ Responsabilités :
 
 * Tableaux de bord (KPI, Exports CSV, Excel...)
 
-### launch orion-api
+## Scripts de lancement
+
+### Démarrage complet (API + Web + Mock)
 
 ```bash
-C:\DEV\PROTO\orion-platform\orion-api\orion_venv\Scripts\activate
+./scripts/start-dev.sh
+```
+
+Sous Windows (PowerShell):
+
+```powershell
+.\scripts\start-dev.ps1
+```
+
+### Démarrage manuel par service
+
+orion-api:
+
+```bash
 python manage.py runserver
 ```
 
-#### sync all complaints
+sync all complaints:
 
 ```bash
 python manage.py sync_job
 ```
 
-### launch orion-web
+orion-web + mock-system-api:
 
 ```bash
 npm run start:all
 ```
-
