@@ -1,5 +1,19 @@
-<form (submit)="onSubmit($event)">
-    <div>
+<div class="container flex flex-col items-center justify-center">
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
+      <div class="w-full max-w-md mt-4">
+        <div class="rounded px-8 pt-6 pb-8 mb-4">
+          <div class="mb-4">
+            <!-- Logo or branding can go here with svg-->
+             <!-- Example SVG logo étoile -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            
+            <h2 class="text-2xl font-bold text-center mb-4">
+              Orion
+            </h2>
+          </div>
+<form (submit)="onSubmit($event)" class="flex flex-col gap-4">
 <mat-form-field>
     <mat-label>
       Email 
@@ -13,10 +27,8 @@
   </mat-error>
 }
   </mat-form-field>
-    </div>
   
 
-  <div>
     <mat-form-field>
     <mat-label>
       Password
@@ -30,7 +42,6 @@
   </mat-error>
 }
   </mat-form-field>
-  </div>
 
   <div class="remember-me">
     <mat-label>
@@ -49,9 +60,18 @@
   </mat-error>
 }
 
-<div class="form-debug">
+<div class="my-4 p-4 bg-gray-100 rounded">
   <h3>Current Form Values:</h3>
   <p>Email: {{ loginForm.email().value() }}</p>
   <p>Password: {{ loginForm.password().value() ? '••••••••' : '(empty)' }}</p>
   <p>Remember me: {{ loginForm.rememberMe().value() ? 'Yes' : 'No' }}</p>
+</div>
+        </div>
+    </div>
+   <div>
+    <div class="w-screen h-screen bg-cover bg-center" style="background-color: #f0f0f0;">
+    </div>
+    <!-- Add a second column -->
+  </div>
+
 </div>
