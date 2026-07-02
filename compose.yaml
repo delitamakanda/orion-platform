@@ -1,0 +1,37 @@
+services:
+  mock-system-api:
+    build:
+      context: ./mock-system-api
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+
+  orion-api:
+    build:
+      context: ./orion-api
+      dockerfile: Dockerfile
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-key}
+      DEBUG: ${DEBUG:-True}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-localhost,127.0.0.1,orion-api}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:4200,http://localhost:3000}
+      EXTERNAL_COMPLAINTS_SYSTEM_API_KEY: ${EXTERNAL_COMPLAINTS_SYSTEM_API_KEY:-default_api_key}
+      EXTERNAL_COMPLAINTS_SYSTEM_API_BASE_URL: ${EXTERNAL_COMPLAINTS_SYSTEM_API_BASE_URL:-http://mock-system-api:3001/api/v1}
+      PRIORITIZATION_PROVIDER: ${PRIORITIZATION_PROVIDER:-mock}
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+    depends_on:
+      - mock-system-api
+    ports:
+      - "8000:8000"
+
+  orion-web:
+    build:
+      context: ./orion-web
+      dockerfile: Dockerfile
+    command: npm run start -- --host 0.0.0.0 --port 4200
+    depends_on:
+      - orion-api
+      - mock-system-api
+    ports:
+      - "4200:4200"
