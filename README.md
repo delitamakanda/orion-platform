@@ -133,6 +133,18 @@ Démarrage complet avec Docker Compose (mock-system-api + orion-api + orion-web)
 docker compose up --build
 ```
 
+Nettoyage container zombies
+
+```bash
+docker container prune
+```
+
+Arrêt forcé Docker (si blocage)
+
+```bash
+wsl --shutdown
+```
+
 Services exposés:
 
 * `mock-system-api`: http://localhost:3001/api/v1
