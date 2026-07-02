@@ -192,7 +192,7 @@ LOGGING = {
 
 # external API settings
 EXTERNAL_COMPLAINTS_SYSTEM_API = {
-    "BASE_URL": "http://localhost:3001/api/v1",
+    "BASE_URL": os.getenv("EXTERNAL_COMPLAINTS_SYSTEM_API_BASE_URL", "http://localhost:3001/api/v1"),
     "TIMEOUT": 5,
     "API_KEY": os.getenv("EXTERNAL_COMPLAINTS_SYSTEM_API_KEY", "default_api_key"),
 }

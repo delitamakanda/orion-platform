@@ -124,3 +124,17 @@ orion-web + mock-system-api:
 ```bash
 npm run start:all
 ```
+
+## Docker Compose
+
+Démarrage complet avec Docker Compose (mock-system-api + orion-api + orion-web):
+
+```bash
+docker compose up --build
+```
+
+Services exposés:
+
+* `mock-system-api`: http://localhost:3001/api/v1
+* `orion-api`: http://localhost:8000/api/v1
+* `orion-web`: http://localhost:4200
