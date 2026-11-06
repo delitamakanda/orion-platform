@@ -8,7 +8,7 @@ from apps.accounts.permissions import IsAgentOrHigher, IsMagistratOrHigher, IsAd
 from apps.audits.services.audit_log_service import AuditLogService
 
 class ComplaintViewSet(viewsets.ModelViewSet):
-    queryset = Complaint.objects.all().order_by('-created_at')
+    queryset = Complaint.objects.all().order_by('-created_at', '-id')
     serializer_class = ComplaintSerializer
     filterset_class = ComplaintFilter
     
