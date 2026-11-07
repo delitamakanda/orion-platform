@@ -133,6 +133,25 @@ Démarrage complet avec Docker Compose (mock-system-api + orion-api + orion-web)
 docker compose up --build
 ```
 
+Prérequis : Docker (avec Compose v2). Aucun `.env` n'est nécessaire ; voir
+`.env.example` pour les variables surchargeables (`SECRET_KEY`, `DEBUG`,
+`PRIORITIZATION_PROVIDER`, `MISTRAL_API_KEY`). Le provider d'IA par défaut est
+`mock` (aucune clé Mistral requise).
+
+Comptes de démo (**local uniquement**, créés par `python manage.py seed_demo_users`
+quand `DEBUG=True` ou `SEED_DEMO_USERS=1`, sans doublon ni réinitialisation des
+mots de passe existants) : `agent@orion.local`, `magistrat@orion.local`,
+`procureur@orion.local`, `admin@orion.local` — mot de passe `orion-demo-123`.
+
+Le script `orion-api/docker/entrypoint.sh` enchaîne migrate → seed → synchronisation
+initiale des plaintes (seulement si aucune plainte, non bloquante) → runserver.
+Il est prévu pour être utilisé comme point d'entrée du conteneur `orion-api`
+(voir « Dépannage »). La base SQLite peut être placée ailleurs via `DATABASE_PATH`
+(par ex. un volume Docker).
+
+Dépannage : si l'API démarre vide, lancer `python manage.py sync_job` une fois le
+mock disponible.
+
 Nettoyage container zombies
 
 ```bash
